@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D’tik.COM — Time to Act and Create.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+:root{--bg:#090909;--panel:#11110f;--gold:#d7aa3c;--gold2:#f0c95e;--cream:#f5f0e5;--muted:#9a978f;--line:#282721}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans",Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:5px 5px}
+a{text-decoration:none;color:inherit}.container{max-width:1240px;margin:auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(215,170,60,.14)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.brand img{width:50px;height:50px;border-radius:50%}.brand b{font:800 23px "Playfair Display",serif}.brand small{display:block;color:var(--gold);font-size:9px;letter-spacing:2px;margin-top:1px}.links{display:flex;gap:30px;font-size:13px;color:#c6c3bb}.links a:first-child,.links a:hover{color:var(--gold)}.submit{border:1px solid var(--gold);padding:11px 16px;border-radius:4px;color:var(--gold);font-weight:700;font-size:12px}
+.hero{min-height:700px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative}.hero:before{content:"D’TIK";position:absolute;right:-100px;top:80px;font:800 190px "Playfair Display",serif;color:rgba(215,170,60,.025);pointer-events:none}
+.kicker{color:var(--gold);font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}.hero h1{font:800 clamp(58px,7vw,94px)/.9 "Playfair Display",serif;margin:20px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:560px;color:#aaa69d;font-size:16px;line-height:1.8}.actions{display:flex;gap:12px;margin-top:28px}.btn{padding:14px 20px;background:var(--gold);color:#111;border-radius:4px;font-weight:800;font-size:13px}.btn.alt{background:transparent;border:1px solid #454239;color:var(--cream)}
+.feature{height:500px;position:relative;border:1px solid #3a321f;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#30240f 0%,#17140e 45%,#0e0e0d 100%);box-shadow:0 25px 80px rgba(0,0,0,.5)}.feature:before{content:"";position:absolute;width:330px;height:330px;border:1px solid rgba(215,170,60,.5);border-radius:50%;right:-90px;bottom:-80px;box-shadow:0 0 0 50px rgba(215,170,60,.035),0 0 0 100px rgba(215,170,60,.02)}.feature:after{content:"✦  ✎  ◇  ✦";position:absolute;right:35px;top:30px;color:rgba(215,170,60,.5);font-size:25px;letter-spacing:14px}.feature-content{position:absolute;inset:0;padding:38px;display:flex;flex-direction:column;justify-content:flex-end}.badge{align-self:flex-start;border:1px solid var(--gold);padding:7px 10px;color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:700;margin-bottom:auto}.feature h2{font:700 48px/1.02 "Playfair Display",serif;max-width:440px;margin:0 0 14px}.feature p{max-width:440px;color:#bdb8ad;line-height:1.7;font-size:14px}.feature .read{margin-top:15px;color:var(--gold);font-weight:700;font-size:12px;letter-spacing:1px}
+
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:15px 0;color:#777;font-size:11px;letter-spacing:3px}.marquee span{color:var(--gold);margin:0 30px}
+section{padding:85px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:35px}.section-head h2{font:700 45px "Playfair Display",serif;margin:8px 0 0}.section-head a{color:var(--gold);font-size:12px;font-weight:700}
+.edition{display:grid;grid-template-columns:1.4fr .6fr;gap:20px}.edition-main{min-height:360px;border-radius:14px;padding:34px;background:linear-gradient(120deg,#19150d,#10100f);border:1px solid #38301f;position:relative;overflow:hidden}.edition-main:after{content:"01";position:absolute;right:25px;bottom:-45px;font:800 180px "Playfair Display";color:rgba(215,170,60,.06)}.edition-main h3{font:700 44px/1.05 "Playfair Display";max-width:600px;margin:28px 0 15px}.edition-main p{color:#aaa;max-width:570px;line-height:1.7}.edition-side{display:grid;gap:20px}.mini{border:1px solid var(--line);border-radius:14px;padding:25px;background:#10100f}.mini .num{color:var(--gold);font-size:11px;letter-spacing:2px}.mini h4{font:600 25px "Playfair Display";margin:13px 0}.mini p{color:#888;font-size:13px;line-height:1.6}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{min-height:245px;border:1px solid var(--line);border-radius:12px;padding:23px;background:linear-gradient(150deg,#141412,#0d0d0c);position:relative;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-7px);border-color:#655126}.card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-45px;bottom:-45px;border:1px solid rgba(215,170,60,.18)}.icon{font-size:28px;color:var(--gold);margin-bottom:28px}.card small{color:var(--gold);font-size:9px;font-weight:800;letter-spacing:2px}.card h3{font:600 25px "Playfair Display";margin:10px 0}.card p{font-size:13px;color:#898780;line-height:1.65}
+
+.gallery{display:grid;grid-template-columns:1.3fr .7fr .7fr;grid-template-rows:220px 180px;gap:14px}.tile{border-radius:12px;border:1px solid var(--line);padding:25px;display:flex;align-items:end;overflow:hidden;position:relative;background:linear-gradient(135deg,#302410,#111)}.tile:nth-child(2){background:linear-gradient(135deg,#222,#0e0e0e)}.tile:nth-child(3){background:linear-gradient(135deg,#3a2c17,#111)}.tile:nth-child(4){background:linear-gradient(135deg,#171717,#29210f)}.tile:nth-child(5){background:linear-gradient(135deg,#251f15,#0e0e0e)}.tile:first-child{grid-row:span 2}.tile b{font:600 27px "Playfair Display";position:relative;z-index:2}.tile:before{content:"";position:absolute;inset:20px;border:1px solid rgba(215,170,60,.15);transform:rotate(-3deg)}.tile:after{content:"✦";position:absolute;right:25px;top:18px;color:var(--gold);font-size:24px}
+
+.archive{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.issue{height:220px;border-radius:10px;border:1px solid var(--line);padding:18px;background:linear-gradient(155deg,#17140e,#101010);display:flex;flex-direction:column;justify-content:space-between}.issue:hover{border-color:var(--gold)}.issue span{font-size:10px;color:var(--gold);letter-spacing:2px}.issue strong{font:600 28px "Playfair Display";line-height:1.05}.issue em{font-size:11px;color:#777;font-style:normal}
+.quote{padding:110px 20px;text-align:center}.quote h2{font:700 italic clamp(38px,5vw,65px)/1.1 "Playfair Display";max-width:900px;margin:auto}.quote p{color:var(--gold);letter-spacing:4px;font-size:10px;margin-top:25px}
+footer{padding:35px 0;color:#6e6b64;font-size:12px}.foot{display:flex;justify-content:space-between}.gold{color:var(--gold)}
+@media(max-width:900px){.links{display:none}.hero{grid-template-columns:1fr;padding:65px 0}.feature{height:420px}.cards{grid-template-columns:repeat(2,1fr)}.edition{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px}.tile:first-child{grid-row:span 1;grid-column:span 2}}
+@media(max-width:560px){.container{padding:0 18px}.brand small{display:none}.submit{display:none}.hero h1{font-size:58px}.feature h2{font-size:38px}.cards{grid-template-columns:1fr}.archive{grid-template-columns:1fr 1fr}.gallery{display:grid;grid-template-columns:1fr}.tile:first-child{grid-column:auto}.actions{flex-direction:column}.section-head{display:block}.section-head h2{font-size:37px}}
+</style>
+</head>
+<body>
+<nav><div class="container nav">
+<a class="brand" href="#"><img src="logo.png"><span><b>D’tik.COM</b><small>DARUSSALAM JURNALISTIK COMMUNITY</small></span></a>
+<div class="links"><a href="#home">Beranda</a><a href="#mading">Mading</a><a href="#karya">Karya</a><a href="#galeri">Galeri</a><a href="#arsip">Arsip</a><a href="#tentang">Tentang</a></div>
+<a class="submit" href="#karya">KIRIM KARYA ↗</a>
+</div></nav>
+
+<main id="home">
+<header class="container hero">
+<div><div class="kicker">DARUSSALAM JURNALISTIK COMMUNITY</div><h1>Time to <span>Act</span><br>and Create.</h1><p>Tempat cerita, gagasan, dan kreativitas santri Darussalam bertemu. Dari mading mingguan menjadi jejak digital yang bisa dikenang.</p><div class="actions"><a class="btn" href="#mading">JELAJAHI MADING →</a><a class="btn alt" href="#arsip">LIHAT ARSIP</a></div></div>
+<div class="feature"><div class="feature-content"><div class="badge">MADING TERBARU · EDISI #01</div><div><div class="kicker">TEMA MINGGU INI</div><h2>Hidup Bermakna, Karya Berjuta.</h2><p>Setiap edisi punya cerita, warna, dan karya yang berbeda. Buka satu edisi dan temukan seluruh rubrik D’tik.COM.</p><div class="read">BUKA EDISI LENGKAP →</div></div></div></div>
+</header>
+
+<div class="marquee">TOPIK UTAMA <span>✦</span> OPINI <span>✦</span> HUMOR PONDOK <span>✦</span> KARYA SENI <span>✦</span> KOMIK <span>✦</span> PUISI <span>✦</span> CERPEN <span>✦</span> TIPS & TRICK <span>✦</span> TOKOH INSPIRATIF</div>
+
+<section id="mading"><div class="container">
+<div class="section-head"><div><div class="kicker">WEEKLY EDITION</div><h2>Satu Minggu, Satu Cerita.</h2></div><a href="#arsip">SEMUA EDISI →</a></div>
+<div class="edition"><div class="edition-main"><div class="kicker">EDISI #01 · MADING MINGGUAN</div><h3>Hidup Bermakna, Karya Berjuta.</h3><p>Awali perjalanan digital D’tik.COM dengan satu edisi penuh. Jelajahi pembuka, topik utama, opini, learning language, humor pondok, karikatur, karya seni, komik, puisi, tokoh inspiratif, cerpen, serta tips & trick.</p><a class="btn" href="#karya">LIHAT RUBRIK →</a></div><div class="edition-side"><div class="mini"><div class="num">PEMBUKA</div><h4>Awal dari setiap edisi.</h4><p>Bagian yang membuka tema dan membawa pembaca masuk ke cerita minggu ini.</p></div><div class="mini"><div class="num">DESAIN EDISI</div><h4>Setiap mading punya wajahnya sendiri.</h4><p>Visual, tipografi, ilustrasi, dan layout ikut menjadi bagian dari karya.</p></div></div></div>
+</div></section>
+
+<section id="karya"><div class="container"><div class="section-head"><div><div class="kicker">RUBRIK</div><h2>Karya & Cerita</h2></div><a href="#">LIHAT SEMUA →</a></div>
+<div class="cards">
+<div class="card"><div class="icon">✎</div><small>01 · TULISAN</small><h3>Topik Utama</h3><p>Bahasan utama yang mengupas tema setiap edisi.</p></div>
+<div class="card"><div class="icon">“</div><small>02 · PENDAPAT</small><h3>Opini</h3><p>Suara, pandangan, dan pemikiran santri.</p></div>
+<div class="card"><div class="icon">Aa</div><small>03 · LANGUAGE</small><h3>Learning Language</h3><p>Belajar bahasa dengan cara ringan dan kreatif.</p></div>
+<div class="card"><div class="icon">☺</div><small>04 · HUMOR</small><h3>Humor Pondok</h3><p>Momen lucu dan cerita khas kehidupan pondok.</p></div>
+<div class="card"><div class="icon">⌁</div><small>05 · VISUAL</small><h3>Karikatur</h3><p>Gagasan yang disampaikan lewat gambar dan satir.</p></div>
+<div class="card"><div class="icon">◇</div><small>06 · ART</small><h3>Karya Seni</h3><p>Ruang untuk lukisan, ilustrasi, dan karya visual.</p></div>
+<div class="card"><div class="icon">▦</div><small>07 · CERITA VISUAL</small><h3>Komik</h3><p>Cerita dalam panel, karakter, dan kreativitas.</p></div>
+<div class="card"><div class="icon">❧</div><small>08 · SASTRA</small><h3>Puisi</h3><p>Kata-kata yang dirangkai menjadi rasa.</p></div>
+<div class="card"><div class="icon">★</div><small>09 · INSPIRASI</small><h3>Tokoh Inspiratif</h3><p>Mengenal sosok dan kisah yang memberi teladan.</p></div>
+<div class="card"><div class="icon">⌂</div><small>10 · SASTRA</small><h3>Cerpen</h3><p>Cerita pendek dari imajinasi para penulis muda.</p></div>
+<div class="card"><div class="icon">+</div><small>11 · LIFESTYLE</small><h3>Tips & Trick</h3><p>Tips sederhana yang berguna untuk kehidupan santri.</p></div>
+</div></div></section>
+
+<section id="galeri"><div class="container"><div class="section-head"><div><div class="kicker">VISUAL ARCHIVE</div><h2>Karya yang Bisa Dilihat.</h2></div><a href="#">BUKA GALERI →</a></div>
+<div class="gallery"><div class="tile"><b>Desain Mading<br>Setiap Edisi.</b></div><div class="tile"><b>Karikatur</b></div><div class="tile"><b>Karya Seni</b></div><div class="tile"><b>Komik</b></div><div class="tile"><b>Dokumentasi</b></div></div></div></section>
+
+<section id="arsip"><div class="container"><div class="section-head"><div><div class="kicker">ARCHIVE</div><h2>Jejak dari Minggu ke Minggu.</h2></div><a href="#">SEMUA ARSIP →</a></div>
+<div class="archive"><div class="issue"><span>EDISI #05</span><strong>Coming Soon</strong><em>September 2026</em></div><div class="issue"><span>EDISI #04</span><strong>Coming Soon</strong><em>September 2026</em></div><div class="issue"><span>EDISI #03</span><strong>Coming Soon</strong><em>September 2026</em></div><div class="issue"><span>EDISI #02</span><strong>Coming Soon</strong><em>September 2026</em></div><div class="issue"><span>EDISI #01</span><strong>Hidup<br>Bermakna</strong><em>September 2026</em></div></div></div></section>
+
+<section id="tentang"><div class="container quote"><h2>“Setiap cerita layak didengar. Setiap karya layak diabadikan.”</h2><p>D’TIK.COM · TIME TO ACT AND CREATE.</p></div></section>
+</main>
+<footer><div class="container foot"><div>© 2026 <span class="gold">D’tik.COM</span> · Darussalam Jurnalistik Community</div><div class="gold">Time to Act and Create.</div></div></footer>
+</body></html>
