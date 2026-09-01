@@ -1,8 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="google-site-verification" content="HnSTkdp3V_JeQd7v_zfTQpxjVqTcmaBlhGu0ncpnh1w">
 
@@ -11,7 +12,7 @@
 <meta name="description" content="D’tik.COM adalah Darussalam Jurnalistik Community, wadah jurnalistik dan kreativitas santri melalui mading, opini, cerpen, puisi, komik, karya seni, dan berbagai rubrik lainnya.">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root{
   --bg:#090909;
@@ -24,14 +25,21 @@
 }
 
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:82px;
 }
 
 body{
-  margin:0;
   background:var(--bg);
   color:var(--cream);
-  font-family:"DM Sans",Arial,sans-serif
+  font-family:"DM Sans",Arial,sans-serif;
+  overflow-x:hidden;
 }
 
 body:before{
@@ -39,52 +47,69 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.08;
+  opacity:.07;
   background-image:radial-gradient(#fff 1px,transparent 1px);
-  background-size:5px 5px
+  background-size:5px 5px;
+  z-index:999;
 }
 
 a{
   text-decoration:none;
-  color:inherit
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
 }
 
 .container{
+  width:100%;
   max-width:1240px;
   margin:auto;
-  padding:0 28px
+  padding:0 28px;
 }
+
+
+/* =========================
+   NAVBAR
+========================= */
 
 nav{
   position:sticky;
   top:0;
-  z-index:20;
-  background:rgba(9,9,9,.82);
+  z-index:100;
+  background:rgba(9,9,9,.84);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(215,170,60,.14)
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(215,170,60,.14);
 }
 
 .nav{
-  height:82px;
+  min-height:82px;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
+  gap:25px;
 }
 
 .brand{
   display:flex;
   gap:12px;
-  align-items:center
+  align-items:center;
+  flex-shrink:0;
 }
 
 .brand img{
   width:50px;
   height:50px;
-  border-radius:50%
+  border-radius:50%;
+  object-fit:cover;
 }
 
 .brand b{
-  font:800 23px "Playfair Display",serif
+  display:block;
+  font:800 23px "Playfair Display",serif;
 }
 
 .brand small{
@@ -92,19 +117,24 @@ nav{
   color:var(--gold);
   font-size:9px;
   letter-spacing:2px;
-  margin-top:1px
+  margin-top:1px;
 }
 
 .links{
   display:flex;
-  gap:30px;
+  align-items:center;
+  gap:27px;
   font-size:13px;
-  color:#c6c3bb
+  color:#c6c3bb;
+}
+
+.links a{
+  transition:.2s;
 }
 
 .links a:first-child,
 .links a:hover{
-  color:var(--gold)
+  color:var(--gold);
 }
 
 .submit{
@@ -113,8 +143,20 @@ nav{
   border-radius:4px;
   color:var(--gold);
   font-weight:700;
-  font-size:12px
+  font-size:12px;
+  white-space:nowrap;
+  transition:.25s;
 }
+
+.submit:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:700px;
@@ -122,7 +164,7 @@ nav{
   grid-template-columns:1fr 1fr;
   gap:50px;
   align-items:center;
-  position:relative
+  position:relative;
 }
 
 .hero:before{
@@ -132,7 +174,7 @@ nav{
   top:80px;
   font:800 190px "Playfair Display",serif;
   color:rgba(215,170,60,.025);
-  pointer-events:none
+  pointer-events:none;
 }
 
 .kicker{
@@ -140,50 +182,65 @@ nav{
   font-weight:700;
   font-size:11px;
   letter-spacing:4px;
-  text-transform:uppercase
+  text-transform:uppercase;
 }
 
 .hero h1{
   font:800 clamp(58px,7vw,94px)/.9 "Playfair Display",serif;
-  margin:20px 0
+  margin:20px 0;
 }
 
 .hero h1 span{
-  color:var(--gold)
+  color:var(--gold);
 }
 
 .hero p{
   max-width:560px;
   color:#aaa69d;
   font-size:16px;
-  line-height:1.8
+  line-height:1.8;
 }
 
 .actions{
   display:flex;
+  flex-wrap:wrap;
   gap:12px;
-  margin-top:28px
+  margin-top:28px;
 }
 
 .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:14px 20px;
   background:var(--gold);
   color:#111;
   border-radius:4px;
   font-weight:800;
-  font-size:13px
+  font-size:13px;
+  transition:.25s;
+}
+
+.btn:hover{
+  background:var(--gold2);
+  transform:translateY(-2px);
 }
 
 .btn.alt{
   background:transparent;
   border:1px solid #454239;
-  color:var(--cream)
+  color:var(--cream);
+}
+
+.btn.alt:hover{
+  border-color:var(--gold);
+  color:var(--gold);
 }
 
 
-/* =========================================
-   FEATURE — AS WHITE AS SNOW
-========================================= */
+/* =========================
+   FEATURE
+========================= */
 
 .feature{
   height:500px;
@@ -210,8 +267,7 @@ nav{
       #dff1ff 100%
     );
 
-  box-shadow:
-    0 25px 80px rgba(40,120,200,.16);
+  box-shadow:0 25px 80px rgba(40,120,200,.16);
 }
 
 .feature:before{
@@ -219,15 +275,12 @@ nav{
   position:absolute;
   right:25px;
   top:20px;
-
   font-size:135px;
-  color:#ffffff;
+  color:#fff;
   opacity:.95;
-
   text-shadow:
     0 0 20px rgba(40,120,200,.28),
     0 0 45px rgba(40,120,200,.18);
-
   pointer-events:none;
 }
 
@@ -236,11 +289,9 @@ nav{
   position:absolute;
   right:28px;
   bottom:28px;
-
   color:rgba(40,120,200,.25);
   font-size:25px;
   letter-spacing:10px;
-
   pointer-events:none;
 }
 
@@ -248,65 +299,58 @@ nav{
   position:absolute;
   inset:0;
   padding:38px;
-
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-
-  z-index:2
+  z-index:2;
 }
 
 .feature .badge{
   align-self:flex-start;
-
   border:1px solid #2878c8;
   padding:7px 10px;
-
   color:#2878c8;
   background:rgba(255,255,255,.65);
-
   font-size:10px;
   letter-spacing:2px;
   font-weight:700;
-
-  margin-bottom:auto
+  margin-bottom:auto;
 }
 
 .feature .kicker{
-  color:#2878c8
+  color:#2878c8;
 }
 
 .feature h2{
   font:700 48px/1.02 "Playfair Display",serif;
   max-width:440px;
   margin:0 0 14px;
-
-  color:#17324d
+  color:#17324d;
 }
 
 .feature p{
   max-width:440px;
   color:#58728a;
   line-height:1.7;
-  font-size:14px
+  font-size:14px;
 }
 
 .feature .read{
   display:inline-block;
   margin-top:15px;
-
   color:#2878c8;
   font-weight:700;
   font-size:12px;
-  letter-spacing:1px
+  letter-spacing:1px;
 }
 
 
-/* =========================================
+/* =========================
    MARQUEE
-========================================= */
+========================= */
 
 .marquee{
+  width:100%;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   overflow:hidden;
@@ -314,51 +358,53 @@ nav{
   padding:15px 0;
   color:#777;
   font-size:11px;
-  letter-spacing:3px
+  letter-spacing:3px;
 }
 
 .marquee span{
   color:var(--gold);
-  margin:0 30px
+  margin:0 30px;
 }
 
 
-/* =========================================
+/* =========================
    SECTION
-========================================= */
+========================= */
 
 section{
   padding:85px 0;
-  border-bottom:1px solid var(--line)
+  border-bottom:1px solid var(--line);
 }
 
 .section-head{
   display:flex;
   align-items:end;
   justify-content:space-between;
-  margin-bottom:35px
+  gap:20px;
+  margin-bottom:35px;
 }
 
 .section-head h2{
-  font:700 45px "Playfair Display",serif;
-  margin:8px 0 0
+  font:700 45px/1.1 "Playfair Display",serif;
+  margin:8px 0 0;
 }
 
-.section-head a{
+.section-head > a{
   color:var(--gold);
   font-size:12px;
-  font-weight:700
+  font-weight:700;
+  white-space:nowrap;
 }
 
 
-/* =========================================
+/* =========================
    EDITION
-========================================= */
+========================= */
 
 .edition{
   display:grid;
   grid-template-columns:1.4fr .6fr;
-  gap:20px
+  gap:20px;
 }
 
 .edition-main{
@@ -368,7 +414,7 @@ section{
   background:linear-gradient(120deg,#19150d,#10100f);
   border:1px solid #38301f;
   position:relative;
-  overflow:hidden
+  overflow:hidden;
 }
 
 .edition-main:after{
@@ -376,60 +422,76 @@ section{
   position:absolute;
   right:25px;
   bottom:-45px;
-  font:800 180px "Playfair Display";
-  color:rgba(215,170,60,.06)
+  font:800 180px "Playfair Display",serif;
+  color:rgba(215,170,60,.06);
 }
 
 .edition-main h3{
-  font:700 44px/1.05 "Playfair Display";
+  font:700 44px/1.05 "Playfair Display",serif;
   max-width:600px;
-  margin:28px 0 15px
+  margin:28px 0 15px;
+  position:relative;
+  z-index:1;
 }
 
 .edition-main p{
   color:#aaa;
   max-width:570px;
-  line-height:1.7
+  line-height:1.7;
+  position:relative;
+  z-index:1;
+}
+
+.edition-main .btn{
+  position:relative;
+  z-index:2;
+  margin-top:24px;
 }
 
 .edition-side{
   display:grid;
-  gap:20px
+  gap:20px;
 }
 
 .mini{
   border:1px solid var(--line);
   border-radius:14px;
   padding:25px;
-  background:#10100f
+  background:#10100f;
+  transition:.25s;
+}
+
+.mini:hover{
+  border-color:#514525;
+  transform:translateY(-3px);
 }
 
 .mini .num{
   color:var(--gold);
   font-size:11px;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 .mini h4{
-  font:600 25px "Playfair Display";
-  margin:13px 0
+  font:600 25px/1.15 "Playfair Display",serif;
+  margin:13px 0;
 }
 
 .mini p{
   color:#888;
   font-size:13px;
-  line-height:1.6
+  line-height:1.6;
 }
 
 
-/* =========================================
+/* =========================
    CARDS
-========================================= */
+========================= */
 
 .cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:16px
+  gap:16px;
 }
 
 .card{
@@ -440,12 +502,12 @@ section{
   background:linear-gradient(150deg,#141412,#0d0d0c);
   position:relative;
   overflow:hidden;
-  transition:.25s
+  transition:.25s;
 }
 
 .card:hover{
   transform:translateY(-7px);
-  border-color:#655126
+  border-color:#655126;
 }
 
 .card:after{
@@ -456,43 +518,43 @@ section{
   border-radius:50%;
   right:-45px;
   bottom:-45px;
-  border:1px solid rgba(215,170,60,.18)
+  border:1px solid rgba(215,170,60,.18);
 }
 
 .icon{
   font-size:28px;
   color:var(--gold);
-  margin-bottom:28px
+  margin-bottom:28px;
 }
 
 .card small{
   color:var(--gold);
   font-size:9px;
   font-weight:800;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 .card h3{
-  font:600 25px "Playfair Display";
-  margin:10px 0
+  font:600 25px/1.15 "Playfair Display",serif;
+  margin:10px 0;
 }
 
 .card p{
   font-size:13px;
   color:#898780;
-  line-height:1.65
+  line-height:1.65;
 }
 
 
-/* =========================================
+/* =========================
    GALLERY
-========================================= */
+========================= */
 
 .gallery{
   display:grid;
   grid-template-columns:1.3fr .7fr .7fr;
   grid-template-rows:220px 180px;
-  gap:14px
+  gap:14px;
 }
 
 .tile{
@@ -503,33 +565,39 @@ section{
   align-items:end;
   overflow:hidden;
   position:relative;
-  background:linear-gradient(135deg,#302410,#111)
+  background:linear-gradient(135deg,#302410,#111);
+  transition:.25s;
+}
+
+.tile:hover{
+  transform:translateY(-4px);
+  border-color:#5b4a28;
 }
 
 .tile:nth-child(2){
-  background:linear-gradient(135deg,#222,#0e0e0e)
+  background:linear-gradient(135deg,#222,#0e0e0e);
 }
 
 .tile:nth-child(3){
-  background:linear-gradient(135deg,#3a2c17,#111)
+  background:linear-gradient(135deg,#3a2c17,#111);
 }
 
 .tile:nth-child(4){
-  background:linear-gradient(135deg,#171717,#29210f)
+  background:linear-gradient(135deg,#171717,#29210f);
 }
 
 .tile:nth-child(5){
-  background:linear-gradient(135deg,#251f15,#0e0e0e)
+  background:linear-gradient(135deg,#251f15,#0e0e0e);
 }
 
 .tile:first-child{
-  grid-row:span 2
+  grid-row:span 2;
 }
 
 .tile b{
-  font:600 27px "Playfair Display";
+  font:600 27px/1.15 "Playfair Display",serif;
   position:relative;
-  z-index:2
+  z-index:2;
 }
 
 .tile:before{
@@ -537,7 +605,7 @@ section{
   position:absolute;
   inset:20px;
   border:1px solid rgba(215,170,60,.15);
-  transform:rotate(-3deg)
+  transform:rotate(-3deg);
 }
 
 .tile:after{
@@ -546,18 +614,18 @@ section{
   right:25px;
   top:18px;
   color:var(--gold);
-  font-size:24px
+  font-size:24px;
 }
 
 
-/* =========================================
+/* =========================
    ARCHIVE
-========================================= */
+========================= */
 
 .archive{
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:13px
+  gap:13px;
 }
 
 .issue{
@@ -568,715 +636,1037 @@ section{
   background:linear-gradient(155deg,#17140e,#101010);
   display:flex;
   flex-direction:column;
-  justify-content:space-between
+  justify-content:space-between;
+  transition:.25s;
+  color:inherit;
 }
 
 .issue:hover{
-  border-color:var(--gold)
+  transform:translateY(-6px);
+  border-color:var(--gold);
+  box-shadow:0 12px 30px rgba(215,170,60,.12);
 }
 
 .issue span{
   font-size:10px;
   color:var(--gold);
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 .issue strong{
-  font:600 28px "Playfair Display";
-  line-height:1.05
+  font:600 28px/1.05 "Playfair Display",serif;
 }
 
 .issue em{
   font-size:11px;
   color:#777;
-  font-style:normal
+  font-style:normal;
 }
 
 
-/* =========================================
+/* =========================
    QUOTE
-========================================= */
+========================= */
 
 .quote{
   padding:110px 20px;
-  text-align:center
+  text-align:center;
 }
 
 .quote h2{
-  font:700 italic clamp(38px,5vw,65px)/1.1 "Playfair Display";
+  font:700 italic clamp(38px,5vw,65px)/1.1 "Playfair Display",serif;
   max-width:900px;
-  margin:auto
+  margin:auto;
 }
 
 .quote p{
   color:var(--gold);
   letter-spacing:4px;
   font-size:10px;
-  margin-top:25px
+  margin-top:25px;
 }
 
 
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
 footer{
   padding:35px 0;
   color:#6e6b64;
-  font-size:12px
+  font-size:12px;
 }
 
 .foot{
   display:flex;
-  justify-content:space-between
+  justify-content:space-between;
+  gap:20px;
 }
 
 .gold{
-  color:var(--gold)
+  color:var(--gold);
 }
 
 
-/* =========================================
+/* =================================================
    TABLET
-========================================= */
+================================================= */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
   .links{
-    display:none
+    gap:17px;
+  }
+
+  .submit{
+    padding:10px 12px;
   }
 
   .hero{
     grid-template-columns:1fr;
-    padding:65px 0
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
+  .hero > div:first-child{
+    max-width:750px;
   }
 
   .feature{
-    height:420px
-  }
-
-  .cards{
-    grid-template-columns:repeat(2,1fr)
+    height:460px;
   }
 
   .edition{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .archive{
-    grid-template-columns:repeat(2,1fr)
+    grid-template-columns:repeat(3,1fr);
   }
 
   .gallery{
     grid-template-columns:1fr 1fr;
-    grid-template-rows:220px 180px
+    grid-template-rows:220px 180px 180px;
   }
 
   .tile:first-child{
     grid-row:span 1;
-    grid-column:span 2
+    grid-column:span 2;
   }
 }
 
 
-/* =========================================
-   HP
-========================================= */
+/* =================================================
+   MOBILE
+================================================= */
 
-@media(max-width:560px){
+@media(max-width:700px){
+
+  html{
+    scroll-padding-top:70px;
+  }
 
   .container{
-    padding:0 18px
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  nav{
+    position:sticky;
+  }
+
+  .nav{
+    min-height:70px;
+  }
+
+  .brand{
+    gap:9px;
+  }
+
+  .brand img{
+    width:43px;
+    height:43px;
+  }
+
+  .brand b{
+    font-size:20px;
   }
 
   .brand small{
-    display:none
+    display:none;
+  }
+
+  .links{
+    display:none;
   }
 
   .submit{
-    display:none
+    display:block;
+    font-size:10px;
+    padding:9px 11px;
+  }
+
+
+  /* HERO */
+
+  .hero{
+    min-height:auto;
+    padding-top:65px;
+    padding-bottom:55px;
+    gap:40px;
+  }
+
+  .hero:before{
+    right:-70px;
+    top:40px;
+    font-size:100px;
+  }
+
+  .kicker{
+    font-size:9px;
+    letter-spacing:3px;
   }
 
   .hero h1{
-    font-size:58px
+    font-size:clamp(54px,15vw,72px);
+    margin:18px 0;
   }
 
-  .feature{
-    height:430px
-  }
-
-  .feature-content{
-    padding:25px
-  }
-
-  .feature:before{
-    font-size:95px;
-    right:10px;
-    top:20px
-  }
-
-  .feature h2{
-    font-size:38px
-  }
-
-  .feature p{
-    font-size:13px
-  }
-
-  .cards{
-    grid-template-columns:1fr
-  }
-
-  .archive{
-    grid-template-columns:1fr 1fr
-  }
-
-  .gallery{
-    display:grid;
-    grid-template-columns:1fr
-  }
-
-  .tile:first-child{
-    grid-column:auto
+  .hero p{
+    font-size:14px;
+    line-height:1.75;
   }
 
   .actions{
-    flex-direction:column
+    flex-direction:column;
+    margin-top:23px;
+  }
+
+  .btn{
+    width:100%;
+    min-height:48px;
+    padding:13px 16px;
+  }
+
+
+  /* FEATURE */
+
+  .feature{
+    height:440px;
+    border-radius:14px;
+  }
+
+  .feature-content{
+    padding:25px;
+  }
+
+  .feature:before{
+    font-size:90px;
+    right:5px;
+    top:15px;
+  }
+
+  .feature:after{
+    right:15px;
+    bottom:18px;
+    font-size:18px;
+    letter-spacing:5px;
+  }
+
+  .feature .badge{
+    font-size:8px;
+    padding:6px 8px;
+    letter-spacing:1.5px;
+  }
+
+  .feature h2{
+    font-size:39px;
+    max-width:320px;
+  }
+
+  .feature p{
+    font-size:12.5px;
+    line-height:1.65;
+    max-width:330px;
+  }
+
+  .feature .read{
+    font-size:10px;
+  }
+
+
+  /* MARQUEE */
+
+  .marquee{
+    font-size:9px;
+    letter-spacing:2px;
+    padding:13px 0;
+  }
+
+  .marquee span{
+    margin:0 16px;
+  }
+
+
+  /* SECTION */
+
+  section{
+    padding:65px 0;
   }
 
   .section-head{
-    display:block
+    display:block;
+    margin-bottom:25px;
   }
 
   .section-head h2{
-    font-size:37px
+    font-size:36px;
+    line-height:1.08;
+    margin-top:9px;
+  }
+
+  .section-head > a{
+    display:inline-block;
+    margin-top:14px;
+  }
+
+
+  /* EDITION */
+
+  .edition-main{
+    min-height:auto;
+    padding:25px;
+  }
+
+  .edition-main h3{
+    font-size:37px;
+    margin:22px 0 13px;
+  }
+
+  .edition-main p{
+    font-size:13px;
+    line-height:1.65;
+  }
+
+  .edition-main:after{
+    font-size:120px;
+    right:10px;
+    bottom:-30px;
+  }
+
+  .edition-side{
+    gap:13px;
+  }
+
+  .mini{
+    padding:21px;
+  }
+
+  .mini h4{
+    font-size:23px;
+  }
+
+  .mini p{
+    font-size:12px;
+  }
+
+
+  /* CARDS */
+
+  .cards{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .card{
+    min-height:200px;
+    padding:22px;
+  }
+
+  .icon{
+    margin-bottom:20px;
+  }
+
+  .card h3{
+    font-size:24px;
+  }
+
+
+  /* GALLERY */
+
+  .gallery{
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(5,170px);
+    gap:12px;
+  }
+
+  .tile{
+    min-height:170px;
+    padding:21px;
+  }
+
+  .tile:first-child{
+    grid-column:auto;
+    grid-row:auto;
+  }
+
+  .tile b{
+    font-size:25px;
+  }
+
+
+  /* ARCHIVE */
+
+  .archive{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .issue{
+    height:190px;
+    padding:15px;
+  }
+
+  .issue strong{
+    font-size:23px;
+  }
+
+  .issue em{
+    font-size:9px;
+  }
+
+
+  /* QUOTE */
+
+  .quote{
+    padding:80px 15px;
+  }
+
+  .quote h2{
+    font-size:36px;
+  }
+
+  .quote p{
+    font-size:8px;
+    letter-spacing:2.5px;
+  }
+
+
+  /* FOOTER */
+
+  footer{
+    padding:28px 0;
   }
 
   .foot{
     flex-direction:column;
-    gap:12px
+    gap:10px;
+    line-height:1.6;
   }
-  .issue {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  transition: .25s;
 }
 
-.issue:hover {
-  transform: translateY(-6px);
-  border-color: var(--gold);
-  box-shadow: 0 12px 30px rgba(215,170,60,.12);
-}
+
+/* =================================================
+   VERY SMALL PHONE
+================================================= */
+
+@media(max-width:380px){
+
+  .container{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .brand b{
+    font-size:18px;
+  }
+
+  .brand img{
+    width:39px;
+    height:39px;
+  }
+
+  .submit{
+    font-size:8px;
+    padding:8px 9px;
+  }
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .feature{
+    height:455px;
+  }
+
+  .feature h2{
+    font-size:35px;
+  }
+
+  .feature p{
+    font-size:12px;
+  }
+
+  .section-head h2{
+    font-size:33px;
+  }
+
+  .archive{
+    grid-template-columns:1fr;
+  }
+
+  .issue{
+    height:175px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <nav>
-<div class="container nav">
+  <div class="container nav">
 
-<a class="brand" href="#">
-  <img src="logo.png">
-  <span>
-    <b>D’tik.COM</b>
-    <small>DARUSSALAM JURNALISTIK COMMUNITY</small>
-  </span>
-</a>
+    <a class="brand" href="#home">
+      <img src="logo.png" alt="Logo D'tik.COM">
 
-<div class="links">
-  <a href="#home">Beranda</a>
-  <a href="#mading">Mading</a>
-  <a href="#karya">Karya</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#arsip">Arsip</a>
-  <a href="#tentang">Tentang</a>
-</div>
+      <span>
+        <b>D’tik.COM</b>
+        <small>DARUSSALAM JURNALISTIK COMMUNITY</small>
+      </span>
+    </a>
 
-<a class="submit" href="#karya">
-  KIRIM KARYA ↗
-</a>
+    <div class="links">
+      <a href="#home">Beranda</a>
+      <a href="#mading">Mading</a>
+      <a href="#karya">Karya</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#arsip">Arsip</a>
+      <a href="#tentang">Tentang</a>
+    </div>
 
-</div>
+    <a class="submit" href="#karya">
+      KIRIM KARYA ↗
+    </a>
+
+  </div>
 </nav>
 
 
 <main id="home">
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="container hero">
 
-<div>
+  <div>
 
-<div class="kicker">
-DARUSSALAM JURNALISTIK COMMUNITY
-</div>
+    <div class="kicker">
+      DARUSSALAM JURNALISTIK COMMUNITY
+    </div>
 
-<h1>
-Time to <span>Act</span><br>
-and Create.
-</h1>
+    <h1>
+      Time to <span>Act</span><br>
+      and Create.
+    </h1>
 
-<p>
-Tempat cerita, gagasan, dan kreativitas santri Darussalam bertemu.
-Dari mading mingguan menjadi jejak digital yang bisa dikenang.
-</p>
+    <p>
+      Tempat cerita, gagasan, dan kreativitas santri Darussalam bertemu.
+      Dari mading mingguan menjadi jejak digital yang bisa dikenang.
+    </p>
 
-<div class="actions">
+    <div class="actions">
 
-<a class="btn" href="pages/mading.html">
-JELAJAHI MADING →
-</a>
+      <a class="btn" href="pages/mading.html">
+        JELAJAHI MADING →
+      </a>
 
-<a class="btn alt" href="#arsip">
-LIHAT ARSIP
-</a>
+      <a class="btn alt" href="#arsip">
+        LIHAT ARSIP
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 
-<!-- =========================================
-     FEATURE AS WHITE AS SNOW
-========================================= -->
+  <!-- FEATURE -->
 
-<div class="feature">
+  <div class="feature">
 
-<div class="feature-content">
+    <div class="feature-content">
 
-<div class="badge">
-MADING TERBARU · EDISI #01
-</div>
+      <div class="badge">
+        MADING TERBARU · EDISI #01
+      </div>
 
-<div>
+      <div>
 
-<div class="kicker">
-TEMA MINGGU INI
-</div>
+        <div class="kicker">
+          TEMA MINGGU INI
+        </div>
 
-<h2>
-As White<br>
-as Snow.
-</h2>
+        <h2>
+          As White<br>
+          as Snow.
+        </h2>
 
-<p>
-Edisi pertama D’tik.COM hadir dengan tema salju.
-Menyelami keindahan, ketenangan, dan makna di
-balik putihnya salju melalui berbagai rubrik karya
-santri.
-</p>
+        <p>
+          Edisi pertama D’tik.COM hadir dengan tema salju.
+          Menyelami keindahan, ketenangan, dan makna di
+          balik putihnya salju melalui berbagai rubrik karya
+          santri.
+        </p>
 
-<a class="read" href="pages/mading.html">
-BUKA EDISI LENGKAP →
-</a>
+        <a class="read" href="pages/mading.html">
+          BUKA EDISI LENGKAP →
+        </a>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </header>
 
 
+<!-- =========================
+     MARQUEE
+========================= -->
+
 <div class="marquee">
 
-TOPIK UTAMA
-<span>✦</span>
+  TOPIK UTAMA
+  <span>✦</span>
 
-OPINI
-<span>✦</span>
+  OPINI
+  <span>✦</span>
 
-HUMOR PONDOK
-<span>✦</span>
+  HUMOR PONDOK
+  <span>✦</span>
 
-KARYA SENI
-<span>✦</span>
+  KARYA SENI
+  <span>✦</span>
 
-KOMIK
-<span>✦</span>
+  KOMIK
+  <span>✦</span>
 
-PUISI
-<span>✦</span>
+  PUISI
+  <span>✦</span>
 
-CERPEN
-<span>✦</span>
+  CERPEN
+  <span>✦</span>
 
-TIPS & TRICK
-<span>✦</span>
+  TIPS & TRICK
+  <span>✦</span>
 
-TOKOH INSPIRATIF
+  TOKOH INSPIRATIF
 
 </div>
 
+
+<!-- =========================
+     MADING
+========================= -->
 
 <section id="mading">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-head">
 
-<div>
+      <div>
 
-<div class="kicker">
-WEEKLY EDITION
-</div>
+        <div class="kicker">
+          WEEKLY EDITION
+        </div>
 
-<h2>
-Satu Minggu, Satu Cerita.
-</h2>
+        <h2>
+          Satu Minggu, Satu Cerita.
+        </h2>
 
-</div>
+      </div>
 
-<a href="#arsip">
-SEMUA EDISI →
-</a>
+      <a href="#arsip">
+        SEMUA EDISI →
+      </a>
 
-</div>
+    </div>
 
 
-<div class="edition">
+    <div class="edition">
 
-<div class="edition-main">
+      <div class="edition-main">
 
-  <div class="kicker">
-    EDISI #01 · MADING MINGGUAN
+        <div class="kicker">
+          EDISI #01 · MADING MINGGUAN
+        </div>
+
+        <h3>
+          As White as Snow.
+        </h3>
+
+        <p>
+          Awali perjalanan digital D’tik.COM dengan edisi pertama
+          bertema <b>As White as Snow</b>. Jelajahi pembuka,
+          topik utama, opini, learning language, humor pondok,
+          karikatur, karya seni, komik, puisi, tokoh inspiratif,
+          cerpen, serta tips &amp; trick dalam satu mading penuh
+          kreativitas santri.
+        </p>
+
+        <a class="btn" href="pages/mading.html">
+          LIHAT RUBRIK →
+        </a>
+
+      </div>
+
+
+      <div class="edition-side">
+
+        <div class="mini">
+
+          <div class="num">
+            PEMBUKA
+          </div>
+
+          <h4>
+            Awal dari setiap edisi.
+          </h4>
+
+          <p>
+            Bagian yang membuka tema dan membawa pembaca masuk
+            ke cerita minggu ini.
+          </p>
+
+        </div>
+
+
+        <div class="mini">
+
+          <div class="num">
+            DESAIN EDISI
+          </div>
+
+          <h4>
+            Setiap mading punya wajahnya sendiri.
+          </h4>
+
+          <p>
+            Visual, tipografi, ilustrasi, dan layout ikut menjadi
+            bagian dari karya.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <h3>
-    As White as Snow.
-  </h3>
-
-  <p>
-    Awali perjalanan digital D’tik.COM dengan edisi pertama
-    bertema <b>As White as Snow</b>. Jelajahi pembuka,
-    topik utama, opini, learning language, humor pondok,
-    karikatur, karya seni, komik, puisi, tokoh inspiratif,
-    cerpen, serta tips &amp; trick dalam satu mading penuh
-    kreativitas santri.
-  </p>
-
-  <a class="btn" href="pages/mading.html">
-    LIHAT RUBRIK →
-  </a>
-
-</div>
-
-<div class="edition-side">
-
-<div class="mini">
-
-<div class="num">
-PEMBUKA
-</div>
-
-<h4>
-Awal dari setiap edisi.
-</h4>
-
-<p>
-Bagian yang membuka tema dan membawa pembaca masuk
-ke cerita minggu ini.
-</p>
-
-</div>
-
-
-<div class="mini">
-
-<div class="num">
-DESAIN EDISI
-</div>
-
-<h4>
-Setiap mading punya wajahnya sendiri.
-</h4>
-
-<p>
-Visual, tipografi, ilustrasi, dan layout ikut menjadi
-bagian dari karya.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
+
+<!-- =========================
+     KARYA
+========================= -->
 
 <section id="karya">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-head">
 
-<div>
+      <div>
 
-<div class="kicker">
-RUBRIK
-</div>
+        <div class="kicker">
+          RUBRIK
+        </div>
 
-<h2>
-Karya & Cerita
-</h2>
+        <h2>
+          Karya &amp; Cerita
+        </h2>
 
-</div>
+      </div>
 
-<a href="#">
-LIHAT SEMUA →
-</a>
+      <a href="#">
+        LIHAT SEMUA →
+      </a>
 
-</div>
+    </div>
 
 
-<div class="cards">
+    <div class="cards">
 
-<div class="card">
-<div class="icon">✎</div>
-<small>01 · TULISAN</small>
-<h3>Topik Utama</h3>
-<p>Bahasan utama yang mengupas tema setiap edisi.</p>
-</div>
+      <div class="card">
+        <div class="icon">✎</div>
+        <small>01 · TULISAN</small>
+        <h3>Topik Utama</h3>
+        <p>Bahasan utama yang mengupas tema setiap edisi.</p>
+      </div>
 
-<div class="card">
-<div class="icon">“</div>
-<small>02 · PENDAPAT</small>
-<h3>Opini</h3>
-<p>Suara, pandangan, dan pemikiran santri.</p>
-</div>
+      <div class="card">
+        <div class="icon">“</div>
+        <small>02 · PENDAPAT</small>
+        <h3>Opini</h3>
+        <p>Suara, pandangan, dan pemikiran santri.</p>
+      </div>
 
-<div class="card">
-<div class="icon">Aa</div>
-<small>03 · LANGUAGE</small>
-<h3>Learning Language</h3>
-<p>Belajar bahasa dengan cara ringan dan kreatif.</p>
-</div>
+      <div class="card">
+        <div class="icon">Aa</div>
+        <small>03 · LANGUAGE</small>
+        <h3>Learning Language</h3>
+        <p>Belajar bahasa dengan cara ringan dan kreatif.</p>
+      </div>
 
-<div class="card">
-<div class="icon">☺</div>
-<small>04 · HUMOR</small>
-<h3>Humor Pondok</h3>
-<p>Momen lucu dan cerita khas kehidupan pondok.</p>
-</div>
+      <div class="card">
+        <div class="icon">☺</div>
+        <small>04 · HUMOR</small>
+        <h3>Humor Pondok</h3>
+        <p>Momen lucu dan cerita khas kehidupan pondok.</p>
+      </div>
 
-<div class="card">
-<div class="icon">⌁</div>
-<small>05 · VISUAL</small>
-<h3>Karikatur</h3>
-<p>Gagasan yang disampaikan lewat gambar dan satir.</p>
-</div>
+      <div class="card">
+        <div class="icon">⌁</div>
+        <small>05 · VISUAL</small>
+        <h3>Karikatur</h3>
+        <p>Gagasan yang disampaikan lewat gambar dan satir.</p>
+      </div>
 
-<div class="card">
-<div class="icon">◇</div>
-<small>06 · ART</small>
-<h3>Karya Seni</h3>
-<p>Ruang untuk lukisan, ilustrasi, dan karya visual.</p>
-</div>
+      <div class="card">
+        <div class="icon">◇</div>
+        <small>06 · ART</small>
+        <h3>Karya Seni</h3>
+        <p>Ruang untuk lukisan, ilustrasi, dan karya visual.</p>
+      </div>
 
-<div class="card">
-<div class="icon">▦</div>
-<small>07 · CERITA VISUAL</small>
-<h3>Komik</h3>
-<p>Cerita dalam panel, karakter, dan kreativitas.</p>
-</div>
+      <div class="card">
+        <div class="icon">▦</div>
+        <small>07 · CERITA VISUAL</small>
+        <h3>Komik</h3>
+        <p>Cerita dalam panel, karakter, dan kreativitas.</p>
+      </div>
 
-<div class="card">
-<div class="icon">❧</div>
-<small>08 · SASTRA</small>
-<h3>Puisi</h3>
-<p>Kata-kata yang dirangkai menjadi rasa.</p>
-</div>
+      <div class="card">
+        <div class="icon">❧</div>
+        <small>08 · SASTRA</small>
+        <h3>Puisi</h3>
+        <p>Kata-kata yang dirangkai menjadi rasa.</p>
+      </div>
 
-<div class="card">
-<div class="icon">★</div>
-<small>09 · INSPIRASI</small>
-<h3>Tokoh Inspiratif</h3>
-<p>Mengenal sosok dan kisah yang memberi teladan.</p>
-</div>
+      <div class="card">
+        <div class="icon">★</div>
+        <small>09 · INSPIRASI</small>
+        <h3>Tokoh Inspiratif</h3>
+        <p>Mengenal sosok dan kisah yang memberi teladan.</p>
+      </div>
 
-<div class="card">
-<div class="icon">⌂</div>
-<small>10 · SASTRA</small>
-<h3>Cerpen</h3>
-<p>Cerita pendek dari imajinasi para penulis muda.</p>
-</div>
+      <div class="card">
+        <div class="icon">⌂</div>
+        <small>10 · SASTRA</small>
+        <h3>Cerpen</h3>
+        <p>Cerita pendek dari imajinasi para penulis muda.</p>
+      </div>
 
-<div class="card">
-<div class="icon">+</div>
-<small>11 · LIFESTYLE</small>
-<h3>Tips & Trick</h3>
-<p>Tips sederhana yang berguna untuk kehidupan santri.</p>
-</div>
+      <div class="card">
+        <div class="icon">+</div>
+        <small>11 · LIFESTYLE</small>
+        <h3>Tips &amp; Trick</h3>
+        <p>Tips sederhana yang berguna untuk kehidupan santri.</p>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     GALERI
+========================= -->
 
 <section id="galeri">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-head">
 
-<div>
+      <div>
 
-<div class="kicker">
-VISUAL ARCHIVE
-</div>
+        <div class="kicker">
+          VISUAL ARCHIVE
+        </div>
 
-<h2>
-Karya yang Bisa Dilihat.
-</h2>
+        <h2>
+          Karya yang Bisa Dilihat.
+        </h2>
 
-</div>
+      </div>
 
-<a href="#">
-BUKA GALERI →
-</a>
+      <a href="#">
+        BUKA GALERI →
+      </a>
 
-</div>
+    </div>
 
 
-<div class="gallery">
+    <div class="gallery">
 
-<div class="tile">
-<b>Desain Mading<br>Setiap Edisi.</b>
-</div>
+      <div class="tile">
+        <b>Desain Mading<br>Setiap Edisi.</b>
+      </div>
 
-<div class="tile">
-<b>Karikatur</b>
-</div>
+      <div class="tile">
+        <b>Karikatur</b>
+      </div>
 
-<div class="tile">
-<b>Karya Seni</b>
-</div>
+      <div class="tile">
+        <b>Karya Seni</b>
+      </div>
 
-<div class="tile">
-<b>Komik</b>
-</div>
+      <div class="tile">
+        <b>Komik</b>
+      </div>
 
-<div class="tile">
-<b>Dokumentasi</b>
-</div>
+      <div class="tile">
+        <b>Dokumentasi</b>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
+
+<!-- =========================
+     ARSIP
+========================= -->
 
 <section id="arsip">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-head">
 
-<div>
+      <div>
 
-<div class="kicker">
-ARCHIVE
-</div>
+        <div class="kicker">
+          ARCHIVE
+        </div>
 
-<h2>
-Jejak dari Minggu ke Minggu.
-</h2>
+        <h2>
+          Jejak dari Minggu ke Minggu.
+        </h2>
 
-</div>
+      </div>
 
-<a href="#">
-SEMUA ARSIP →
-</a>
+      <a href="#">
+        SEMUA ARSIP →
+      </a>
 
-</div>
+    </div>
 
 
-<div class="archive">
+    <div class="archive">
 
-  <a class="issue" href="#">
-    <span>EDISI #05</span>
-    <strong>Coming Soon</strong>
-    <em>September 2026</em>
-  </a>
+      <a class="issue" href="#">
+        <span>EDISI #05</span>
+        <strong>Coming Soon</strong>
+        <em>September 2026</em>
+      </a>
 
-  <a class="issue" href="#">
-    <span>EDISI #04</span>
-    <strong>Coming Soon</strong>
-    <em>September 2026</em>
-  </a>
+      <a class="issue" href="#">
+        <span>EDISI #04</span>
+        <strong>Coming Soon</strong>
+        <em>September 2026</em>
+      </a>
 
-  <a class="issue" href="#">
-    <span>EDISI #03</span>
-    <strong>Coming Soon</strong>
-    <em>September 2026</em>
-  </a>
+      <a class="issue" href="#">
+        <span>EDISI #03</span>
+        <strong>Coming Soon</strong>
+        <em>September 2026</em>
+      </a>
 
-  <a class="issue" href="#">
-    <span>EDISI #02</span>
-    <strong>Coming Soon</strong>
-    <em>September 2026</em>
-  </a>
+      <a class="issue" href="#">
+        <span>EDISI #02</span>
+        <strong>Coming Soon</strong>
+        <em>September 2026</em>
+      </a>
 
-  <a href="pages/mading.html" class="issue">
-  <span>EDISI #01</span>
-  <strong>As White<br>as Snow</strong>
-  <em>September 2026</em>
-</a>
+      <a href="pages/mading.html" class="issue">
+        <span>EDISI #01</span>
+        <strong>As White<br>as Snow</strong>
+        <em>September 2026</em>
+      </a>
 
-</div>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
+<!-- =========================
+     TENTANG
+========================= -->
+
 <section id="tentang">
 
-<div class="container quote">
+  <div class="container quote">
 
-<h2>
-“Setiap cerita layak didengar.
-Setiap karya layak diabadikan.”
-</h2>
+    <h2>
+      “Setiap cerita layak didengar.
+      Setiap karya layak diabadikan.”
+    </h2>
 
-<p>
-D’TIK.COM · TIME TO ACT AND CREATE.
-</p>
+    <p>
+      D’TIK.COM · TIME TO ACT AND CREATE.
+    </p>
 
-</div>
+  </div>
 
 </section>
 
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<div class="container foot">
+  <div class="container foot">
 
-<div>
-© 2026
-<span class="gold">D’tik.COM</span>
-· Darussalam Jurnalistik Community
-</div>
+    <div>
+      © 2026
+      <span class="gold">D’tik.COM</span>
+      · Darussalam Jurnalistik Community
+    </div>
 
-<div class="gold">
-Time to Act and Create.
-</div>
+    <div class="gold">
+      Time to Act and Create.
+    </div>
 
-</div>
+  </div>
 
 </footer>
 
 </body>
 </html>
+```
