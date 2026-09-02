@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tentang Kita — D’tik.COM</title>
+
+  <meta
+    name="description"
+    content="Tentang D’tik.COM — Darussalam Jurnalistik Community."
+  >
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+    :root{
+      --bg:#090909;
+      --panel:#11110f;
+      --gold:#d7aa3c;
+      --gold2:#f0c95e;
+      --cream:#f5f0e5;
+      --muted:#9a978f;
+      --line:#282721;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--cream);
+      font-family:"DM Sans",Arial,sans-serif;
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.07;
+      background-image:radial-gradient(#fff 1px,transparent 1px);
+      background-size:5px 5px;
+      z-index:999;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:100%;
+      max-width:1240px;
+      margin:auto;
+      padding:0 28px;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      background:rgba(9,9,9,.84);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border-bottom:1px solid rgba(215,170,60,.14);
+    }
+
+    .nav{
+      min-height:82px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:25px;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+
+      flex-shrink:0;
+    }
+
+    .brand img{
+      width:50px;
+      height:50px;
+
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .brand-text b{
+      display:block;
+
+      font:800 23px "Playfair Display",serif;
+    }
+
+    .brand-text small{
+      display:block;
+
+      color:var(--gold);
+
+      font-size:9px;
+      letter-spacing:2px;
+
+      margin-top:1px;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:27px;
+
+      font-size:13px;
+      color:#c6c3bb;
+    }
+
+    .links a{
+      transition:.2s;
+    }
+
+    .links a:hover,
+    .links a.active{
+      color:var(--gold);
+    }
+
+    .submit{
+      border:1px solid var(--gold);
+
+      padding:11px 16px;
+
+      border-radius:4px;
+
+      color:var(--gold);
+
+      font-weight:700;
+      font-size:12px;
+
+      white-space:nowrap;
+
+      transition:.25s;
+    }
+
+    .submit:hover{
+      background:var(--gold);
+      color:#111;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:560px;
+
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+
+      align-items:center;
+
+      gap:55px;
+
+      padding-top:70px;
+      padding-bottom:80px;
+
+      position:relative;
+    }
+
+    .hero:before{
+      content:"ABOUT";
+
+      position:absolute;
+
+      right:-100px;
+      top:90px;
+
+      font:800 170px "Playfair Display",serif;
+
+      color:rgba(215,170,60,.025);
+
+      pointer-events:none;
+    }
+
+    .kicker{
+      color:var(--gold);
+
+      font-weight:700;
+      font-size:11px;
+
+      letter-spacing:4px;
+
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      font:800 clamp(58px,7vw,94px)/.9
+      "Playfair Display",serif;
+
+      margin:20px 0;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+    .hero p{
+      max-width:570px;
+
+      color:#aaa69d;
+
+      font-size:16px;
+
+      line-height:1.8;
+    }
+
+    .actions{
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+
+      align-items:center;
+      justify-content:center;
+
+      padding:14px 20px;
+
+      background:var(--gold);
+
+      color:#111;
+
+      border-radius:4px;
+
+      font-weight:800;
+      font-size:13px;
+
+      transition:.25s;
+    }
+
+    .btn:hover{
+      background:var(--gold2);
+      transform:translateY(-2px);
+    }
+
+    .btn.alt{
+      background:transparent;
+
+      border:1px solid #454239;
+
+      color:var(--cream);
+    }
+
+    .btn.alt:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+
+    /* =========================
+       HERO CARD
+    ========================= */
+
+    .hero-card{
+      min-height:410px;
+
+      border-radius:16px;
+
+      border:1px solid #38301f;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(215,170,60,.17),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          #19150d,
+          #0d0d0c
+        );
+
+      position:relative;
+
+      overflow:hidden;
+
+      padding:30px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+    }
+
+    .hero-card:before{
+      content:"D";
+
+      position:absolute;
+
+      right:-30px;
+      bottom:-85px;
+
+      font:800 300px "Playfair Display",serif;
+
+      color:rgba(215,170,60,.055);
+    }
+
+    .hero-card-top{
+      display:flex;
+
+      justify-content:space-between;
+
+      color:#666;
+
+      font-size:9px;
+
+      letter-spacing:2px;
+    }
+
+    .hero-card-top strong{
+      color:var(--gold);
+    }
+
+    .hero-card-middle{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-card-middle small{
+      color:#777;
+
+      font-size:9px;
+
+      letter-spacing:3px;
+    }
+
+    .hero-card-middle h2{
+      margin-top:14px;
+
+      font:700 54px/.94
+      "Playfair Display",serif;
+    }
+
+    .hero-card-middle h2 span{
+      color:var(--gold);
+    }
+
+    .hero-card-bottom{
+      position:relative;
+      z-index:2;
+
+      color:#777;
+
+      font-size:10px;
+
+      line-height:1.6;
+
+      max-width:310px;
+    }
+
+
+    /* =========================
+       MARQUEE
+    ========================= */
+
+    .marquee{
+      width:100%;
+
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+
+      overflow:hidden;
+
+      white-space:nowrap;
+
+      padding:15px 0;
+
+      color:#777;
+
+      font-size:11px;
+
+      letter-spacing:3px;
+    }
+
+    .marquee span{
+      color:var(--gold);
+      margin:0 30px;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section{
+      padding:85px 0;
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-head{
+      margin-bottom:35px;
+    }
+
+    .section-head h2{
+      font:700 45px/1.1
+      "Playfair Display",serif;
+
+      margin-top:8px;
+    }
+
+
+    /* =========================
+       WHO WE ARE
+    ========================= */
+
+    .story{
+      display:grid;
+
+      grid-template-columns:.8fr 1.2fr;
+
+      gap:50px;
+
+      align-items:start;
+    }
+
+    .story-label{
+      color:var(--gold);
+
+      font:700 12px "DM Sans",sans-serif;
+
+      letter-spacing:3px;
+    }
+
+    .story h3{
+      font:700 clamp(36px,4vw,58px)/1
+      "Playfair Display",serif;
+
+      margin-top:15px;
+    }
+
+    .story-text{
+      color:#aaa69d;
+
+      font-size:15px;
+
+      line-height:1.9;
+    }
+
+    .story-text p + p{
+      margin-top:20px;
+    }
+
+    .story-text strong{
+      color:var(--cream);
+    }
+
+
+    /* =========================
+       THREE VALUES
+    ========================= */
+
+    .values{
+      display:grid;
+
+      grid-template-columns:repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .value{
+      min-height:250px;
+
+      border:1px solid var(--line);
+
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #15140f,
+          #0e0e0d
+        );
+
+      padding:27px;
+
+      position:relative;
+
+      overflow:hidden;
+
+      transition:.25s;
+    }
+
+    .value:hover{
+      transform:translateY(-5px);
+
+      border-color:#5d4b25;
+    }
+
+    .value-number{
+      color:var(--gold);
+
+      font:800 55px/.8
+      "Playfair Display",serif;
+    }
+
+    .value h3{
+      font:600 29px/1.1
+      "Playfair Display",serif;
+
+      margin:30px 0 12px;
+    }
+
+    .value p{
+      color:#777;
+
+      font-size:13px;
+
+      line-height:1.7;
+    }
+
+    .value:after{
+      content:"✦";
+
+      position:absolute;
+
+      right:22px;
+      top:20px;
+
+      color:rgba(215,170,60,.25);
+
+      font-size:20px;
+    }
+
+
+    /* =========================
+       WHAT WE DO
+    ========================= */
+
+    .work-grid{
+      display:grid;
+
+      grid-template-columns:repeat(2,1fr);
+
+      gap:16px;
+    }
+
+    .work{
+      min-height:190px;
+
+      border:1px solid var(--line);
+
+      border-radius:13px;
+
+      padding:27px;
+
+      background:#10100f;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+
+      transition:.25s;
+    }
+
+    .work:hover{
+      border-color:#554623;
+
+      transform:translateY(-3px);
+    }
+
+    .work-top{
+      display:flex;
+
+      justify-content:space-between;
+    }
+
+    .work-number{
+      color:#555;
+
+      font-size:10px;
+
+      letter-spacing:2px;
+    }
+
+    .work-icon{
+      color:var(--gold);
+
+      font-size:20px;
+    }
+
+    .work h3{
+      font:600 27px/1.1
+      "Playfair Display",serif;
+
+      margin-top:25px;
+    }
+
+    .work p{
+      color:#777;
+
+      font-size:12px;
+
+      line-height:1.6;
+
+      margin-top:8px;
+    }
+
+
+    /* =========================
+       TEAM
+    ========================= */
+
+    .team-intro{
+      max-width:650px;
+
+      color:#8d8981;
+
+      line-height:1.8;
+
+      font-size:14px;
+
+      margin-bottom:30px;
+    }
+
+    .team-box{
+      min-height:230px;
+
+      border:1px dashed #3a362c;
+
+      border-radius:14px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      text-align:center;
+
+      padding:30px;
+
+      background:#0d0d0c;
+    }
+
+    .team-box h3{
+      font:600 34px
+      "Playfair Display",serif;
+    }
+
+    .team-box p{
+      color:#666;
+
+      font-size:12px;
+
+      margin-top:10px;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote{
+      padding:110px 20px;
+
+      text-align:center;
+    }
+
+    .quote h2{
+      max-width:900px;
+
+      margin:auto;
+
+      font:700 italic clamp(38px,5vw,65px)/1.1
+      "Playfair Display",serif;
+    }
+
+    .quote p{
+      color:var(--gold);
+
+      letter-spacing:4px;
+
+      font-size:10px;
+
+      margin-top:25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      padding:35px 0;
+
+      color:#6e6b64;
+
+      font-size:12px;
+    }
+
+    .foot{
+      display:flex;
+
+      justify-content:space-between;
+
+      gap:20px;
+    }
+
+    .gold{
+      color:var(--gold);
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media(max-width:1000px){
+
+      .links{
+        gap:17px;
+      }
+
+      .submit{
+        padding:10px 12px;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .story{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .values{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:700px){
+
+      .container{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .nav{
+        min-height:70px;
+      }
+
+      .brand{
+        gap:9px;
+      }
+
+      .brand img{
+        width:43px;
+        height:43px;
+      }
+
+      .brand-text b{
+        font-size:20px;
+      }
+
+      .brand-text small{
+        display:none;
+      }
+
+      .links{
+        display:none;
+      }
+
+      .submit{
+        font-size:9px;
+        padding:9px 10px;
+      }
+
+
+      /* HERO */
+
+      .hero{
+        min-height:auto;
+
+        padding-top:60px;
+        padding-bottom:55px;
+
+        gap:35px;
+      }
+
+      .hero:before{
+        font-size:100px;
+
+        right:-60px;
+
+        top:45px;
+      }
+
+      .hero h1{
+        font-size:clamp(54px,15vw,72px);
+      }
+
+      .hero p{
+        font-size:14px;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+
+        min-height:48px;
+      }
+
+
+      /* HERO CARD */
+
+      .hero-card{
+        min-height:350px;
+
+        padding:22px;
+      }
+
+      .hero-card-middle h2{
+        font-size:43px;
+      }
+
+
+      /* MARQUEE */
+
+      .marquee{
+        font-size:9px;
+      }
+
+      .marquee span{
+        margin:0 16px;
+      }
+
+
+      /* SECTIONS */
+
+      section{
+        padding:65px 0;
+      }
+
+      .section-head{
+        margin-bottom:25px;
+      }
+
+      .section-head h2{
+        font-size:36px;
+      }
+
+
+      /* VALUES */
+
+      .values{
+        grid-template-columns:1fr;
+      }
+
+      .value{
+        min-height:220px;
+      }
+
+
+      /* WORK */
+
+      .work-grid{
+        grid-template-columns:1fr;
+      }
+
+
+      /* TEAM */
+
+      .team-box{
+        min-height:200px;
+      }
+
+      .team-box h3{
+        font-size:29px;
+      }
+
+
+      /* QUOTE */
+
+      .quote{
+        padding:80px 15px;
+      }
+
+      .quote h2{
+        font-size:36px;
+      }
+
+      .quote p{
+        font-size:8px;
+
+        letter-spacing:2px;
+      }
+
+
+      /* FOOTER */
+
+      .foot{
+        flex-direction:column;
+
+        gap:10px;
+
+        line-height:1.6;
+      }
+
+    }
+
+
+    @media(max-width:380px){
+
+      .hero h1{
+        font-size:51px;
+      }
+
+      .brand img{
+        width:39px;
+        height:39px;
+      }
+
+      .brand-text b{
+        font-size:18px;
+      }
+
+      .hero-card-middle h2{
+        font-size:38px;
+      }
+
+    }
+    /* =========================
+   TEAM / DI BALIK D'TIK.COM
+========================= */
+
+.team-section{
+  padding:100px 0;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:45px;
+}
+
+.eyebrow{
+  color:#d7aa3c;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:700;
+}
+
+.section-head h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(38px,5vw,65px);
+  margin:8px 0 0;
+}
+
+.section-head > p{
+  max-width:380px;
+  color:#9a978f;
+  line-height:1.7;
+}
+
+/* PEMBIMBING + KETUA */
+
+.leaders{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-bottom:80px;
+}
+
+.leader-card{
+  background:#11110f;
+  border:1px solid #282721;
+  overflow:hidden;
+}
+
+.leader-photo{
+  height:480px;
+  background:#080808;
+  display:flex;
+  justify-content:center;
+  align-items:end;
+  overflow:hidden;
+}
+
+.leader-photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+}
+
+.leader-info{
+  padding:25px;
+  border-top:1px solid #282721;
+}
+
+.leader-info span,
+.member-card small{
+  color:#d7aa3c;
+  font-size:10px;
+  letter-spacing:1.8px;
+  font-weight:700;
+}
+
+.leader-info h3{
+  margin:10px 0 5px;
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+
+.leader-info p,
+.member-card p{
+  color:#9a978f;
+  margin:0;
+}
+
+/* JUDUL BAGIAN */
+
+.sub-title{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:45px 0 25px;
+  border-bottom:1px solid #282721;
+  padding-bottom:15px;
+}
+
+.sub-title span{
+  color:#d7aa3c;
+  font-size:12px;
+  font-weight:700;
+}
+
+.sub-title h3{
+  margin:0;
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+}
+
+/* MEMBER */
+
+.member-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.member-card{
+  padding:25px;
+  min-height:135px;
+  background:#11110f;
+  border:1px solid #282721;
+  transition:.25s ease;
+}
+
+.member-card:hover{
+  transform:translateY(-4px);
+  border-color:#d7aa3c;
+}
+
+.member-card h4{
+  margin:12px 0 7px;
+  font-size:17px;
+  line-height:1.35;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head > p{
+    margin-top:20px;
+  }
+
+  .leaders{
+    grid-template-columns:1fr;
+  }
+
+  .leader-photo{
+    height:430px;
+  }
+
+  .member-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav">
+
+      <a
+        class="brand"
+        href="../index.html"
+      >
+
+        <img
+          src="../logo.png"
+          alt="Logo D'tik.COM"
+        >
+
+        <div class="brand-text">
+
+          <b>D’tik.COM</b>
+
+          <small>
+            DARUSSALAM JURNALISTIK COMMUNITY
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <div class="links">
+
+        <a href="../index.html">
+          Beranda
+        </a>
+
+        <a href="mading.html">
+          Mading
+        </a>
+
+        <a href="../index.html#karya">
+          Karya
+        </a>
+
+        <a href="visual-archive.html">
+          Galeri
+        </a>
+
+        <a href="../index.html#arsip">
+          Arsip
+        </a>
+
+        <a
+          href="tentang.html"
+          class="active"
+        >
+          Tentang
+        </a>
+
+      </div>
+
+
+      <a
+        class="submit"
+        href="../index.html#karya"
+      >
+        KIRIM KARYA ↗
+      </a>
+
+    </div>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="container hero">
+
+      <div>
+
+        <div class="kicker">
+          DARUSSALAM JURNALISTIK COMMUNITY
+        </div>
+
+
+        <h1>
+          Tentang<br>
+          <span>Kita.</span>
+        </h1>
+
+
+        <p>
+          Kami adalah D’tik.COM — ruang bagi santri
+          untuk menulis, berkarya, bercerita, dan
+          menyampaikan sesuatu dengan cara mereka sendiri.
+        </p>
+
+
+        <div class="actions">
+
+          <a
+            class="btn"
+            href="#siapa-kita"
+          >
+            KENALAN LEBIH DEKAT →
+          </a>
+
+
+          <a
+            class="btn alt"
+            href="../index.html"
+          >
+            KEMBALI KE BERANDA
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- HERO CARD -->
+
+      <div class="hero-card">
+
+        <div class="hero-card-top">
+
+          <strong>
+            D’TIK.COM
+          </strong>
+
+          <span>
+            EST. 2026
+          </span>
+
+        </div>
+
+
+        <div class="hero-card-middle">
+
+          <small>
+            DARUSSALAM
+          </small>
+
+          <h2>
+            Act.<br>
+            Create.<br>
+            <span>Share.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="hero-card-bottom">
+
+          Tempat di mana ide kecil bisa
+          berubah menjadi tulisan, desain,
+          cerita, dan karya.
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MARQUEE
+    ========================= -->
+
+    <div class="marquee">
+
+      D’TIK.COM
+      <span>✦</span>
+
+      JOURNALISM
+      <span>✦</span>
+
+      CREATIVITY
+      <span>✦</span>
+
+      SANTRI
+      <span>✦</span>
+
+      STORY
+      <span>✦</span>
+
+      CREATE
+      <span>✦</span>
+
+      SHARE
+
+    </div>
+
+
+
+    <!-- =========================
+         SIAPA KITA
+    ========================= -->
+
+    <section id="siapa-kita">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            WHO WE ARE
+          </div>
+
+          <h2>
+            Siapa Kita?
+          </h2>
+
+        </div>
+
+
+        <div class="story">
+
+
+          <div>
+
+            <div class="story-label">
+              D’TIK.COM
+            </div>
+
+            <h3>
+              Bukan cuma<br>
+              tempat menulis.
+            </h3>
+
+          </div>
+
+
+          <div class="story-text">
+
+            <p>
+              <strong>D’tik.COM</strong> adalah
+              Darussalam Jurnalistik Community,
+              sebuah ruang kreativitas yang menjadi
+              tempat untuk menuangkan ide, cerita,
+              informasi, dan karya.
+            </p>
+
+            <p>
+              Lewat jurnalistik, kami belajar melihat
+              sesuatu dari berbagai sudut pandang.
+              Lewat mading, kami belajar menyampaikan
+              sesuatu dengan menarik. Dan lewat karya,
+              kami belajar bahwa setiap orang punya
+              sesuatu untuk diceritakan.
+            </p>
+
+            <p>
+              Karena bagi kami, jurnalistik bukan hanya
+              soal berita. Ini tentang keberanian untuk
+              <strong>mengamati, bertindak, menciptakan,
+              dan berbagi.</strong>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         NILAI
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            OUR VALUES
+          </div>
+
+          <h2>
+            Tiga Hal yang Kami Bawa.
+          </h2>
+
+        </div>
+
+
+        <div class="values">
+
+
+          <div class="value">
+
+            <div class="value-number">
+              01
+            </div>
+
+            <h3>
+              Act.
+            </h3>
+
+            <p>
+              Jangan cuma punya ide.
+              Berani mulai, berani mencoba,
+              dan berani mengambil langkah.
+            </p>
+
+          </div>
+
+
+
+          <div class="value">
+
+            <div class="value-number">
+              02
+            </div>
+
+            <h3>
+              Create.
+            </h3>
+
+            <p>
+              Mengubah ide menjadi sesuatu
+              yang nyata melalui tulisan,
+              desain, foto, maupun karya kreatif.
+            </p>
+
+          </div>
+
+
+
+          <div class="value">
+
+            <div class="value-number">
+              03
+            </div>
+
+            <h3>
+              Share.
+            </h3>
+
+            <p>
+              Karena karya akan lebih berarti
+              ketika bisa dibaca, dilihat,
+              dan dirasakan oleh orang lain.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         APA YANG KITA LAKUKAN
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            WHAT WE DO
+          </div>
+
+          <h2>
+            Apa yang Kita Lakukan?
+          </h2>
+
+        </div>
+
+
+        <div class="work-grid">
+
+
+          <div class="work">
+
+            <div class="work-top">
+
+              <span class="work-number">
+                01 · JOURNALISM
+              </span>
+
+              <span class="work-icon">
+                ✦
+              </span>
+
+            </div>
+
+            <div>
+
+              <h3>
+                Jurnalistik
+              </h3>
+
+              <p>
+                Mengumpulkan informasi,
+                menulis cerita, dan menyampaikan
+                sesuatu dengan sudut pandang yang menarik.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="work">
+
+            <div class="work-top">
+
+              <span class="work-number">
+                02 · MADING
+              </span>
+
+              <span class="work-icon">
+                ✦
+              </span>
+
+            </div>
+
+            <div>
+
+              <h3>
+                Mading
+              </h3>
+
+              <p>
+                Menghadirkan informasi dan karya
+                dalam bentuk visual yang menarik
+                untuk dinikmati bersama.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="work">
+
+            <div class="work-top">
+
+              <span class="work-number">
+                03 · CREATIVE
+              </span>
+
+              <span class="work-icon">
+                ✦
+              </span>
+
+            </div>
+
+            <div>
+
+              <h3>
+                Karya Kreatif
+              </h3>
+
+              <p>
+                Mulai dari tulisan, karikatur,
+                komik, seni, sampai berbagai
+                bentuk kreativitas lainnya.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="work">
+
+            <div class="work-top">
+
+              <span class="work-number">
+                04 · DOCUMENTATION
+              </span>
+
+              <span class="work-icon">
+                ✦
+              </span>
+
+            </div>
+
+            <div>
+
+              <h3>
+                Dokumentasi
+              </h3>
+
+              <p>
+                Mengabadikan momen dan menyimpan
+                cerita agar tidak hanya menjadi
+                kenangan yang lewat begitu saja.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TIM
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            THE PEOPLE
+          </div>
+
+          <h2>
+            Di Balik D’tik.COM.
+          </h2>
+
+        </div>
+
+
+        <p class="team-intro">
+          D’tik.COM bukan dibuat oleh satu orang.
+          Ada banyak ide, tangan, cerita, dan
+          kreativitas yang membuatnya terus berjalan.
+        </p>
+
+
+        <section class="team-section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">THE PEOPLE BEHIND IT</span>
+      <h2>Di Balik D’tik.COM</h2>
+    </div>
+    <p>
+      Orang-orang yang ikut menghidupkan setiap ide,
+      tulisan, ilustrasi, dan cerita di D’tik.COM.
+    </p>
+  </div>
+
+  <!-- PEMBIMBING & KETUA -->
+  <div class="leaders">
+
+    <div class="leader-card">
+      <div class="leader-photo">
+        <img src="../images/pembimbing.png" alt="Pembimbing D'tik.COM">
+      </div>
+      <div class="leader-info">
+        <span>PEMBIMBING D'TIK.COM</span>
+        <h3>M. Alwan Hamamy</h3>
+        <p>as Supervisor</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-photo">
+        <img src="../images/ketua.png" alt="Ketua D'tik.COM">
+      </div>
+      <div class="leader-info">
+        <span>KETUA</span>
+        <h3>Muhammad Tsaqib Althafur Robbany</h3>
+        <p>as Concept Designer</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PENGURUS -->
+  <div class="sub-title">
+    <span>01</span>
+    <h3>Pengurus</h3>
+  </div>
+
+  <div class="member-grid">
+
+    <div class="member-card">
+      <small>WAKIL KETUA</small>
+      <h4>M. Mutabbahirul Ulum Al-Ma'shum</h4>
+      <p>as Concept Developer</p>
+    </div>
+
+    <div class="member-card">
+      <small>SEKERTARIS</small>
+      <h4>Muhammad Jaisyal 'Azham</h4>
+      <p>as Writer</p>
+    </div>
+
+    <div class="member-card">
+      <small>BENDAHARA</small>
+      <h4>Atbi' Muhammada</h4>
+      <p>as Opini Writer</p>
+    </div>
+
+  </div>
+
+  <!-- ANGGOTA -->
+  <div class="sub-title">
+    <span>02</span>
+    <h3>Anggota</h3>
+  </div>
+
+  <div class="member-grid">
+
+    <div class="member-card">
+      <small>ANGGOTA</small>
+      <h4>Fahd Arkan Abimanyu</h4>
+      <p>as Ilustrator</p>
+    </div>
+
+    <div class="member-card">
+      <small>ANGGOTA</small>
+      <h4>Muhammad Azzam Danish</h4>
+      <p>as Writer</p>
+    </div>
+
+    <div class="member-card">
+      <small>ANGGOTA</small>
+      <h4>Muhammad Fatih Hasan</h4>
+      <p>as Drawer</p>
+    </div>
+
+    <div class="member-card">
+      <small>ANGGOTA</small>
+      <h4>Muhammad Fiqri As Syidiq</h4>
+      <p>as Drawer</p>
+    </div>
+
+    <div class="member-card">
+      <small>ANGGOTA</small>
+      <h4>Ahmad Iqbal Kafa Musawa</h4>
+      <p>as Poet</p>
+    </div>
+
+  </div>
+</section>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUOTE
+    ========================= -->
+
+    <section>
+
+      <div class="container quote">
+
+        <h2>
+          “Bukan cuma tentang apa yang
+          kami tulis, tapi tentang apa
+          yang berani kami mulai.”
+        </h2>
+
+        <p>
+          TIME TO ACT AND CREATE.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container foot">
+
+      <div>
+
+        © 2026
+        <span class="gold">
+          D’tik.COM
+        </span>
+        · Darussalam Jurnalistik Community
+
+      </div>
+
+
+      <div class="gold">
+        Time to Act and Create.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
