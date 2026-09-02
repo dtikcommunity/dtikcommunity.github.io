@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Visual Archive — D’tik.COM</title>
+
+  <meta
+    name="description"
+    content="Visual Archive D’tik.COM — kumpulan desain mading setiap edisi."
+  >
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+
+    :root{
+      --bg:#090909;
+      --panel:#11110f;
+      --gold:#d7aa3c;
+      --gold2:#f0c95e;
+      --cream:#f5f0e5;
+      --muted:#9a978f;
+      --line:#282721;
+    }
+
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+
+    body{
+      background:var(--bg);
+      color:var(--cream);
+      font-family:"DM Sans",Arial,sans-serif;
+      overflow-x:hidden;
+    }
+
+
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.07;
+      background-image:radial-gradient(#fff 1px,transparent 1px);
+      background-size:5px 5px;
+      z-index:999;
+    }
+
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+
+    .container{
+      width:100%;
+      max-width:1240px;
+      margin:auto;
+      padding:0 28px;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+
+      background:rgba(9,9,9,.84);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border-bottom:1px solid rgba(215,170,60,.14);
+    }
+
+
+    .nav{
+      min-height:82px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:25px;
+    }
+
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+
+      flex-shrink:0;
+    }
+
+
+    .brand img{
+      width:50px;
+      height:50px;
+
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+
+    .brand-text b{
+      display:block;
+
+      font:800 23px "Playfair Display",serif;
+    }
+
+
+    .brand-text small{
+      display:block;
+
+      color:var(--gold);
+
+      font-size:9px;
+      letter-spacing:2px;
+
+      margin-top:1px;
+    }
+
+
+    .links{
+      display:flex;
+      align-items:center;
+
+      gap:27px;
+
+      font-size:13px;
+      color:#c6c3bb;
+    }
+
+
+    .links a{
+      transition:.2s;
+    }
+
+
+    .links a:hover,
+    .links a.active{
+      color:var(--gold);
+    }
+
+
+    .submit{
+      border:1px solid var(--gold);
+
+      padding:11px 16px;
+
+      border-radius:4px;
+
+      color:var(--gold);
+
+      font-weight:700;
+      font-size:12px;
+
+      white-space:nowrap;
+
+      transition:.25s;
+    }
+
+
+    .submit:hover{
+      background:var(--gold);
+      color:#111;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:590px;
+
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+
+      gap:50px;
+
+      align-items:center;
+
+      position:relative;
+
+      padding-top:70px;
+      padding-bottom:80px;
+    }
+
+
+    .hero:before{
+      content:"VISUAL";
+
+      position:absolute;
+
+      right:-100px;
+      top:80px;
+
+      font:800 170px "Playfair Display",serif;
+
+      color:rgba(215,170,60,.025);
+
+      pointer-events:none;
+    }
+
+
+    .kicker{
+      color:var(--gold);
+
+      font-weight:700;
+      font-size:11px;
+
+      letter-spacing:4px;
+
+      text-transform:uppercase;
+    }
+
+
+    .hero h1{
+      font:800 clamp(58px,7vw,94px)/.9
+      "Playfair Display",serif;
+
+      margin:20px 0;
+    }
+
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+
+    .hero p{
+      max-width:560px;
+
+      color:#aaa69d;
+
+      font-size:16px;
+
+      line-height:1.8;
+    }
+
+
+    .actions{
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+
+      margin-top:28px;
+    }
+
+
+    .btn{
+      display:inline-flex;
+
+      align-items:center;
+      justify-content:center;
+
+      padding:14px 20px;
+
+      background:var(--gold);
+
+      color:#111;
+
+      border-radius:4px;
+
+      font-weight:800;
+      font-size:13px;
+
+      transition:.25s;
+    }
+
+
+    .btn:hover{
+      background:var(--gold2);
+
+      transform:translateY(-2px);
+    }
+
+
+    .btn.alt{
+      background:transparent;
+
+      border:1px solid #454239;
+
+      color:var(--cream);
+    }
+
+
+    .btn.alt:hover{
+      border-color:var(--gold);
+
+      color:var(--gold);
+    }
+
+
+    /* =========================
+       HERO VISUAL
+    ========================= */
+
+    .hero-visual{
+      min-height:430px;
+
+      position:relative;
+
+      border-radius:16px;
+
+      overflow:hidden;
+
+      border:1px solid #38301f;
+
+      background:
+        radial-gradient(
+          circle at 75% 20%,
+          rgba(215,170,60,.18),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #19150d,
+          #0d0d0c
+        );
+
+      box-shadow:
+        0 25px 80px rgba(0,0,0,.35);
+    }
+
+
+    .hero-visual:before{
+      content:"01";
+
+      position:absolute;
+
+      right:-10px;
+      bottom:-65px;
+
+      font:800 230px "Playfair Display",serif;
+
+      color:rgba(215,170,60,.07);
+    }
+
+
+    .hero-visual:after{
+      content:"✦";
+
+      position:absolute;
+
+      right:30px;
+      top:25px;
+
+      color:var(--gold);
+
+      font-size:25px;
+    }
+
+
+    .hero-card{
+      position:absolute;
+
+      inset:30px;
+
+      border:1px solid rgba(215,170,60,.20);
+
+      padding:25px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+    }
+
+
+    .hero-card-top{
+      display:flex;
+
+      justify-content:space-between;
+      align-items:center;
+
+      color:#777;
+
+      font-size:9px;
+
+      letter-spacing:2px;
+    }
+
+
+    .hero-card-top strong{
+      color:var(--gold);
+    }
+
+
+    .hero-card-title{
+      position:relative;
+      z-index:2;
+    }
+
+
+    .hero-card-title small{
+      color:#777;
+
+      font-size:9px;
+
+      letter-spacing:3px;
+    }
+
+
+    .hero-card-title h2{
+      margin-top:12px;
+
+      font:700 55px/.92
+      "Playfair Display",serif;
+    }
+
+
+    .hero-card-title h2 span{
+      color:var(--gold);
+    }
+
+
+    .hero-card-bottom{
+      color:#777;
+
+      font-size:10px;
+
+      letter-spacing:1.5px;
+    }
+
+
+    /* =========================
+       MARQUEE
+    ========================= */
+
+    .marquee{
+      width:100%;
+
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+
+      overflow:hidden;
+
+      white-space:nowrap;
+
+      padding:15px 0;
+
+      color:#777;
+
+      font-size:11px;
+
+      letter-spacing:3px;
+    }
+
+
+    .marquee span{
+      color:var(--gold);
+
+      margin:0 30px;
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section{
+      padding:85px 0;
+
+      border-bottom:1px solid var(--line);
+    }
+
+
+    .section-head{
+      display:flex;
+
+      align-items:end;
+
+      justify-content:space-between;
+
+      gap:20px;
+
+      margin-bottom:35px;
+    }
+
+
+    .section-head h2{
+      font:700 45px/1.1
+      "Playfair Display",serif;
+
+      margin:8px 0 0;
+    }
+
+
+    .section-head > a{
+      color:var(--gold);
+
+      font-size:12px;
+      font-weight:700;
+
+      white-space:nowrap;
+    }
+
+
+    /* =========================
+       FEATURED MADING
+    ========================= */
+
+    .featured{
+      position:relative;
+
+      min-height:570px;
+
+      overflow:hidden;
+
+      border-radius:16px;
+
+      border:1px solid #38301f;
+
+      background:#111;
+
+      display:flex;
+
+      align-items:flex-end;
+
+      transition:.3s ease;
+    }
+
+
+    .featured:hover{
+      transform:translateY(-4px);
+
+      border-color:var(--gold);
+
+      box-shadow:
+        0 20px 55px rgba(215,170,60,.08);
+    }
+
+
+    .featured-image{
+      position:absolute;
+
+      inset:0;
+
+      overflow:hidden;
+
+      background:#171717;
+    }
+
+
+    .featured-image img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      object-position:center;
+
+      transition:.8s ease;
+    }
+
+
+    .featured:hover .featured-image img{
+      transform:scale(1.025);
+    }
+
+
+    .featured-image:after{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.96),
+          rgba(0,0,0,.72) 35%,
+          rgba(0,0,0,.08) 100%
+        );
+    }
+
+
+    .featured-content{
+      position:relative;
+
+      z-index:2;
+
+      width:100%;
+
+      padding:38px;
+    }
+
+
+    .featured-meta{
+      display:flex;
+
+      justify-content:space-between;
+
+      margin-bottom:15px;
+
+      color:#aaa;
+
+      font-size:10px;
+
+      font-weight:700;
+
+      letter-spacing:2px;
+    }
+
+
+    .featured-meta span:first-child{
+      color:var(--gold);
+    }
+
+
+    .featured h3{
+      font:700 clamp(45px,6vw,75px)/.9
+      "Playfair Display",serif;
+
+      margin-bottom:15px;
+    }
+
+
+    .featured-description{
+      max-width:580px;
+
+      color:#bbb7ae;
+
+      font-size:14px;
+
+      line-height:1.7;
+    }
+
+
+    .featured .btn{
+      margin-top:23px;
+    }
+
+
+    /* =========================
+       NEXT EDITIONS
+    ========================= */
+
+    .next-grid{
+      display:grid;
+
+      grid-template-columns:repeat(2,1fr);
+
+      gap:18px;
+    }
+
+
+    .next-card{
+      min-height:280px;
+
+      border:1px solid var(--line);
+
+      border-radius:14px;
+
+      padding:28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #15130f,
+          #0e0e0d
+        );
+
+      position:relative;
+
+      overflow:hidden;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:space-between;
+
+      transition:.25s;
+    }
+
+
+    .next-card:hover{
+      transform:translateY(-5px);
+
+      border-color:#5d4b25;
+    }
+
+
+    .next-card:after{
+      content:"";
+
+      position:absolute;
+
+      right:-30px;
+      bottom:-70px;
+
+      font:800 180px "Playfair Display",serif;
+
+      color:rgba(215,170,60,.05);
+    }
+
+
+    .next-number{
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+    }
+
+
+    .next-number strong{
+      color:var(--gold);
+
+      font:800 75px/.8
+      "Playfair Display",serif;
+    }
+
+
+    .next-number span{
+      color:#555;
+
+      font-size:9px;
+
+      letter-spacing:2px;
+    }
+
+
+    .next-card h3{
+      font:600 32px/1.1
+      "Playfair Display",serif;
+
+      margin-bottom:10px;
+    }
+
+
+    .next-card p{
+      max-width:460px;
+
+      color:#85827b;
+
+      font-size:13px;
+
+      line-height:1.7;
+    }
+
+
+    .coming{
+      display:inline-block;
+
+      margin-top:18px;
+
+      padding:8px 11px;
+
+      border:1px solid #292929;
+
+      color:#555;
+
+      font-size:9px;
+
+      font-weight:700;
+
+      letter-spacing:2px;
+    }
+
+
+    /* =========================
+       VISUAL NOTE
+    ========================= */
+
+    .visual-note{
+      margin-top:18px;
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr 1fr;
+
+      gap:14px;
+    }
+
+
+    .note{
+      padding:23px;
+
+      min-height:150px;
+
+      border:1px solid var(--line);
+
+      border-radius:12px;
+
+      background:#10100f;
+
+      transition:.25s;
+    }
+
+
+    .note:hover{
+      border-color:#514525;
+
+      transform:translateY(-3px);
+    }
+
+
+    .note small{
+      color:var(--gold);
+
+      font-size:9px;
+
+      font-weight:800;
+
+      letter-spacing:2px;
+    }
+
+
+    .note h4{
+      font:600 22px/1.15
+      "Playfair Display",serif;
+
+      margin:12px 0 8px;
+    }
+
+
+    .note p{
+      color:#777;
+
+      font-size:12px;
+
+      line-height:1.6;
+    }
+
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote{
+      padding:110px 20px;
+
+      text-align:center;
+    }
+
+
+    .quote h2{
+      max-width:900px;
+
+      margin:auto;
+
+      font:700 italic clamp(38px,5vw,65px)/1.1
+      "Playfair Display",serif;
+    }
+
+
+    .quote p{
+      color:var(--gold);
+
+      letter-spacing:4px;
+
+      font-size:10px;
+
+      margin-top:25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      padding:35px 0;
+
+      color:#6e6b64;
+
+      font-size:12px;
+    }
+
+
+    .foot{
+      display:flex;
+
+      justify-content:space-between;
+
+      gap:20px;
+    }
+
+
+    .gold{
+      color:var(--gold);
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media(max-width:1000px){
+
+      .links{
+        gap:17px;
+      }
+
+
+      .submit{
+        padding:10px 12px;
+      }
+
+
+      .hero{
+        grid-template-columns:1fr;
+
+        padding-top:60px;
+      }
+
+
+      .hero-visual{
+        min-height:400px;
+      }
+
+
+      .visual-note{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:700px){
+
+      .container{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+
+      .nav{
+        min-height:70px;
+      }
+
+
+      .brand{
+        gap:9px;
+      }
+
+
+      .brand img{
+        width:43px;
+        height:43px;
+      }
+
+
+      .brand-text b{
+        font-size:20px;
+      }
+
+
+      .brand-text small{
+        display:none;
+      }
+
+
+      .links{
+        display:none;
+      }
+
+
+      .submit{
+        display:block;
+
+        font-size:10px;
+
+        padding:9px 11px;
+      }
+
+
+      /* HERO */
+
+      .hero{
+        min-height:auto;
+
+        padding-top:65px;
+        padding-bottom:55px;
+
+        gap:35px;
+      }
+
+
+      .hero:before{
+        right:-70px;
+
+        top:40px;
+
+        font-size:100px;
+      }
+
+
+      .kicker{
+        font-size:9px;
+
+        letter-spacing:3px;
+      }
+
+
+      .hero h1{
+        font-size:clamp(54px,15vw,72px);
+
+        margin:18px 0;
+      }
+
+
+      .hero p{
+        font-size:14px;
+
+        line-height:1.75;
+      }
+
+
+      .actions{
+        flex-direction:column;
+
+        margin-top:23px;
+      }
+
+
+      .btn{
+        width:100%;
+
+        min-height:48px;
+      }
+
+
+      .hero-visual{
+        min-height:370px;
+
+        border-radius:14px;
+      }
+
+
+      .hero-card{
+        inset:20px;
+
+        padding:20px;
+      }
+
+
+      .hero-card-title h2{
+        font-size:43px;
+      }
+
+
+      /* MARQUEE */
+
+      .marquee{
+        font-size:9px;
+
+        letter-spacing:2px;
+
+        padding:13px 0;
+      }
+
+
+      .marquee span{
+        margin:0 16px;
+      }
+
+
+      /* SECTION */
+
+      section{
+        padding:65px 0;
+      }
+
+
+      .section-head{
+        display:block;
+
+        margin-bottom:25px;
+      }
+
+
+      .section-head h2{
+        font-size:36px;
+      }
+
+
+      .section-head > a{
+        display:inline-block;
+
+        margin-top:14px;
+      }
+
+
+      /* FEATURE */
+
+      .featured{
+        min-height:480px;
+
+        border-radius:14px;
+      }
+
+
+      .featured-content{
+        padding:24px;
+      }
+
+
+      .featured h3{
+        font-size:43px;
+      }
+
+
+      .featured-description{
+        font-size:13px;
+      }
+
+
+      /* NEXT */
+
+      .next-grid{
+        grid-template-columns:1fr;
+
+        gap:13px;
+      }
+
+
+      .next-card{
+        min-height:290px;
+
+        padding:23px;
+      }
+
+
+      .next-number strong{
+        font-size:65px;
+      }
+
+
+      .next-card h3{
+        font-size:28px;
+      }
+
+
+      /* NOTE */
+
+      .visual-note{
+        grid-template-columns:1fr;
+
+        gap:12px;
+      }
+
+
+      /* QUOTE */
+
+      .quote{
+        padding:80px 15px;
+      }
+
+
+      .quote h2{
+        font-size:36px;
+      }
+
+
+      .quote p{
+        font-size:8px;
+
+        letter-spacing:2.5px;
+      }
+
+
+      /* FOOTER */
+
+      .foot{
+        flex-direction:column;
+
+        gap:10px;
+
+        line-height:1.6;
+      }
+
+    }
+
+
+    /* =========================
+       VERY SMALL PHONE
+    ========================= */
+
+    @media(max-width:380px){
+
+      .brand-text b{
+        font-size:18px;
+      }
+
+
+      .brand img{
+        width:39px;
+        height:39px;
+      }
+
+
+      .submit{
+        font-size:8px;
+
+        padding:8px 9px;
+      }
+
+
+      .hero h1{
+        font-size:51px;
+      }
+
+
+      .hero-visual{
+        min-height:340px;
+      }
+
+
+      .hero-card-title h2{
+        font-size:38px;
+      }
+
+
+      .featured h3{
+        font-size:37px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+
+        <img
+          src="../logo.png"
+          alt="Logo D'tik.COM"
+        >
+
+        <div class="brand-text">
+
+          <b>D’tik.COM</b>
+
+          <small>
+            DARUSSALAM JURNALISTIK COMMUNITY
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <div class="links">
+
+        <a href="../index.html">
+          Beranda
+        </a>
+
+        <a href="mading.html">
+          Mading
+        </a>
+
+        <a
+          href="visual-archive.html"
+          class="active"
+        >
+          Visual Archive
+        </a>
+
+        <a href="../index.html#tentang">
+          Tentang
+        </a>
+
+      </div>
+
+
+      <a
+        class="submit"
+        href="mading.html"
+      >
+        ← MADING
+      </a>
+
+    </div>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="container hero">
+
+      <div>
+
+        <div class="kicker">
+          VISUAL ARCHIVE · D’TIK.COM
+        </div>
+
+
+        <h1>
+          Jejak<br>
+          <span>Visual.</span>
+        </h1>
+
+
+        <p>
+          Setiap edisi punya wajahnya sendiri.
+          Di sini, desain mading D’tik.COM disimpan
+          sebagai bagian dari perjalanan jurnalistik
+          dan kreativitas santri.
+        </p>
+
+
+        <div class="actions">
+
+          <a
+            class="btn"
+            href="#edisi"
+          >
+            LIHAT EDISI #01 →
+          </a>
+
+
+          <a
+            class="btn alt"
+            href="../index.html"
+          >
+            KEMBALI KE BERANDA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+
+      <div class="hero-visual">
+
+        <div class="hero-card">
+
+          <div class="hero-card-top">
+
+            <strong>
+              VISUAL ARCHIVE
+            </strong>
+
+            <span>
+              01 / 2026
+            </span>
+
+          </div>
+
+
+          <div class="hero-card-title">
+
+            <small>
+              FIRST EDITION
+            </small>
+
+            <h2>
+              As White<br>
+              <span>as Snow.</span>
+            </h2>
+
+          </div>
+
+
+          <div class="hero-card-bottom">
+            D’TIK.COM · TIME TO ACT AND CREATE.
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MARQUEE
+    ========================= -->
+
+    <div class="marquee">
+
+      VISUAL ARCHIVE
+      <span>✦</span>
+
+      MADING
+      <span>✦</span>
+
+      EDITION #01
+      <span>✦</span>
+
+      D’TIK.COM
+      <span>✦</span>
+
+      AS WHITE AS SNOW
+      <span>✦</span>
+
+      JOURNALISM
+      <span>✦</span>
+
+      CREATIVITY
+
+    </div>
+
+
+
+    <!-- =========================
+         EDISI TERBARU
+    ========================= -->
+
+    <section id="edisi">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="kicker">
+              LATEST VISUAL
+            </div>
+
+            <h2>
+              Edisi Pertama.
+            </h2>
+
+          </div>
+
+
+          <a href="mading.html">
+            BUKA MADING →
+          </a>
+
+        </div>
+
+
+
+        <!-- FEATURED -->
+
+        <a
+          href="mading.html"
+          class="featured"
+        >
+
+          <div class="featured-image">
+
+            <img
+              src="../assets/mading-edisi-01.jpg"
+              alt="Mading D’tik.COM Edisi #01"
+            >
+
+          </div>
+
+
+          <div class="featured-content">
+
+            <div class="featured-meta">
+
+              <span>
+                EDISI #01 · SEPTEMBER 2026
+              </span>
+
+              <span>
+                D’TIK.COM
+              </span>
+
+            </div>
+
+
+            <h3>
+              As White as Snow.
+            </h3>
+
+
+            <p class="featured-description">
+              Desain mading pertama D’tik.COM dengan
+              tema salju. Sebuah awal dari perjalanan
+              jurnalistik, kreativitas, dan cerita para
+              santri.
+            </p>
+
+
+            <span class="btn">
+              LIHAT EDISI →
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         COMING NEXT
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="kicker">
+              NEXT EDITIONS
+            </div>
+
+            <h2>
+              Yang Akan Datang.
+            </h2>
+
+          </div>
+
+          <a href="#">
+            MORE SOON →
+          </a>
+
+        </div>
+
+
+        <div class="next-grid">
+
+
+          <!-- EDISI 02 -->
+
+          <div class="next-card">
+
+            <div class="next-number">
+
+              <strong>
+                02
+              </strong>
+
+              <span>
+                EDITION
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <h3>
+                Coming Soon.
+              </h3>
+
+              <p>
+                Desain mading edisi kedua akan
+                segera masuk ke dalam Visual Archive
+                D’tik.COM.
+              </p>
+
+              <span class="coming">
+                COMING SOON
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- EDISI 03 -->
+
+          <div class="next-card">
+
+            <div class="next-number">
+
+              <strong>
+                03
+              </strong>
+
+              <span>
+                EDITION
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <h3>
+                Coming Soon.
+              </h3>
+
+              <p>
+                Cerita baru, desain baru,
+                dan wajah baru D’tik.COM
+                akan segera hadir.
+              </p>
+
+              <span class="coming">
+                COMING SOON
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- CATATAN VISUAL -->
+
+        <div class="visual-note">
+
+
+          <div class="note">
+
+            <small>
+              01 · DESIGN
+            </small>
+
+            <h4>
+              Setiap Edisi Punya Wajah.
+            </h4>
+
+            <p>
+              Layout, tipografi, warna, dan ilustrasi
+              menjadi bagian dari cerita setiap mading.
+            </p>
+
+          </div>
+
+
+          <div class="note">
+
+            <small>
+              02 · ARCHIVE
+            </small>
+
+            <h4>
+              Disimpan, Bukan Dilupakan.
+            </h4>
+
+            <p>
+              Visual mading menjadi jejak perjalanan
+              D’tik.COM dari minggu ke minggu.
+            </p>
+
+          </div>
+
+
+          <div class="note">
+
+            <small>
+              03 · CREATIVE
+            </small>
+
+            <h4>
+              Dari Kertas ke Digital.
+            </h4>
+
+            <p>
+              Karya yang sebelumnya hadir di mading
+              kini punya tempat untuk dikenang secara digital.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUOTE
+    ========================= -->
+
+    <section>
+
+      <div class="container quote">
+
+        <h2>
+          “Setiap mading punya cerita.
+          Setiap desain punya jejak.”
+        </h2>
+
+        <p>
+          D’TIK.COM · TIME TO ACT AND CREATE.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container foot">
+
+      <div>
+        © 2026
+        <span class="gold">
+          D’tik.COM
+        </span>
+        · Darussalam Jurnalistik Community
+      </div>
+
+      <div class="gold">
+        Time to Act and Create.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
