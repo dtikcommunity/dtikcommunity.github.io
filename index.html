@@ -1,17 +1,20 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="google-site-verification" content="HnSTkdp3V_JeQd7v_zfTQpxjVqTcmaBlhGu0ncpnh1w">
+<meta name="google-site-verification"
+content="HnSTkdp3V_JeQd7v_zfTQpxjVqTcmaBlhGu0ncpnh1w">
 
 <title>D’tik.COM — Darussalam Jurnalistik Community</title>
 
-<meta name="description" content="D’tik.COM adalah Darussalam Jurnalistik Community, wadah jurnalistik dan kreativitas santri melalui mading, opini, cerpen, puisi, komik, karya seni, dan berbagai rubrik lainnya.">
+<meta name="description"
+content="D’tik.COM adalah Darussalam Jurnalistik Community, wadah jurnalistik dan kreativitas santri melalui mading, opini, cerpen, puisi, komik, karya seni, dan berbagai rubrik lainnya.">
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root{
@@ -551,6 +554,95 @@ section{
 ========================= */
 
 .gallery{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+
+/* DESAIN MADING */
+
+.mading-archive{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:280px;
+  padding:38px;
+  overflow:hidden;
+
+  border-radius:14px;
+  border:1px solid rgba(215,170,60,.25);
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(215,170,60,.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #1d1810,
+      #0e0e0d
+    );
+
+  transition:.3s ease;
+}
+
+.mading-archive:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+  box-shadow:0 18px 45px rgba(215,170,60,.08);
+}
+
+.mading-archive:after{
+  content:"MADING";
+  position:absolute;
+  right:-25px;
+  bottom:-45px;
+
+  font:800 130px "Playfair Display",serif;
+  color:rgba(215,170,60,.045);
+
+  pointer-events:none;
+}
+
+.mading-archive-content{
+  position:relative;
+  z-index:2;
+}
+
+.mading-archive-content span{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+.mading-archive-content h3{
+  margin:13px 0 15px;
+
+  font:700 clamp(38px,5vw,62px)/.95
+  "Playfair Display",serif;
+}
+
+.mading-archive-content p{
+  max-width:480px;
+  color:#96938c;
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.mading-archive-content strong{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+
+/* KATEGORI VISUAL */
+
+.gallery-tiles{
   display:grid;
   grid-template-columns:1.3fr .7fr .7fr;
   grid-template-rows:220px 180px;
@@ -584,10 +676,6 @@ section{
 
 .tile:nth-child(4){
   background:linear-gradient(135deg,#171717,#29210f);
-}
-
-.tile:nth-child(5){
-  background:linear-gradient(135deg,#251f15,#0e0e0e);
 }
 
 .tile:first-child{
@@ -674,7 +762,8 @@ section{
 }
 
 .quote h2{
-  font:700 italic clamp(38px,5vw,65px)/1.1 "Playfair Display",serif;
+  font:700 italic clamp(38px,5vw,65px)/1.1
+  "Playfair Display",serif;
   max-width:900px;
   margin:auto;
 }
@@ -708,9 +797,9 @@ footer{
 }
 
 
-/* =================================================
+/* =========================
    TABLET
-================================================= */
+========================= */
 
 @media(max-width:1000px){
 
@@ -748,7 +837,7 @@ footer{
     grid-template-columns:repeat(3,1fr);
   }
 
-  .gallery{
+  .gallery-tiles{
     grid-template-columns:1fr 1fr;
     grid-template-rows:220px 180px 180px;
   }
@@ -760,9 +849,9 @@ footer{
 }
 
 
-/* =================================================
+/* =========================
    MOBILE
-================================================= */
+========================= */
 
 @media(max-width:700px){
 
@@ -773,10 +862,6 @@ footer{
   .container{
     padding-left:18px;
     padding-right:18px;
-  }
-
-  nav{
-    position:sticky;
   }
 
   .nav{
@@ -998,9 +1083,22 @@ footer{
 
   /* GALLERY */
 
-  .gallery{
+  .mading-archive{
+    min-height:250px;
+    padding:25px;
+  }
+
+  .mading-archive-content h3{
+    font-size:40px;
+  }
+
+  .mading-archive-content p{
+    font-size:13px;
+  }
+
+  .gallery-tiles{
     grid-template-columns:1fr;
-    grid-template-rows:repeat(5,170px);
+    grid-template-rows:repeat(4,170px);
     gap:12px;
   }
 
@@ -1067,12 +1165,13 @@ footer{
     gap:10px;
     line-height:1.6;
   }
+
 }
 
 
-/* =================================================
+/* =========================
    VERY SMALL PHONE
-================================================= */
+========================= */
 
 @media(max-width:380px){
 
@@ -1122,43 +1221,60 @@ footer{
   .issue{
     height:175px;
   }
+
+  .mading-archive-content h3{
+    font-size:35px;
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVBAR
 ========================= -->
 
 <nav>
+
   <div class="container nav">
 
     <a class="brand" href="#home">
+
       <img src="logo.png" alt="Logo D'tik.COM">
 
       <span>
         <b>D’tik.COM</b>
         <small>DARUSSALAM JURNALISTIK COMMUNITY</small>
       </span>
+
     </a>
 
+
     <div class="links">
+
       <a href="#home">Beranda</a>
       <a href="#mading">Mading</a>
       <a href="#karya">Karya</a>
       <a href="#galeri">Galeri</a>
       <a href="#arsip">Arsip</a>
       <a href="#tentang">Tentang</a>
+
     </div>
+
 
     <a class="submit" href="#karya">
       KIRIM KARYA ↗
     </a>
 
   </div>
+
 </nav>
+
 
 
 <main id="home">
@@ -1242,6 +1358,7 @@ footer{
 </header>
 
 
+
 <!-- =========================
      MARQUEE
 ========================= -->
@@ -1275,6 +1392,7 @@ footer{
   TOKOH INSPIRATIF
 
 </div>
+
 
 
 <!-- =========================
@@ -1378,6 +1496,7 @@ footer{
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1495,6 +1614,7 @@ footer{
 </section>
 
 
+
 <!-- =========================
      GALERI
 ========================= -->
@@ -1517,7 +1637,7 @@ footer{
 
       </div>
 
-      <a href="#">
+      <a href="pages/visual-archive.html">
         BUKA GALERI →
       </a>
 
@@ -1526,24 +1646,63 @@ footer{
 
     <div class="gallery">
 
-      <div class="tile">
-        <b>Desain Mading<br>Setiap Edisi.</b>
-      </div>
 
-      <div class="tile">
-        <b>Karikatur</b>
-      </div>
+      <!-- =========================
+           DESAIN MADING
+      ========================= -->
 
-      <div class="tile">
-        <b>Karya Seni</b>
-      </div>
+      <a
+        href="pages/visual-archive.html"
+        class="mading-archive"
+      >
 
-      <div class="tile">
-        <b>Komik</b>
-      </div>
+        <div class="mading-archive-content">
 
-      <div class="tile">
-        <b>Dokumentasi</b>
+          <span>
+            VISUAL ARCHIVE / MADING
+          </span>
+
+          <h3>
+            Desain Mading<br>
+            Setiap Edisi.
+          </h3>
+
+          <p>
+            Kumpulan desain mading D’tik.COM
+            dari setiap edisi yang telah dibuat.
+          </p>
+
+          <strong>
+            LIHAT SEMUA EDISI ↗
+          </strong>
+
+        </div>
+
+      </a>
+
+
+      <!-- =========================
+           KATEGORI VISUAL
+      ========================= -->
+
+      <div class="gallery-tiles">
+
+        <div class="tile">
+          <b>Karikatur</b>
+        </div>
+
+        <div class="tile">
+          <b>Karya Seni</b>
+        </div>
+
+        <div class="tile">
+          <b>Komik</b>
+        </div>
+
+        <div class="tile">
+          <b>Dokumentasi</b>
+        </div>
+
       </div>
 
     </div>
@@ -1551,6 +1710,7 @@ footer{
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1610,7 +1770,12 @@ footer{
 
       <a href="pages/mading.html" class="issue">
         <span>EDISI #01</span>
-        <strong>As White<br>as Snow</strong>
+
+        <strong>
+          As White<br>
+          as Snow
+        </strong>
+
         <em>September 2026</em>
       </a>
 
@@ -1619,6 +1784,7 @@ footer{
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1642,7 +1808,9 @@ footer{
 
 </section>
 
+
 </main>
+
 
 
 <!-- =========================
@@ -1667,6 +1835,6 @@ footer{
 
 </footer>
 
+
 </body>
 </html>
-```
