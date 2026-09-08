@@ -266,57 +266,155 @@ nav{
    FEATURE
 ========================= */
 
-.feature{
+ .feature{
   height:500px;
   position:relative;
-  border:1px solid #c8e3f7;
+  border:1px solid #d9c98a;
   border-radius:16px;
   overflow:hidden;
-
   background:
-    radial-gradient(
-      circle at 18% 18%,
-      rgba(255,255,255,.98),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 82% 72%,
-      rgba(191,225,250,.75),
-      transparent 38%
-    ),
-    linear-gradient(
-      145deg,
-      #eaf6ff 0%,
-      #ffffff 48%,
-      #dff1ff 100%
-    );
-
-  box-shadow:0 25px 80px rgba(40,120,200,.16);
+    radial-gradient(circle at 78% 48%, rgba(215,170,60,.10), transparent 34%),
+    radial-gradient(circle at 15% 12%, rgba(255,255,255,.95), transparent 30%),
+    linear-gradient(145deg,#ffffff 0%,#fbfaf5 58%,#f3eedf 100%);
+  box-shadow:0 25px 80px rgba(23,23,20,.10);
 }
 
-.feature:before{
-  content:"❄";
+.time-clock{
   position:absolute;
-  right:25px;
-  top:20px;
-  font-size:135px;
-  color:#fff;
-  opacity:.95;
-  text-shadow:
-    0 0 20px rgba(40,120,200,.28),
-    0 0 45px rgba(40,120,200,.18);
+  right:48px;
+  top:48px;
+  width:370px;
+  height:370px;
+  border:2px solid rgba(23,23,20,.26);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center,#fffdf8 0 67%,#f7f1df 67.5% 68%,#fff 68.5% 100%);
+  box-shadow:
+    0 0 0 10px rgba(215,170,60,.07),
+    0 0 0 22px rgba(23,23,20,.035),
+    inset 0 0 0 1px rgba(215,170,60,.18),
+    0 18px 45px rgba(23,23,20,.08);
+  z-index:1;
   pointer-events:none;
 }
 
-.feature:after{
-  content:"✦  ❄  ✧  ❄  ✦";
+.time-clock:before{
+  content:"";
   position:absolute;
-  right:28px;
-  bottom:28px;
-  color:rgba(40,120,200,.25);
-  font-size:25px;
-  letter-spacing:10px;
-  pointer-events:none;
+  inset:22px;
+  border:1px solid rgba(23,23,20,.10);
+  border-radius:50%;
+}
+
+.time-clock:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:11px;
+  height:11px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:#d7aa3c;
+  border:3px solid #fffdf8;
+  box-shadow:0 0 0 1px rgba(23,23,20,.28);
+  z-index:4;
+}
+
+.time-clock .numeral{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform-origin:center;
+  color:#1d1d1a;
+  font:700 15px/1 "Playfair Display",serif;
+  letter-spacing:0;
+}
+
+.time-clock .n12{transform:translate(-50%,-50%) translateY(-157px);}
+.time-clock .n1{transform:translate(-50%,-50%) translate(78px,-136px);}
+.time-clock .n2{transform:translate(-50%,-50%) translate(136px,-78px);}
+.time-clock .n3{transform:translate(-50%,-50%) translateX(157px);}
+.time-clock .n4{transform:translate(-50%,-50%) translate(136px,78px);}
+.time-clock .n5{transform:translate(-50%,-50%) translate(78px,136px);}
+.time-clock .n6{transform:translate(-50%,-50%) translateY(157px);}
+.time-clock .n7{transform:translate(-50%,-50%) translate(-78px,136px);}
+.time-clock .n8{transform:translate(-50%,-50%) translate(-136px,78px);}
+.time-clock .n9{transform:translate(-50%,-50%) translateX(-157px);}
+.time-clock .n10{transform:translate(-50%,-50%) translate(-136px,-78px);}
+.time-clock .n11{transform:translate(-50%,-50%) translate(-78px,-136px);}
+
+.time-clock .tick{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:2px;
+  height:12px;
+  background:rgba(23,23,20,.28);
+  transform-origin:50% 160px;
+}
+.time-clock .t1{transform:translate(-50%,-50%) rotate(30deg);}
+.time-clock .t2{transform:translate(-50%,-50%) rotate(60deg);}
+.time-clock .t3{transform:translate(-50%,-50%) rotate(90deg);}
+.time-clock .t4{transform:translate(-50%,-50%) rotate(120deg);}
+.time-clock .t5{transform:translate(-50%,-50%) rotate(150deg);}
+.time-clock .t6{transform:translate(-50%,-50%) rotate(180deg);}
+.time-clock .t7{transform:translate(-50%,-50%) rotate(210deg);}
+.time-clock .t8{transform:translate(-50%,-50%) rotate(240deg);}
+.time-clock .t9{transform:translate(-50%,-50%) rotate(270deg);}
+.time-clock .t10{transform:translate(-50%,-50%) rotate(300deg);}
+.time-clock .t11{transform:translate(-50%,-50%) rotate(330deg);}
+.time-clock .tick.major{width:3px;height:17px;background:#1d1d1a;}
+
+.time-clock .hand{
+  position:absolute;
+  left:50%;
+  top:50%;
+  border-radius:99px;
+  transform-origin:0 50%;
+  z-index:3;
+}
+.time-clock .hour{
+  width:92px;
+  height:5px;
+  background:#1d1d1a;
+  transform:rotate(310deg);
+  box-shadow:0 2px 5px rgba(23,23,20,.12);
+  animation:clockHour 120s linear infinite;
+}
+.time-clock .minute{
+  width:125px;
+  height:3px;
+  background:#d7aa3c;
+  transform:rotate(45deg);
+  box-shadow:0 2px 7px rgba(215,170,60,.28);
+  animation:clockMinute 20s linear infinite;
+}
+.time-clock .second{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:138px;
+  height:1px;
+  border-radius:99px;
+  background:#8d6a18;
+  transform-origin:0 50%;
+  transform:rotate(0deg);
+  z-index:2;
+  animation:clockSecond 5s linear infinite;
+}
+
+@keyframes clockHour{
+  from{transform:rotate(310deg);}
+  to{transform:rotate(670deg);}
+}
+@keyframes clockMinute{
+  from{transform:rotate(45deg);}
+  to{transform:rotate(405deg);}
+}
+@keyframes clockSecond{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
 
 .feature-content{
@@ -331,43 +429,37 @@ nav{
 
 .feature .badge{
   align-self:flex-start;
-  border:1px solid #2878c8;
+  border:1px solid #d7aa3c;
   padding:7px 10px;
-  color:#2878c8;
-  background:rgba(255,255,255,.65);
+  color:#1d1d1a;
+  background:rgba(255,255,255,.82);
   font-size:10px;
   letter-spacing:2px;
   font-weight:700;
   margin-bottom:auto;
 }
 
-.feature .kicker{
-  color:#2878c8;
-}
-
+.feature .kicker{color:#9b7620;}
 .feature h2{
   font:700 48px/1.02 "Playfair Display",serif;
   max-width:440px;
   margin:0 0 14px;
-  color:#17324d;
+  color:#1d1d1a;
 }
-
 .feature p{
   max-width:440px;
-  color:#58728a;
+  color:#55534d;
   line-height:1.7;
   font-size:14px;
 }
-
 .feature .read{
   display:inline-block;
   margin-top:15px;
-  color:#2878c8;
+  color:#9b7620;
   font-weight:700;
   font-size:12px;
   letter-spacing:1px;
 }
-
 
 /* =========================
    MARQUEE
@@ -1011,18 +1103,30 @@ footer{
     padding:25px;
   }
 
-  .feature:before{
-    font-size:90px;
-    right:5px;
-    top:15px;
+  .time-clock{
+    width:285px;
+    height:285px;
+    right:-18px;
+    top:82px;
   }
 
-  .feature:after{
-    right:15px;
-    bottom:18px;
-    font-size:18px;
-    letter-spacing:5px;
-  }
+  .time-clock .numeral{font-size:11px;}
+  .time-clock .n12{transform:translate(-50%,-50%) translateY(-120px);}
+  .time-clock .n1{transform:translate(-50%,-50%) translate(60px,-104px);}
+  .time-clock .n2{transform:translate(-50%,-50%) translate(104px,-60px);}
+  .time-clock .n3{transform:translate(-50%,-50%) translateX(120px);}
+  .time-clock .n4{transform:translate(-50%,-50%) translate(104px,60px);}
+  .time-clock .n5{transform:translate(-50%,-50%) translate(60px,104px);}
+  .time-clock .n6{transform:translate(-50%,-50%) translateY(120px);}
+  .time-clock .n7{transform:translate(-50%,-50%) translate(-60px,104px);}
+  .time-clock .n8{transform:translate(-50%,-50%) translate(-104px,60px);}
+  .time-clock .n9{transform:translate(-50%,-50%) translateX(-120px);}
+  .time-clock .n10{transform:translate(-50%,-50%) translate(-104px,-60px);}
+  .time-clock .n11{transform:translate(-50%,-50%) translate(-60px,-104px);}
+  .time-clock .tick{height:9px;transform-origin:50% 120px;}
+  .time-clock .tick.major{height:13px;}
+  .time-clock .hour{width:70px;height:4px;}
+  .time-clock .minute{width:92px;height:2px;}
 
   .feature .badge{
     font-size:8px;
@@ -1394,31 +1498,49 @@ footer{
 
   <div class="feature">
 
+    <div class="time-clock" aria-hidden="true">
+      <span class="numeral n12">XII</span>
+      <span class="numeral n1">I</span>
+      <span class="numeral n2">II</span>
+      <span class="numeral n3">III</span>
+      <span class="numeral n4">IV</span>
+      <span class="numeral n5">V</span>
+      <span class="numeral n6">VI</span>
+      <span class="numeral n7">VII</span>
+      <span class="numeral n8">VIII</span>
+      <span class="numeral n9">IX</span>
+      <span class="numeral n10">X</span>
+      <span class="numeral n11">XI</span>
+
+      <span class="tick t1"></span><span class="tick t2"></span>
+      <span class="tick t3 major"></span><span class="tick t4"></span>
+      <span class="tick t5"></span><span class="tick t6 major"></span>
+      <span class="tick t7"></span><span class="tick t8"></span>
+      <span class="tick t9 major"></span><span class="tick t10"></span>
+      <span class="tick t11"></span>
+
+      <span class="hand hour"></span>
+      <span class="hand minute"></span>
+      <span class="second"></span>
+    </div>
+
     <div class="feature-content">
 
-      <div class="badge">
-        MADING TERBARU · EDISI #01
-      </div>
+      <div class="badge">MADING TERBARU · EDISI #02</div>
 
       <div>
+        <div class="kicker">TEMA MINGGU INI</div>
 
-        <div class="kicker">
-          TEMA MINGGU INI
-        </div>
-
-        <h2>
-          As White<br>
-          as Snow.
-        </h2>
+        <h2>Time is<br>Ours.</h2>
 
         <p>
-          Edisi pertama D’tik.COM hadir dengan tema salju.
-          Menyelami keindahan, ketenangan, dan makna di
-          balik putihnya salju melalui berbagai rubrik karya
-          santri.
+          Edisi kedua D’tik.COM hadir dengan tema waktu.
+          Menyelami arti setiap detik, kesempatan, perjalanan,
+          dan cerita yang tercipta di dalamnya melalui berbagai
+          rubrik karya santri.
         </p>
 
-        <a class="read" href="pages/mading-edisi-01.html">
+        <a class="read" href="pages/mading-edisi-02.html">
           BUKA EDISI LENGKAP →
         </a>
 
@@ -1504,19 +1626,19 @@ footer{
         </div>
 
         <h3>
-          As White as Snow.
+          Time is Ours.
         </h3>
 
         <p>
-          Awali perjalanan digital D’tik.COM dengan edisi pertama
-          bertema <b>As White as Snow</b>. Jelajahi pembuka,
+          Perjalanan digital D’tik.COM dengan edisi kedua
+          bertema <b>Time is Ours</b>. Jelajahi pembuka,
           topik utama, opini, learning language, humor pondok,
           karikatur, karya seni, komik, puisi, tokoh inspiratif,
           cerpen, serta tips &amp; trick dalam satu mading penuh
           kreativitas santri.
         </p>
 
-        <a class="btn" href="pages/mading-edisi-01.html">
+        <a class="btn" href="pages/mading-edisi-02.html">
           LIHAT RUBRIK →
         </a>
 
@@ -1825,9 +1947,12 @@ footer{
         <em>September 2026</em>
       </a>
 
-      <a class="issue" href="#">
+      <a href="pages/mading-edisi-02.html" class="issue">
         <span>EDISI #02</span>
-        <strong>Coming Soon</strong>
+
+        <strong>Time is<br>
+          Ours</strong>
+
         <em>September 2026</em>
       </a>
 
