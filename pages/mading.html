@@ -46,36 +46,32 @@ body{
 }
 
 /* =========================
-   BACKGROUND
+   BACKGROUND DOTS
 ========================= */
 
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  pointer-events:none;
   z-index:-2;
-  opacity:.3;
+  pointer-events:none;
 
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.13) .8px,
+      transparent 1px
+    );
 
-  background-size:24px 24px;
-
-  mask-image:linear-gradient(
-    to bottom,
-    black,
-    transparent 80%
-  );
+  background-size:6px 6px;
 }
 
 body::after{
   content:"";
   position:fixed;
   inset:0;
-  pointer-events:none;
   z-index:-1;
+  pointer-events:none;
 
   background:
     radial-gradient(
@@ -102,7 +98,6 @@ a{
   padding:0 28px;
 }
 
-
 /* =========================
    NAVBAR
 ========================= */
@@ -112,7 +107,17 @@ nav{
   top:0;
   z-index:1000;
 
-  background:rgba(8,8,8,.86);
+  background-color:rgba(8,8,8,.94);
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.12) .8px,
+      transparent 1px
+    );
+
+  background-size:6px 6px;
+
   backdrop-filter:blur(18px);
 
   border-bottom:1px solid rgba(215,170,60,.15);
@@ -126,6 +131,7 @@ nav{
   justify-content:space-between;
 
   position:relative;
+  z-index:2;
 }
 
 .brand{
@@ -156,7 +162,6 @@ nav{
 .links{
   display:flex;
   gap:27px;
-
   font-size:13px;
   color:#bbb8b0;
 }
@@ -194,6 +199,7 @@ nav{
 
   background:transparent;
   border:1px solid var(--gold);
+  border-radius:4px;
 
   color:var(--cream);
   font-size:22px;
@@ -203,6 +209,7 @@ nav{
   align-items:center;
   justify-content:center;
 }
+
 
 
 /* =========================
