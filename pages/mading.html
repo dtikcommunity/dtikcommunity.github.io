@@ -3,130 +3,2325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mading — D’tik.COM</title>
+
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
-:root{--bg:#090909;--panel:#11110f;--panel2:#141310;--gold:#d7aa3c;--cream:#f5f0e5;--muted:#9a978f;--line:#282721;}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:82px}
-body{background:var(--bg);color:var(--cream);font-family:"DM Sans",Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.08;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:5px 5px}
-body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 82% 8%,rgba(215,170,60,.07),transparent 25%),radial-gradient(circle at 12% 55%,rgba(255,255,255,.025),transparent 30%)}
-a{color:inherit;text-decoration:none}.container{width:100%;max-width:1240px;margin:auto;padding:0 28px}
-/* NAVBAR */
-nav{position:sticky;top:0;z-index:1000;background:rgba(9,9,9,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(215,170,60,.15)}
-.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;position:relative}.brand{display:flex;align-items:center;gap:12px}.brand img{width:50px;height:50px;border-radius:50%;object-fit:cover}.brand b{display:block;font:800 23px "Playfair Display",serif}.brand small{display:block;color:var(--gold);font-size:8px;letter-spacing:1.7px}.links{display:flex;gap:27px;font-size:13px;color:#bbb8b0}.links a{transition:.2s}.links a:hover{color:var(--gold)}.submit{border:1px solid var(--gold);padding:11px 15px;color:var(--gold);font-size:11px;font-weight:700;transition:.2s}.submit:hover{background:var(--gold);color:#090909}.menu-toggle{display:none;width:42px;height:42px;background:transparent;border:1px solid var(--gold);border-radius:4px;color:var(--cream);font-size:22px;cursor:pointer;align-items:center;justify-content:center}
-/* HERO */
-.hero{padding:92px 0 100px;border-bottom:1px solid var(--line)}.hero-inner{display:block;max-width:900px}.eyebrow{color:var(--gold);font-size:10px;font-weight:700;letter-spacing:4px}.hero-copy h1{margin:20px 0 24px;font:800 clamp(64px,8vw,110px)/.84 "Playfair Display",serif;letter-spacing:-4px}.hero-copy h1 span{color:var(--gold)}.hero-description{max-width:510px;color:var(--muted);font-size:14px;line-height:1.85}.hero-meta{display:flex;align-items:center;gap:18px;margin-top:32px}.hero-meta a{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:1.5px}.hero-meta .line{width:55px;height:1px;background:var(--gold)}.hero-number{margin-top:35px;color:rgba(215,170,60,.045);font:800 170px/1 "Playfair Display",serif;letter-spacing:-8px}
-/* EDITIONS */
 
-.editions{padding:105px 0 120px}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:42px}.section-head h2{margin-top:8px;font:700 clamp(38px,5vw,55px) "Playfair Display",serif;letter-spacing:-1px}.section-head p{max-width:380px;color:var(--muted);font-size:12px;line-height:1.8}.edition-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.edition-card{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel);transition:.35s}.edition-card:hover{transform:translateY(-6px);border-color:#4a473c}.edition-card.primary{grid-column:span 2;min-height:470px;display:grid;grid-template-columns:1.1fr .9fr}
-.edition-cover{
-  position:relative;
-  min-height:390px;
-  padding:38px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  overflow:hidden;
+:root{
+  --bg:#080808;
+  --panel:#10100f;
+  --panel2:#141310;
+
+  --gold:#d7aa3c;
+  --cream:#f5f0e5;
+  --muted:#9a978f;
+  --line:#282721;
+
+  --blue:#2878c8;
+  --blue-light:#dff1ff;
+  --snow:#ffffff;
+  --snow-text:#17324d;
+  --snow-muted:#58728a;
+  --snow-line:#c8e3f7;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  opacity:.3;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+  background-size:24px 24px;
+
+  mask-image:linear-gradient(
+    to bottom,
+    black,
+    transparent 80%
+  );
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
   background:
-    radial-gradient(circle at 18% 18%,rgba(255,255,255,.98),transparent 28%),
-    radial-gradient(circle at 82% 72%,rgba(191,225,250,.75),transparent 38%),
-    linear-gradient(145deg,#eaf6ff 0%,#ffffff 48%,#dff1ff 100%);
-  border-right:1px solid #c8e3f7;
-  box-shadow:0 25px 80px rgba(40,120,200,.16);
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(215,170,60,.07),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 10% 55%,
+      rgba(255,255,255,.025),
+      transparent 30%
+    );
 }
 
-.edition-cover:before{
-  content:"❄";
-  position:absolute;
-  right:25px;
-  top:20px;
-  font-size:135px;
-  color:#fff;
-  opacity:.95;
-  text-shadow:0 0 20px rgba(40,120,200,.28),0 0 45px rgba(40,120,200,.18);
-  pointer-events:none;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-.edition-cover:after{
-  content:"✦  ❄  ✧  ❄  ✦";
-  position:absolute;
-  right:28px;
-  bottom:28px;
-  color:rgba(40,120,200,.25);
-  font-size:25px;
-  letter-spacing:10px;
-  pointer-events:none;
+.container{
+  width:100%;
+  max-width:1240px;
+  margin:auto;
+  padding:0 28px;
 }
 
-.edition-number{
-  align-self:flex-start;
-  position:absolute;
-  left:38px;
-  top:38px;
-  z-index:2;
-  border:1px solid #2878c8;
-  padding:7px 10px;
-  color:#2878c8;
-  background:rgba(255,255,255,.65);
-  font-size:10px;
-  letter-spacing:2px;
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(8,8,8,.86);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(215,170,60,.15);
+}
+
+.nav{
+  min-height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  position:relative;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.brand b{
+  display:block;
+  font:800 23px "Playfair Display",serif;
+}
+
+.brand small{
+  display:block;
+  color:var(--gold);
+  font-size:8px;
+  letter-spacing:1.7px;
+}
+
+.links{
+  display:flex;
+  gap:27px;
+
+  font-size:13px;
+  color:#bbb8b0;
+}
+
+.links a{
+  transition:.2s ease;
+}
+
+.links a:hover{
+  color:var(--gold);
+}
+
+.submit{
+  border:1px solid var(--gold);
+  padding:11px 15px;
+
+  color:var(--gold);
+
+  font-size:11px;
   font-weight:700;
+
+  transition:.2s ease;
 }
 
-.edition-cover h3{
+.submit:hover{
+  background:var(--gold);
+  color:#080808;
+}
+
+.menu-toggle{
+  display:none;
+
+  width:42px;
+  height:42px;
+
+  background:transparent;
+  border:1px solid var(--gold);
+
+  color:var(--cream);
+  font-size:22px;
+
+  cursor:pointer;
+
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:650px;
+  position:relative;
+  overflow:hidden;
+
+  border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+  min-height:650px;
+
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+
+  align-items:center;
+
+  gap:70px;
+}
+
+.hero-copy{
   position:relative;
   z-index:2;
-  max-width:440px;
-  margin:0 0 14px;
-  color:#17324d;
-  font:700 48px/1.02 "Playfair Display",serif;
+}
+
+.eyebrow{
+  color:var(--gold);
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:4px;
+}
+
+.hero h1{
+  margin:22px 0 24px;
+
+  font:
+    800 clamp(65px,8vw,112px)/.83
+    "Playfair Display",serif;
+
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:520px;
+
+  color:var(--muted);
+
+  font-size:15px;
+  line-height:1.85;
+}
+
+.hero-meta{
+  display:flex;
+  align-items:center;
+  gap:20px;
+
+  margin-top:35px;
+}
+
+.hero-meta a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  color:var(--gold);
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.hero-meta .line{
+  width:55px;
+  height:1px;
+  background:var(--gold);
+}
+
+.hero-number{
+  position:absolute;
+
+  left:-15px;
+  bottom:-75px;
+
+  font:
+    800 300px/1
+    "Playfair Display",serif;
+
+  color:rgba(215,170,60,.035);
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   EDITIONS
+========================= */
+
+.editions{
+  padding:105px 0 120px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  gap:40px;
+
+  margin-bottom:42px;
+}
+
+.section-head-left .eyebrow{
+  display:block;
+}
+
+.section-head h2{
+  margin-top:8px;
+
+  font:
+    700 clamp(38px,5vw,55px)
+    "Playfair Display",serif;
+
   letter-spacing:-1px;
 }
 
-.edition-cover h3:after{
-  content:"";
-  display:block;
-  width:50px;
-  height:1px;
-  background:#2878c8;
-  margin-top:24px;
+.section-head p{
+  max-width:380px;
+
+  color:var(--muted);
+
+  font-size:12px;
+  line-height:1.8;
 }
 
-.edition-cover .edition-sub{
+
+/* EDITION GRID */
+
+.edition-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+}
+
+
+/* =========================
+   EDITION CARD
+========================= */
+
+.edition-card{
   position:relative;
-  z-index:2;
-  color:#58728a;
+
+  overflow:hidden;
+
+  border:1px solid var(--line);
+
+  background:var(--panel);
+
+  transition:.35s ease;
+}
+
+.edition-card:hover{
+  transform:translateY(-6px);
+  border-color:#4a473c;
+}
+
+.edition-card.primary{
+  grid-column:span 2;
+
+  min-height:470px;
+
+  display:grid;
+
+  grid-template-columns:1.1fr .9fr;
+}
+
+
+/* =================================================
+   EDISI 01
+   SAME VISUAL AS HOMEPAGE
+   AS WHITE AS SNOW
+================================================= */
+
+.edition-card.primary{
+  grid-column:span 2;
+
+  height:500px;
+
+  position:relative;
+
+  border:1px solid var(--snow-line);
+  border-radius:16px;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(255,255,255,.98),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(191,225,250,.75),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #eaf6ff 0%,
+      #ffffff 48%,
+      #dff1ff 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(40,120,200,.16);
+
+  transition:.35s ease;
+}
+
+.edition-card.primary:hover{
+  transform:translateY(-6px);
+
+  border-color:#9fc9e7;
+
+  box-shadow:
+    0 30px 90px rgba(40,120,200,.22);
+}
+
+
+/* BIG SNOWFLAKE */
+
+.edition-card.primary::before{
+  content:"❄";
+
+  position:absolute;
+
+  right:25px;
+  top:20px;
+
+  font-size:135px;
+
+  color:#fff;
+
+  opacity:.95;
+
+  text-shadow:
+    0 0 20px rgba(40,120,200,.28),
+    0 0 45px rgba(40,120,200,.18);
+
+  pointer-events:none;
+
+  z-index:1;
+}
+
+
+/* SNOW SYMBOLS */
+
+.edition-card.primary::after{
+  content:"✦  ❄  ✧  ❄  ✦";
+
+  position:absolute;
+
+  right:28px;
+  bottom:28px;
+
+  color:rgba(40,120,200,.25);
+
+  font-size:25px;
+
+  letter-spacing:10px;
+
+  pointer-events:none;
+
+  z-index:1;
+}
+
+
+/* CLICKABLE COVER */
+
+.snow{
+  position:absolute;
+
+  inset:0;
+
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  color:var(--snow-text);
+}
+
+
+/* EDITION LABEL */
+
+.snow .edition-number{
+  position:absolute;
+
+  left:38px;
+  top:38px;
+
+  z-index:5;
+
+  border:1px solid var(--blue);
+
+  padding:7px 10px;
+
+  color:var(--blue);
+
+  background:rgba(255,255,255,.65);
+
   font-size:10px;
   letter-spacing:2px;
-  text-transform:uppercase;
+
+  font-weight:700;
 }
 
-.edition-card.primary{grid-column:span 2;min-height:390px;display:grid;grid-template-columns:1fr 1fr}
-.edition-info{padding:42px;display:flex;flex-direction:column;justify-content:center}.edition-info small{color:var(--gold);font-size:9px;letter-spacing:2.5px;font-weight:700}.edition-info h4{margin:13px 0 12px;font:600 34px "Playfair Display",serif}.edition-info p{max-width:430px;color:var(--muted);font-size:13px;line-height:1.8}.open{display:inline-flex;align-items:center;gap:12px;width:max-content;margin-top:28px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:1.5px}.open:after{content:"→";transition:.2s}.open:hover:after{transform:translateX(5px)}.edition-card.future{min-height:320px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 85% 20%,rgba(215,170,60,.09),transparent 28%),var(--panel2)}.future-top{display:flex;justify-content:space-between;align-items:flex-start}.future-number{color:#555149;font:700 12px "DM Sans",sans-serif;letter-spacing:2px}.future-status{color:#5f5b53;font-size:8px;letter-spacing:2px}.future h3{margin-top:auto;color:#ded9cb;font:600 clamp(39px,4vw,55px)/.9 "Playfair Display",serif}.future-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;gap:20px}.future-bottom p{max-width:330px;color:#77736a;font-size:11px;line-height:1.7}.future-arrow{width:42px;height:42px;border:1px solid #38362f;display:flex;align-items:center;justify-content:center;color:#77736a;font-size:17px}
-/* INDEX + FOOTER */
-.edition-index{margin-top:65px;padding-top:25px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}.index-item{padding:15px 20px;border-right:1px solid var(--line)}.index-item:first-child{padding-left:0}.index-item:last-child{border-right:0}.index-item small{color:#66635c;font-size:8px;letter-spacing:2px}.index-item strong{display:block;margin-top:7px;font:500 15px "Playfair Display",serif;color:#d3cec2}footer{border-top:1px solid var(--line);padding:35px 0;color:#66635d;font-size:10px}.foot{display:flex;justify-content:space-between;align-items:center}.foot span{color:var(--gold)}
-/* MOBILE */
-@media(max-width:850px){.container{padding:0 18px}.nav{min-height:70px}.brand img{width:42px;height:42px}.brand b{font-size:20px}.brand small{display:none}.menu-toggle{display:flex;margin-left:auto}.submit{display:none!important}.links{display:none;position:absolute;top:70px;left:0;width:100%;padding:10px 18px 15px;background:rgba(8,8,8,.98);border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-direction:column;gap:0;z-index:9999}.links.active{display:flex}.links a{padding:15px 5px;border-bottom:1px solid var(--line)}.links a:last-child{border-bottom:0}.hero{padding:65px 0 75px}.hero-copy h1{font-size:68px}.section-head{display:block}.section-head p{margin-top:17px}.edition-grid{grid-template-columns:1fr}.edition-card.primary{grid-column:auto;grid-template-columns:1fr;min-height:auto}.edition-cover{min-height:440px;border-right:0;border-bottom:1px solid #c8e3f7;padding:25px}.edition-info{padding:28px}.edition-info h4{font-size:29px}.edition-card.future{min-height:280px}.edition-index{grid-template-columns:1fr 1fr;row-gap:20px}.index-item:nth-child(2),.index-item:nth-child(4){border-right:0}.index-item:nth-child(3){padding-left:0}.foot{flex-direction:column;align-items:flex-start;gap:12px}}
-@media(max-width:450px){.hero-copy h1{font-size:58px}.edition-cover{min-height:455px}.edition-cover h3{font-size:39px;max-width:320px}.edition-cover:before{font-size:90px;right:5px;top:15px}.edition-cover:after{right:15px;bottom:18px;font-size:18px;letter-spacing:5px}.edition-number{left:25px;top:25px;font-size:8px;padding:6px 8px;letter-spacing:1.5px}.edition-index{grid-template-columns:1fr}.index-item{border-right:0!important;border-bottom:1px solid var(--line);padding:14px 0}.index-item:last-child{border-bottom:0}}
+
+/* TOP RIGHT ISSUE */
+
+.snow::before{
+  content:"LATEST ISSUE";
+
+  position:absolute;
+
+  right:38px;
+  top:42px;
+
+  color:var(--blue);
+
+  font-size:9px;
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  z-index:5;
+}
+
+
+/* TITLE */
+
+.snow h3{
+  position:absolute;
+
+  left:38px;
+  bottom:38px;
+
+  z-index:5;
+
+  max-width:500px;
+
+  margin:0;
+
+  color:var(--snow-text);
+
+  font:
+    700 clamp(48px,5vw,70px)/.92
+    "Playfair Display",serif;
+
+  letter-spacing:-2px;
+}
+
+
+/* DESCRIPTION AREA */
+
+.snow-description{
+  position:absolute;
+
+  right:38px;
+  bottom:42px;
+
+  width:390px;
+
+  z-index:5;
+}
+
+.snow-description .kicker{
+  color:var(--blue);
+
+  font-size:10px;
+
+  letter-spacing:3px;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+}
+
+.snow-description p{
+  color:var(--snow-muted);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+  margin:0;
+}
+
+.snow-open{
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-top:17px;
+
+  color:var(--snow-text);
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:1.5px;
+}
+
+.snow-open::after{
+  content:"→";
+
+  transition:.2s ease;
+}
+
+.snow-open:hover::after{
+  transform:translateX(5px);
+}
+
+
+/* =========================
+   EDISI 02 · TIME IS OURS
+   SAME VISUAL AS HOMEPAGE
+========================= */
+
+.time-primary{
+  grid-column:span 2;
+  height:500px;
+
+  position:relative;
+  overflow:hidden;
+
+  border:1px solid #d9c98a;
+  border-radius:16px;
+
+  background:
+    radial-gradient(circle at 78% 48%, rgba(215,170,60,.10), transparent 34%),
+    radial-gradient(circle at 15% 12%, rgba(255,255,255,.95), transparent 30%),
+    linear-gradient(145deg,#ffffff 0%,#fbfaf5 58%,#f3eedf 100%);
+
+  box-shadow:0 25px 80px rgba(23,23,20,.10);
+
+  transition:.35s ease;
+}
+
+.time-primary:hover{
+  transform:translateY(-6px);
+  border-color:#b99a42;
+}
+
+
+/* =========================
+   HOMEPAGE-STYLE CLOCK
+========================= */
+
+.time-edition-clock{
+  position:absolute;
+
+  right:48px;
+  top:48px;
+
+  width:370px;
+  height:370px;
+
+  border:2px solid rgba(23,23,20,.26);
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffdf8 0 67%,
+      #f7f1df 67.5% 68%,
+      #fff 68.5% 100%
+    );
+
+  box-shadow:
+    0 0 0 10px rgba(215,170,60,.07),
+    0 0 0 22px rgba(23,23,20,.035),
+    inset 0 0 0 1px rgba(215,170,60,.18),
+    0 18px 45px rgba(23,23,20,.08);
+
+  z-index:1;
+  pointer-events:none;
+
+  animation:none;
+}
+
+.time-edition-clock::before{
+  content:"";
+
+  position:absolute;
+  inset:22px;
+
+  border:1px solid rgba(23,23,20,.10);
+  border-radius:50%;
+}
+
+.time-edition-clock::after{
+  content:"";
+
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:11px;
+  height:11px;
+
+  transform:translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:#d7aa3c;
+
+  border:3px solid #fffdf8;
+
+  box-shadow:
+    0 0 0 1px rgba(23,23,20,.28);
+
+  z-index:4;
+}
+
+
+/* =========================
+   ROMAN NUMERALS
+========================= */
+
+.time-edition-clock .roman{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform-origin:center;
+
+  color:#1d1d1a;
+
+  font:
+    700 15px/1
+    "Playfair Display",serif;
+
+  letter-spacing:0;
+}
+
+.time-edition-clock .roman-xii{
+  transform:
+    translate(-50%,-50%)
+    translateY(-157px);
+}
+
+.time-edition-clock .roman-i{
+  transform:
+    translate(-50%,-50%)
+    translate(78px,-136px);
+}
+
+.time-edition-clock .roman-ii{
+  transform:
+    translate(-50%,-50%)
+    translate(136px,-78px);
+}
+
+.time-edition-clock .roman-iii{
+  transform:
+    translate(-50%,-50%)
+    translateX(157px);
+}
+
+.time-edition-clock .roman-iv{
+  transform:
+    translate(-50%,-50%)
+    translate(136px,78px);
+}
+
+.time-edition-clock .roman-v{
+  transform:
+    translate(-50%,-50%)
+    translate(78px,136px);
+}
+
+.time-edition-clock .roman-vi{
+  transform:
+    translate(-50%,-50%)
+    translateY(157px);
+}
+
+.time-edition-clock .roman-vii{
+  transform:
+    translate(-50%,-50%)
+    translate(-78px,136px);
+}
+
+.time-edition-clock .roman-viii{
+  transform:
+    translate(-50%,-50%)
+    translate(-136px,78px);
+}
+
+.time-edition-clock .roman-ix{
+  transform:
+    translate(-50%,-50%)
+    translateX(-157px);
+}
+
+.time-edition-clock .roman-x{
+  transform:
+    translate(-50%,-50%)
+    translate(-136px,-78px);
+}
+
+.time-edition-clock .roman-xi{
+  transform:
+    translate(-50%,-50%)
+    translate(-78px,-136px);
+}
+
+
+/* =========================
+   CLOCK TICKS
+========================= */
+
+.time-edition-clock .tick{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  width:2px;
+  height:12px;
+
+  background:rgba(23,23,20,.28);
+
+  transform-origin:50% 160px;
+}
+
+.time-edition-clock .t1{
+  transform:translate(-50%,-50%) rotate(30deg);
+}
+
+.time-edition-clock .t2{
+  transform:translate(-50%,-50%) rotate(60deg);
+}
+
+.time-edition-clock .t3{
+  transform:translate(-50%,-50%) rotate(90deg);
+}
+
+.time-edition-clock .t4{
+  transform:translate(-50%,-50%) rotate(120deg);
+}
+
+.time-edition-clock .t5{
+  transform:translate(-50%,-50%) rotate(150deg);
+}
+
+.time-edition-clock .t6{
+  transform:translate(-50%,-50%) rotate(180deg);
+}
+
+.time-edition-clock .t7{
+  transform:translate(-50%,-50%) rotate(210deg);
+}
+
+.time-edition-clock .t8{
+  transform:translate(-50%,-50%) rotate(240deg);
+}
+
+.time-edition-clock .t9{
+  transform:translate(-50%,-50%) rotate(270deg);
+}
+
+.time-edition-clock .t10{
+  transform:translate(-50%,-50%) rotate(300deg);
+}
+
+.time-edition-clock .t11{
+  transform:translate(-50%,-50%) rotate(330deg);
+}
+
+.time-edition-clock .tick.major{
+  width:3px;
+  height:17px;
+
+  background:#1d1d1a;
+}
+
+
+/* =========================
+   CLOCK HANDS
+========================= */
+
+.time-edition-clock .clock-hand{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  border-radius:99px;
+
+  transform-origin:0 50%;
+
+  z-index:3;
+}
+
+.time-edition-clock .clock-hand.hour{
+  width:92px;
+  height:5px;
+
+  background:#1d1d1a;
+
+  transform:rotate(310deg);
+
+  box-shadow:
+    0 2px 5px rgba(23,23,20,.12);
+
+  animation:editionClockHour 120s linear infinite;
+}
+
+.time-edition-clock .clock-hand.minute{
+  width:125px;
+  height:3px;
+
+  background:#d7aa3c;
+
+  transform:rotate(45deg);
+
+  box-shadow:
+    0 2px 7px rgba(215,170,60,.28);
+
+  animation:editionClockMinute 20s linear infinite;
+}
+
+.time-edition-clock .clock-hand.second{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  width:138px;
+  height:1px;
+
+  border-radius:99px;
+
+  background:#8d6a18;
+
+  transform-origin:0 50%;
+
+  transform:rotate(0deg);
+
+  z-index:2;
+
+  animation:editionClockSecond 5s linear infinite;
+}
+
+@keyframes editionClockHour{
+  from{transform:rotate(310deg);}
+  to{transform:rotate(670deg);}
+}
+
+@keyframes editionClockMinute{
+  from{transform:rotate(45deg);}
+  to{transform:rotate(405deg);}
+}
+
+@keyframes editionClockSecond{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+
+/* =========================
+   HOMEPAGE-STYLE CONTENT
+========================= */
+
+.time-edition-content{
+  position:absolute;
+
+  inset:0;
+
+  padding:38px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  z-index:2;
+}
+
+.time-edition-content .time-badge{
+  align-self:flex-start;
+
+  border:1px solid #d7aa3c;
+
+  padding:7px 10px;
+
+  color:#1d1d1a;
+
+  background:rgba(255,255,255,.82);
+
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:700;
+
+  margin-bottom:auto;
+}
+
+.time-edition-content .time-kicker{
+  color:#9b7620;
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:3px;
+}
+
+.time-edition-content h3{
+  margin:0 0 14px;
+
+  max-width:440px;
+
+  color:#1d1d1a;
+
+  font:
+    700 48px/1.02
+    "Playfair Display",serif;
+}
+
+.time-edition-content p{
+  max-width:440px;
+
+  color:#55534d;
+
+  line-height:1.7;
+
+  font-size:14px;
+}
+
+.time-edition-content .open{
+  display:inline-block;
+
+  width:max-content;
+
+  margin-top:15px;
+
+  color:#9b7620;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+}
+
+
+/* =========================
+   MOBILE · SAME AS HOMEPAGE
+========================= */
+
+@media(max-width:1000px){
+
+  .time-primary{
+    height:460px;
+  }
+
+  .time-edition-clock{
+    width:330px;
+    height:330px;
+
+    right:25px;
+    top:48px;
+  }
+
+  .time-edition-clock .roman{
+    font-size:13px;
+  }
+
+  .time-edition-clock .roman-xii{
+    transform:translate(-50%,-50%) translateY(-140px);
+  }
+
+  .time-edition-clock .roman-i{
+    transform:translate(-50%,-50%) translate(70px,-121px);
+  }
+
+  .time-edition-clock .roman-ii{
+    transform:translate(-50%,-50%) translate(121px,-70px);
+  }
+
+  .time-edition-clock .roman-iii{
+    transform:translate(-50%,-50%) translateX(140px);
+  }
+
+  .time-edition-clock .roman-iv{
+    transform:translate(-50%,-50%) translate(121px,70px);
+  }
+
+  .time-edition-clock .roman-v{
+    transform:translate(-50%,-50%) translate(70px,121px);
+  }
+
+  .time-edition-clock .roman-vi{
+    transform:translate(-50%,-50%) translateY(140px);
+  }
+
+  .time-edition-clock .roman-vii{
+    transform:translate(-50%,-50%) translate(-70px,121px);
+  }
+
+  .time-edition-clock .roman-viii{
+    transform:translate(-50%,-50%) translate(-121px,70px);
+  }
+
+  .time-edition-clock .roman-ix{
+    transform:translate(-50%,-50%) translateX(-140px);
+  }
+
+  .time-edition-clock .roman-x{
+    transform:translate(-50%,-50%) translate(-121px,-70px);
+  }
+
+  .time-edition-clock .roman-xi{
+    transform:translate(-50%,-50%) translate(-70px,-121px);
+  }
+
+  .time-edition-clock .tick{
+    transform-origin:50% 143px;
+  }
+
+  .time-edition-clock .clock-hand.hour{
+    width:82px;
+  }
+
+  .time-edition-clock .clock-hand.minute{
+    width:110px;
+  }
+
+  .time-edition-clock .clock-hand.second{
+    width:120px;
+  }
+}
+
+@media(max-width:700px){
+
+  .time-primary{
+    height:440px;
+    border-radius:14px;
+  }
+
+  .time-edition-content{
+    padding:25px;
+  }
+
+  .time-edition-clock{
+    width:285px;
+    height:285px;
+
+    right:-18px;
+    top:82px;
+  }
+
+  .time-edition-clock .roman{
+    font-size:11px;
+  }
+
+  .time-edition-clock .roman-xii{
+    transform:translate(-50%,-50%) translateY(-120px);
+  }
+
+  .time-edition-clock .roman-i{
+    transform:translate(-50%,-50%) translate(60px,-104px);
+  }
+
+  .time-edition-clock .roman-ii{
+    transform:translate(-50%,-50%) translate(104px,-60px);
+  }
+
+  .time-edition-clock .roman-iii{
+    transform:translate(-50%,-50%) translateX(120px);
+  }
+
+  .time-edition-clock .roman-iv{
+    transform:translate(-50%,-50%) translate(104px,60px);
+  }
+
+  .time-edition-clock .roman-v{
+    transform:translate(-50%,-50%) translate(60px,104px);
+  }
+
+  .time-edition-clock .roman-vi{
+    transform:translate(-50%,-50%) translateY(120px);
+  }
+
+  .time-edition-clock .roman-vii{
+    transform:translate(-50%,-50%) translate(-60px,104px);
+  }
+
+  .time-edition-clock .roman-viii{
+    transform:translate(-50%,-50%) translate(-104px,60px);
+  }
+
+  .time-edition-clock .roman-ix{
+    transform:translate(-50%,-50%) translateX(-120px);
+  }
+
+  .time-edition-clock .roman-x{
+    transform:translate(-50%,-50%) translate(-104px,-60px);
+  }
+
+  .time-edition-clock .roman-xi{
+    transform:translate(-50%,-50%) translate(-60px,-104px);
+  }
+
+  .time-edition-clock .tick{
+    height:9px;
+    transform-origin:50% 120px;
+  }
+
+  .time-edition-clock .tick.major{
+    height:13px;
+  }
+
+  .time-edition-clock .clock-hand.hour{
+    width:70px;
+    height:4px;
+  }
+
+  .time-edition-clock .clock-hand.minute{
+    width:92px;
+    height:2px;
+  }
+
+  .time-edition-clock .clock-hand.second{
+    width:100px;
+  }
+
+  .time-edition-content .time-badge{
+    font-size:8px;
+    padding:6px 8px;
+    letter-spacing:1.5px;
+  }
+
+  .time-edition-content .time-kicker{
+    font-size:9px;
+    letter-spacing:3px;
+  }
+
+  .time-edition-content h3{
+    font-size:39px;
+    max-width:320px;
+  }
+
+  .time-edition-content p{
+    font-size:12.5px;
+    line-height:1.65;
+    max-width:330px;
+  }
+
+  .time-edition-content .open{
+    font-size:10px;
+  }
+}
+
+@media(max-width:450px){
+
+  .time-primary{
+    height:430px;
+  }
+
+  .time-edition-clock{
+    width:260px;
+    height:260px;
+
+    right:-22px;
+    top:78px;
+  }
+
+  .time-edition-clock .roman-xii{
+    transform:translate(-50%,-50%) translateY(-110px);
+  }
+
+  .time-edition-clock .roman-i{
+    transform:translate(-50%,-50%) translate(55px,-95px);
+  }
+
+  .time-edition-clock .roman-ii{
+    transform:translate(-50%,-50%) translate(95px,-55px);
+  }
+
+  .time-edition-clock .roman-iii{
+    transform:translate(-50%,-50%) translateX(110px);
+  }
+
+  .time-edition-clock .roman-iv{
+    transform:translate(-50%,-50%) translate(95px,55px);
+  }
+
+  .time-edition-clock .roman-v{
+    transform:translate(-50%,-50%) translate(55px,95px);
+  }
+
+  .time-edition-clock .roman-vi{
+    transform:translate(-50%,-50%) translateY(110px);
+  }
+
+  .time-edition-clock .roman-vii{
+    transform:translate(-50%,-50%) translate(-55px,95px);
+  }
+
+  .time-edition-clock .roman-viii{
+    transform:translate(-50%,-50%) translate(-95px,55px);
+  }
+
+  .time-edition-clock .roman-ix{
+    transform:translate(-50%,-50%) translateX(-110px);
+  }
+
+  .time-edition-clock .roman-x{
+    transform:translate(-50%,-50%) translate(-95px,-55px);
+  }
+
+  .time-edition-clock .roman-xi{
+    transform:translate(-50%,-50%) translate(-55px,-95px);
+  }
+
+  .time-edition-clock .tick{
+    transform-origin:50% 110px;
+  }
+
+  .time-edition-clock .clock-hand.hour{
+    width:62px;
+  }
+
+  .time-edition-clock .clock-hand.minute{
+    width:80px;
+  }
+
+  .time-edition-clock .clock-hand.second{
+    width:88px;
+  }
+
+  .time-edition-content h3{
+    font-size:36px;
+  }
+
+  .time-edition-content p{
+    font-size:12px;
+  }
+}
+
+/* =========================
+   EDISI 03
+========================= */
+
+.edition-card.future{
+  min-height:320px;
+
+  padding:30px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(215,170,60,.09),
+      transparent 28%
+    ),
+    var(--panel2);
+}
+
+.future-top{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+}
+
+.future-number{
+  color:#555149;
+
+  font:
+    700 12px
+    "DM Sans",sans-serif;
+
+  letter-spacing:2px;
+}
+
+.future-status{
+  color:#5f5b53;
+
+  font-size:8px;
+
+  letter-spacing:2px;
+}
+
+.future h3{
+  margin-top:auto;
+
+  color:#ded9cb;
+
+  font:
+    600 clamp(39px,4vw,55px)/.9
+    "Playfair Display",serif;
+}
+
+.future-bottom{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  margin-top:30px;
+
+  gap:20px;
+}
+
+.future-bottom p{
+  max-width:330px;
+
+  color:#77736a;
+
+  font-size:11px;
+
+  line-height:1.7;
+}
+
+.future-arrow{
+  width:42px;
+  height:42px;
+
+  border:1px solid #38362f;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  color:#77736a;
+
+  font-size:17px;
+}
+
+
+
+
+/* =========================
+   INDEX
+========================= */
+
+.edition-index{
+  margin-top:65px;
+
+  padding-top:25px;
+
+  border-top:1px solid var(--line);
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+}
+
+.index-item{
+  padding:15px 20px;
+
+  border-right:1px solid var(--line);
+}
+
+.index-item:first-child{
+  padding-left:0;
+}
+
+.index-item:last-child{
+  border-right:0;
+}
+
+.index-item small{
+  color:#66635c;
+
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+.index-item strong{
+  display:block;
+
+  margin-top:7px;
+
+  font:
+    500 15px
+    "Playfair Display",serif;
+
+  color:#d3cec2;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+
+  padding:35px 0;
+
+  color:#66635d;
+
+  font-size:10px;
+}
+
+.foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.foot span{
+  color:var(--gold);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+  .container{
+    padding:0 18px;
+  }
+
+  /* NAV */
+
+  .nav{
+    min-height:70px;
+  }
+
+  .brand img{
+    width:42px;
+    height:42px;
+  }
+
+  .brand b{
+    font-size:20px;
+  }
+
+  .brand small{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:flex;
+    margin-left:auto;
+  }
+
+  .submit{
+    display:none;
+  }
+
+  .links{
+    display:none;
+
+    position:absolute;
+
+    top:70px;
+    left:0;
+
+    width:100%;
+
+    padding:10px 18px 15px;
+
+    background:rgba(8,8,8,.98);
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+
+    flex-direction:column;
+
+    gap:0;
+
+    z-index:9999;
+  }
+
+  .links.active{
+    display:flex;
+  }
+
+  .links a{
+    padding:15px 5px;
+
+    border-bottom:1px solid var(--line);
+  }
+
+  .links a:last-child{
+    border-bottom:0;
+  }
+
+
+  /* HERO */
+
+  .hero{
+    min-height:auto;
+  }
+
+  .hero-inner{
+    min-height:auto;
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+    padding-top:75px;
+    padding-bottom:75px;
+  }
+
+  .hero h1{
+    font-size:68px;
+    letter-spacing:-3px;
+  }
+
+  .hero-description{
+    font-size:13px;
+  }
+
+  .hero-number{
+    font-size:190px;
+    bottom:-25px;
+  }
+
+
+  /* FEATURED */
+
+  .featured-card{
+    height:430px;
+  }
+
+  .snowflake{
+    right:25px;
+    top:35px;
+    font-size:75px;
+  }
+
+
+  /* EDITIONS */
+
+  .editions{
+    padding:75px 0 85px;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:17px;
+  }
+
+  .edition-grid{
+    grid-template-columns:1fr;
+  }
+
+  .edition-card.primary{
+    grid-column:auto;
+
+    grid-template-columns:1fr;
+
+    min-height:auto;
+  }
+
+  .edition-cover.snow{
+    min-height:360px;
+  }
+
+  .edition-info{
+    padding:28px;
+  }
+
+  .edition-info h4{
+    font-size:29px;
+  }
+
+  .edition-card.future{
+    min-height:280px;
+  }
+
+  .edition-index{
+    grid-template-columns:1fr 1fr;
+
+    row-gap:20px;
+  }
+
+  .index-item:nth-child(2){
+    border-right:0;
+  }
+
+  .index-item:nth-child(3){
+    padding-left:0;
+  }
+
+  .index-item:nth-child(4){
+    border-right:0;
+  }
+
+  .foot{
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:12px;
+  }
+
+}
+
+
+@media(max-width:450px){
+
+  .hero-inner{
+    padding-top:60px;
+  }
+
+  .hero h1{
+    font-size:58px;
+  }
+
+  .featured-card{
+    height:390px;
+  }
+
+  .issue-num{
+    font-size:55px;
+  }
+
+  .featured-bottom h2{
+    font-size:38px;
+  }
+
+  .featured-bottom p{
+    font-size:11px;
+  }
+
+  .snowflake{
+    right:15px;
+    top:25px;
+    font-size:65px;
+  }
+
+  .edition-cover.snow{
+    min-height:320px;
+  }
+
+  .edition-cover h3{
+    font-size:44px;
+  }
+
+  .edition-index{
+    grid-template-columns:1fr;
+  }
+
+  .index-item{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+  }
+
+  .index-item:last-child{
+    border-bottom:0;
+  }
+
+}
+
 </style>
 </head>
+
+
 <body>
-<nav><div class="container nav"><a class="brand" href="../index.html"><img src="../logo.png" alt="Logo D'tik.COM"><span><b>D’tik.COM</b><small>DARUSSALAM JURNALISTIK COMMUNITY</small></span></a><div class="links" id="navLinks"><a href="../index.html">Beranda</a><a href="mading.html">Mading</a><a href="../index.html#karya">Karya</a><a href="visual-archive.html">Galeri</a><a href="../index.html#arsip">Arsip</a><a href="tentang.html">Tentang</a></div><a class="submit" href="../index.html#karya">KIRIM KARYA ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu">☰</button></div></nav>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+
+      <img
+        src="../logo.png"
+        alt="Logo D'tik.COM"
+      >
+
+      <span>
+
+        <b>D’tik.COM</b>
+
+        <small>
+          DARUSSALAM JURNALISTIK COMMUNITY
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <div class="links" id="navLinks">
+
+      <a href="../index.html">
+        Beranda
+      </a>
+
+      <a href="mading.html">
+        Mading
+      </a>
+
+      <a href="../index.html#karya">
+        Karya
+      </a>
+
+      <a href="visual-archive.html">
+        Galeri
+      </a>
+
+      <a href="../index.html#arsip">
+        Arsip
+      </a>
+
+      <a href="tentang.html">
+        Tentang
+      </a>
+
+    </div>
+
+
+    <a
+      class="submit"
+      href="../index.html#karya"
+    >
+      KIRIM KARYA ↗
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Buka menu"
+    >
+      ☰
+    </button>
+
+  </div>
+
+</nav>
+
+
 <main>
-<section class="hero"><div class="container hero-inner"><div class="hero-copy"><div class="eyebrow">D’TIK.COM · MADING ARCHIVE</div><h1>Jelajahi<br><span>Mading.</span></h1><p class="hero-description">Setiap edisi punya cerita, suasana, dan identitasnya sendiri. Bukan sekadar kumpulan tulisan, tapi sebuah perjalanan dari satu tema ke tema berikutnya.</p><div class="hero-meta"><a href="#editions">LIHAT SEMUA EDISI <span>↓</span></a><div class="line"></div><span style="color:#66635d;font-size:9px;letter-spacing:2px">2026</span></div></div>
-</div></section>
-<section class="editions" id="editions"><div class="container"><div class="section-head"><div><div class="eyebrow">OUR EDITIONS</div><h2>Pilih Edisi.</h2></div><p>Setiap mading punya karakter visual dan cerita yang berbeda. Pilih satu dan masuk ke dunianya.</p></div><div class="edition-grid">
-<article class="edition-card primary"><a href="mading-edisi-01.html" class="edition-cover snow">
-<div class="edition-number">EDITION · 01</div>
-<h3>As White<br>as Snow.</h3><div class="edition-sub">Seputih Salju · Edisi Pertama</div>
-</a><div class="edition-info"><small>SEPTEMBER 2026 · LATEST ISSUE</small><h4>As White as Snow.</h4><p>Edisi pertama D’tik.COM dengan tema salju. Sebuah mading yang membawa nuansa dingin, putih, tenang, dan penuh cerita.</p><a class="open" href="mading-edisi-01.html">JELAJAHI EDISI</a></div></article>
-<article class="edition-card future"><div class="future-top"><div class="future-number">EDITION · 02</div><div class="future-status">COMING SOON</div></div><h3>The Next<br>Story.</h3><div class="future-bottom"><p>Tema baru. Dunia visual baru. Cerita baru dari D’tik.COM.</p><div class="future-arrow">→</div></div></article>
-<article class="edition-card future"><div class="future-top"><div class="future-number">EDITION · 03</div><div class="future-status">STAY TUNED</div></div><h3>Your<br>Story.</h3><div class="future-bottom"><p>Satu edisi lagi, satu cerita lagi, satu dunia lagi.</p><div class="future-arrow">✦</div></div></article>
-</div><div class="edition-index"><div class="index-item"><small>01</small><strong>As White as Snow</strong></div><div class="index-item"><small>02</small><strong>Coming Soon</strong></div><div class="index-item"><small>03</small><strong>Coming Soon</strong></div><div class="index-item"><small>ARCHIVE</small><strong>D’tik.COM</strong></div></div></div></section>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container hero-inner">
+
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        D’TIK.COM · MADING ARCHIVE
+      </div>
+
+
+      <h1>
+        Jelajahi<br>
+        <span>Mading.</span>
+      </h1>
+
+
+      <p class="hero-description">
+        Setiap edisi punya cerita, suasana,
+        dan identitasnya sendiri. Bukan sekadar
+        kumpulan tulisan, tapi sebuah perjalanan
+        dari satu tema ke tema berikutnya.
+      </p>
+
+
+      <div class="hero-meta">
+
+        <a href="#editions">
+          LIHAT SEMUA EDISI
+          <span>↓</span>
+        </a>
+
+        <div class="line"></div>
+
+        <span
+          style="
+            color:#66635d;
+            font-size:9px;
+            letter-spacing:2px;
+          "
+        >
+          2026
+        </span>
+
+      </div>
+
+
+      <div class="hero-number">
+        01
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EDITIONS
+========================= -->
+
+<section
+  class="editions"
+  id="editions"
+>
+
+  <div class="container">
+
+
+    <div class="section-head">
+
+      <div class="section-head-left">
+
+        <div class="eyebrow">
+          OUR EDITIONS
+        </div>
+
+        <h2>
+          Pilih Edisi.
+        </h2>
+
+      </div>
+
+
+      <p>
+        Setiap mading punya karakter visual
+        dan cerita yang berbeda. Pilih satu
+        dan masuk ke dunianya.
+      </p>
+
+    </div>
+
+
+    <div class="edition-grid">
+
+
+      <!-- =================
+           EDISI 01
+           AS WHITE AS SNOW
+           HOMEPAGE STYLE
+      ================== -->
+
+      <article class="edition-card primary">
+
+        <a
+          href="mading-edisi-01.html"
+          class="snow"
+        >
+
+          <div class="edition-number">
+            MADING TERBARU · EDISI #01
+          </div>
+
+
+          <h3>
+            As White<br>
+            as Snow.
+          </h3>
+
+
+          <div class="snow-description">
+
+            <div class="kicker">
+              TEMA MINGGU INI
+            </div>
+
+            <p>
+              Edisi pertama D’tik.COM hadir
+              dengan tema salju, dingin,
+              putih, dan ketenangan.
+              Sebuah mading penuh cerita
+              dan kreativitas santri.
+            </p>
+
+
+            <span class="snow-open">
+              BUKA EDISI LENGKAP
+            </span>
+
+          </div>
+
+        </a>
+
+      </article>
+
+
+      <!-- =================
+           EDISI 02 · TIME IS OURS
+      ================== -->
+
+      <article class="edition-card time-primary">
+
+        <a
+          href="mading-edisi-02.html"
+          class="time-edition-content"
+        >
+
+          <div class="time-badge">
+            MADING TERBARU · EDISI #02
+          </div>
+
+
+          <div>
+
+            <div class="time-kicker">
+              TEMA MINGGU INI
+            </div>
+
+
+            <h3>
+              Time is<br>
+              Ours.
+            </h3>
+
+
+            <p>
+              Edisi kedua D’tik.COM hadir dengan tema waktu.
+              Menyelami arti setiap detik, kesempatan, perjalanan,
+              dan cerita yang tercipta di dalamnya melalui berbagai
+              rubrik karya santri.
+            </p>
+
+
+            <span class="open">
+              BUKA EDISI LENGKAP →
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- CLOCK -->
+
+        <div class="time-edition-clock">
+
+          <span class="roman roman-xii">XII</span>
+          <span class="roman roman-i">I</span>
+          <span class="roman roman-ii">II</span>
+          <span class="roman roman-iii">III</span>
+          <span class="roman roman-iv">IV</span>
+          <span class="roman roman-v">V</span>
+          <span class="roman roman-vi">VI</span>
+          <span class="roman roman-vii">VII</span>
+          <span class="roman roman-viii">VIII</span>
+          <span class="roman roman-ix">IX</span>
+          <span class="roman roman-x">X</span>
+          <span class="roman roman-xi">XI</span>
+
+          <span class="tick t1"></span>
+          <span class="tick t2"></span>
+          <span class="tick t3 major"></span>
+          <span class="tick t4"></span>
+          <span class="tick t5"></span>
+          <span class="tick t6 major"></span>
+          <span class="tick t7"></span>
+          <span class="tick t8"></span>
+          <span class="tick t9 major"></span>
+          <span class="tick t10"></span>
+          <span class="tick t11"></span>
+
+          <span class="clock-hand hour"></span>
+          <span class="clock-hand minute"></span>
+          <span class="clock-hand second"></span>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================
+           EDISI 03
+      ================== -->
+
+      <article class="edition-card future">
+
+        <div class="future-top">
+
+          <div class="future-number">
+            EDITION · 03
+          </div>
+
+          <div class="future-status">
+            STAY TUNED
+          </div>
+
+        </div>
+
+
+        <h3>
+          Your<br>
+          Story.
+        </h3>
+
+
+        <div class="future-bottom">
+
+          <p>
+            Satu edisi lagi,
+            satu cerita lagi,
+            satu dunia lagi.
+          </p>
+
+
+          <div class="future-arrow">
+            ✦
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- =================
+         EDITION INDEX
+    ================== -->
+
+    <div class="edition-index">
+
+
+      <div class="index-item">
+
+        <small>
+          01
+        </small>
+
+        <strong>
+          As White as Snow
+        </strong>
+
+      </div>
+
+
+      <div class="index-item">
+
+        <small>
+          02
+        </small>
+
+        <strong>
+          Time is Ours
+        </strong>
+
+      </div>
+
+
+      <div class="index-item">
+
+        <small>
+          03
+        </small>
+
+        <strong>
+          Coming Soon
+        </strong>
+
+      </div>
+
+
+      <div class="index-item">
+
+        <small>
+          ARCHIVE
+        </small>
+
+        <strong>
+          D’tik.COM
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
 </main>
-<footer><div class="container foot"><div>© 2026 <span>D’tik.COM</span></div><div>Time to Act and Create.</div></div></footer>
-<script>document.addEventListener("DOMContentLoaded",function(){const menuToggle=document.getElementById("menuToggle"),navLinks=document.getElementById("navLinks");menuToggle.addEventListener("click",function(){navLinks.classList.toggle("active");menuToggle.textContent=navLinks.classList.contains("active")?"✕":"☰"});navLinks.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){navLinks.classList.remove("active");menuToggle.textContent="☰"})})});</script>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container foot">
+
+    <div>
+
+      © 2026
+
+      <span>
+        D’tik.COM
+      </span>
+
+    </div>
+
+
+    <div>
+      Time to Act and Create.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuToggle.addEventListener(
+      "click",
+      function(){
+
+        navLinks.classList.toggle("active");
+
+
+        if(
+          navLinks.classList.contains("active")
+        ){
+
+          menuToggle.textContent = "✕";
+
+        }else{
+
+          menuToggle.textContent = "☰";
+
+        }
+
+      }
+    );
+
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            navLinks.classList.remove("active");
+
+            menuToggle.textContent = "☰";
+
+          }
+        );
+
+      });
+
+  }
+);
+
+</script>
+
+
 </body>
 </html>
