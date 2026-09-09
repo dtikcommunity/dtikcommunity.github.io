@@ -543,7 +543,6 @@ nav{
 /* TOP RIGHT ISSUE */
 
 .snow::before{
-  content:"LATEST ISSUE";
 
   position:absolute;
 
@@ -1797,6 +1796,187 @@ footer{
     border-bottom:0;
   }
 
+}
+
+
+/* =========================================================
+   FINAL MOBILE FIX
+   CONTENT/HTML TETAP — HANYA POSISI & UKURAN RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px){
+
+  /* EDISI 01 */
+  .edition-card.primary{
+    grid-column:1 / -1 !important;
+    display:block !important;
+    height:460px !important;
+    min-height:460px !important;
+    position:relative !important;
+    overflow:hidden !important;
+  }
+
+  .edition-card.primary .snow{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+  }
+
+  .edition-card.primary .edition-number{
+    left:22px !important;
+    top:22px !important;
+    font-size:9px !important;
+    padding:6px 8px !important;
+  }
+
+  .edition-card.primary .snow::before{
+    right:22px !important;
+    top:28px !important;
+    font-size:70px !important;
+  }
+
+  /* Pisahkan judul dan deskripsi agar tidak bertumpuk */
+  .edition-card.primary .snow h3{
+    left:22px !important;
+    bottom:auto !important;
+    top:245px !important;
+    max-width:260px !important;
+    font-size:43px !important;
+    line-height:.92 !important;
+  }
+
+  .edition-card.primary .snow-description{
+    left:22px !important;
+    right:22px !important;
+    bottom:22px !important;
+    top:auto !important;
+    width:auto !important;
+    max-width:390px !important;
+  }
+
+  .edition-card.primary .snow-description .kicker{
+    font-size:8px !important;
+    margin-bottom:7px !important;
+  }
+
+  .edition-card.primary .snow-description p{
+    max-width:350px !important;
+    font-size:11px !important;
+    line-height:1.45 !important;
+  }
+
+  .edition-card.primary .snow-open{
+    margin-top:10px !important;
+    font-size:9px !important;
+  }
+
+
+  /* EDISI 02 */
+  .time-primary{
+    grid-column:1 / -1 !important;
+    height:440px !important;
+    min-height:440px !important;
+    position:relative !important;
+    overflow:hidden !important;
+  }
+
+  .time-edition-content{
+    position:absolute !important;
+    inset:0 !important;
+    padding:25px !important;
+    z-index:5 !important;
+  }
+
+  .time-edition-content > div:last-child{
+    max-width:205px !important;
+    position:relative !important;
+    z-index:6 !important;
+  }
+
+  .time-edition-content h3{
+    font-size:39px !important;
+    line-height:.95 !important;
+    margin-bottom:11px !important;
+  }
+
+  .time-edition-content p{
+    max-width:205px !important;
+    font-size:11px !important;
+    line-height:1.5 !important;
+  }
+
+  .time-edition-content .open{
+    margin-top:11px !important;
+    font-size:9px !important;
+  }
+
+  .time-edition-clock{
+    width:270px !important;
+    height:270px !important;
+    right:-35px !important;
+    top:92px !important;
+    z-index:1 !important;
+    opacity:.66 !important;
+  }
+}
+
+@media (max-width:450px){
+
+  .edition-card.primary{
+    height:430px !important;
+    min-height:430px !important;
+  }
+
+  .edition-card.primary .snow h3{
+    top:225px !important;
+    font-size:37px !important;
+    max-width:225px !important;
+  }
+
+  .edition-card.primary .snow-description{
+    bottom:18px !important;
+  }
+
+  .edition-card.primary .snow-description p{
+    max-width:245px !important;
+    font-size:10px !important;
+    line-height:1.4 !important;
+  }
+
+  .edition-card.primary .snow-open{
+    margin-top:8px !important;
+    font-size:8px !important;
+  }
+
+  .time-primary{
+    height:425px !important;
+    min-height:425px !important;
+  }
+
+  .time-edition-clock{
+    width:245px !important;
+    height:245px !important;
+    right:-38px !important;
+    top:94px !important;
+  }
+
+  .time-edition-content{
+    padding:22px !important;
+  }
+
+  .time-edition-content > div:last-child{
+    max-width:190px !important;
+  }
+
+  .time-edition-content h3{
+    font-size:35px !important;
+  }
+
+  .time-edition-content p{
+    max-width:185px !important;
+    font-size:10.5px !important;
+  }
 }
 
 </style>
