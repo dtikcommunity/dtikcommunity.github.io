@@ -210,8 +210,6 @@ nav{
   justify-content:center;
 }
 
-
-
 /* =========================
    HERO
 ========================= */
@@ -313,7 +311,6 @@ nav{
   pointer-events:none;
 }
 
-
 /* =========================
    EDITIONS
 ========================= */
@@ -355,17 +352,18 @@ nav{
   line-height:1.8;
 }
 
-
-/* EDITION GRID */
+/* =========================
+   EDITION GRID
+   SATU-SATU / VERTICAL
+========================= */
 
 .edition-grid{
   display:grid;
 
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr;
 
-  gap:18px;
+  gap:28px;
 }
-
 
 /* =========================
    EDITION CARD
@@ -388,26 +386,16 @@ nav{
   border-color:#4a473c;
 }
 
-.edition-card.primary{
-  grid-column:span 2;
-
-  min-height:470px;
-
-  display:grid;
-
-  grid-template-columns:1.1fr .9fr;
-}
-
-
-/* =================================================
+/* =========================
    EDISI 01
-   SAME VISUAL AS HOMEPAGE
    AS WHITE AS SNOW
-================================================= */
+========================= */
 
 .edition-card.primary{
-  grid-column:span 2;
 
+  grid-column:1 / -1;
+
+  width:100%;
   height:500px;
 
   position:relative;
@@ -450,7 +438,6 @@ nav{
     0 30px 90px rgba(40,120,200,.22);
 }
 
-
 /* BIG SNOWFLAKE */
 
 .edition-card.primary::before{
@@ -476,7 +463,6 @@ nav{
   z-index:1;
 }
 
-
 /* SNOW SYMBOLS */
 
 .edition-card.primary::after{
@@ -498,7 +484,6 @@ nav{
   z-index:1;
 }
 
-
 /* CLICKABLE COVER */
 
 .snow{
@@ -513,7 +498,6 @@ nav{
 
   color:var(--snow-text);
 }
-
 
 /* EDITION LABEL */
 
@@ -539,27 +523,6 @@ nav{
   font-weight:700;
 }
 
-
-/* TOP RIGHT ISSUE */
-
-.snow::before{
-
-  position:absolute;
-
-  right:38px;
-  top:42px;
-
-  color:var(--blue);
-
-  font-size:9px;
-  font-weight:700;
-
-  letter-spacing:2px;
-
-  z-index:5;
-}
-
-
 /* TITLE */
 
 .snow h3{
@@ -583,8 +546,7 @@ nav{
   letter-spacing:-2px;
 }
 
-
-/* DESCRIPTION AREA */
+/* DESCRIPTION */
 
 .snow-description{
   position:absolute;
@@ -647,14 +609,16 @@ nav{
   transform:translateX(5px);
 }
 
-
 /* =========================
-   EDISI 02 · TIME IS OURS
-   SAME VISUAL AS HOMEPAGE
+   EDISI 02
+   TIME IS OURS
 ========================= */
 
 .time-primary{
-  grid-column:span 2;
+
+  grid-column:1 / -1;
+
+  width:100%;
   height:500px;
 
   position:relative;
@@ -664,11 +628,25 @@ nav{
   border-radius:16px;
 
   background:
-    radial-gradient(circle at 78% 48%, rgba(215,170,60,.10), transparent 34%),
-    radial-gradient(circle at 15% 12%, rgba(255,255,255,.95), transparent 30%),
-    linear-gradient(145deg,#ffffff 0%,#fbfaf5 58%,#f3eedf 100%);
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(215,170,60,.10),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 15% 12%,
+      rgba(255,255,255,.95),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfaf5 58%,
+      #f3eedf 100%
+    );
 
-  box-shadow:0 25px 80px rgba(23,23,20,.10);
+  box-shadow:
+    0 25px 80px rgba(23,23,20,.10);
 
   transition:.35s ease;
 }
@@ -678,12 +656,12 @@ nav{
   border-color:#b99a42;
 }
 
-
 /* =========================
-   HOMEPAGE-STYLE CLOCK
+   CLOCK
 ========================= */
 
 .time-edition-clock{
+
   position:absolute;
 
   right:48px;
@@ -711,11 +689,10 @@ nav{
 
   z-index:1;
   pointer-events:none;
-
-  animation:none;
 }
 
 .time-edition-clock::before{
+
   content:"";
 
   position:absolute;
@@ -726,9 +703,11 @@ nav{
 }
 
 .time-edition-clock::after{
+
   content:"";
 
   position:absolute;
+
   left:50%;
   top:50%;
 
@@ -749,12 +728,10 @@ nav{
   z-index:4;
 }
 
-
-/* =========================
-   ROMAN NUMERALS
-========================= */
+/* ROMAN NUMERALS */
 
 .time-edition-clock .roman{
+
   position:absolute;
 
   left:50%;
@@ -767,8 +744,6 @@ nav{
   font:
     700 15px/1
     "Playfair Display",serif;
-
-  letter-spacing:0;
 }
 
 .time-edition-clock .roman-xii{
@@ -843,12 +818,10 @@ nav{
     translate(-78px,-136px);
 }
 
-
-/* =========================
-   CLOCK TICKS
-========================= */
+/* CLOCK TICKS */
 
 .time-edition-clock .tick{
+
   position:absolute;
 
   left:50%;
@@ -907,18 +880,17 @@ nav{
 }
 
 .time-edition-clock .tick.major{
+
   width:3px;
   height:17px;
 
   background:#1d1d1a;
 }
 
-
-/* =========================
-   CLOCK HANDS
-========================= */
+/* CLOCK HANDS */
 
 .time-edition-clock .clock-hand{
+
   position:absolute;
 
   left:50%;
@@ -932,6 +904,7 @@ nav{
 }
 
 .time-edition-clock .clock-hand.hour{
+
   width:92px;
   height:5px;
 
@@ -946,6 +919,7 @@ nav{
 }
 
 .time-edition-clock .clock-hand.minute{
+
   width:125px;
   height:3px;
 
@@ -960,6 +934,7 @@ nav{
 }
 
 .time-edition-clock .clock-hand.second{
+
   position:absolute;
 
   left:50%;
@@ -982,26 +957,44 @@ nav{
 }
 
 @keyframes editionClockHour{
-  from{transform:rotate(310deg);}
-  to{transform:rotate(670deg);}
+
+  from{
+    transform:rotate(310deg);
+  }
+
+  to{
+    transform:rotate(670deg);
+  }
 }
 
 @keyframes editionClockMinute{
-  from{transform:rotate(45deg);}
-  to{transform:rotate(405deg);}
+
+  from{
+    transform:rotate(45deg);
+  }
+
+  to{
+    transform:rotate(405deg);
+  }
 }
 
 @keyframes editionClockSecond{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
 }
 
-
 /* =========================
-   HOMEPAGE-STYLE CONTENT
+   EDISI 02 CONTENT
 ========================= */
 
 .time-edition-content{
+
   position:absolute;
 
   inset:0;
@@ -1016,6 +1009,7 @@ nav{
 }
 
 .time-edition-content .time-badge{
+
   align-self:flex-start;
 
   border:1px solid #d7aa3c;
@@ -1034,6 +1028,7 @@ nav{
 }
 
 .time-edition-content .time-kicker{
+
   color:#9b7620;
 
   font-size:10px;
@@ -1043,6 +1038,7 @@ nav{
 }
 
 .time-edition-content h3{
+
   margin:0 0 14px;
 
   max-width:440px;
@@ -1055,6 +1051,7 @@ nav{
 }
 
 .time-edition-content p{
+
   max-width:440px;
 
   color:#55534d;
@@ -1065,6 +1062,7 @@ nav{
 }
 
 .time-edition-content .open{
+
   display:inline-block;
 
   width:max-content;
@@ -1080,307 +1078,14 @@ nav{
   letter-spacing:1px;
 }
 
-
-/* =========================
-   MOBILE · SAME AS HOMEPAGE
-========================= */
-
-@media(max-width:1000px){
-
-  .time-primary{
-    height:460px;
-  }
-
-  .time-edition-clock{
-    width:330px;
-    height:330px;
-
-    right:25px;
-    top:48px;
-  }
-
-  .time-edition-clock .roman{
-    font-size:13px;
-  }
-
-  .time-edition-clock .roman-xii{
-    transform:translate(-50%,-50%) translateY(-140px);
-  }
-
-  .time-edition-clock .roman-i{
-    transform:translate(-50%,-50%) translate(70px,-121px);
-  }
-
-  .time-edition-clock .roman-ii{
-    transform:translate(-50%,-50%) translate(121px,-70px);
-  }
-
-  .time-edition-clock .roman-iii{
-    transform:translate(-50%,-50%) translateX(140px);
-  }
-
-  .time-edition-clock .roman-iv{
-    transform:translate(-50%,-50%) translate(121px,70px);
-  }
-
-  .time-edition-clock .roman-v{
-    transform:translate(-50%,-50%) translate(70px,121px);
-  }
-
-  .time-edition-clock .roman-vi{
-    transform:translate(-50%,-50%) translateY(140px);
-  }
-
-  .time-edition-clock .roman-vii{
-    transform:translate(-50%,-50%) translate(-70px,121px);
-  }
-
-  .time-edition-clock .roman-viii{
-    transform:translate(-50%,-50%) translate(-121px,70px);
-  }
-
-  .time-edition-clock .roman-ix{
-    transform:translate(-50%,-50%) translateX(-140px);
-  }
-
-  .time-edition-clock .roman-x{
-    transform:translate(-50%,-50%) translate(-121px,-70px);
-  }
-
-  .time-edition-clock .roman-xi{
-    transform:translate(-50%,-50%) translate(-70px,-121px);
-  }
-
-  .time-edition-clock .tick{
-    transform-origin:50% 143px;
-  }
-
-  .time-edition-clock .clock-hand.hour{
-    width:82px;
-  }
-
-  .time-edition-clock .clock-hand.minute{
-    width:110px;
-  }
-
-  .time-edition-clock .clock-hand.second{
-    width:120px;
-  }
-}
-
-@media(max-width:700px){
-
-  .time-primary{
-    height:440px;
-    border-radius:14px;
-  }
-
-  .time-edition-content{
-    padding:25px;
-  }
-
-  .time-edition-clock{
-    width:285px;
-    height:285px;
-
-    right:-18px;
-    top:82px;
-  }
-
-  .time-edition-clock .roman{
-    font-size:11px;
-  }
-
-  .time-edition-clock .roman-xii{
-    transform:translate(-50%,-50%) translateY(-120px);
-  }
-
-  .time-edition-clock .roman-i{
-    transform:translate(-50%,-50%) translate(60px,-104px);
-  }
-
-  .time-edition-clock .roman-ii{
-    transform:translate(-50%,-50%) translate(104px,-60px);
-  }
-
-  .time-edition-clock .roman-iii{
-    transform:translate(-50%,-50%) translateX(120px);
-  }
-
-  .time-edition-clock .roman-iv{
-    transform:translate(-50%,-50%) translate(104px,60px);
-  }
-
-  .time-edition-clock .roman-v{
-    transform:translate(-50%,-50%) translate(60px,104px);
-  }
-
-  .time-edition-clock .roman-vi{
-    transform:translate(-50%,-50%) translateY(120px);
-  }
-
-  .time-edition-clock .roman-vii{
-    transform:translate(-50%,-50%) translate(-60px,104px);
-  }
-
-  .time-edition-clock .roman-viii{
-    transform:translate(-50%,-50%) translate(-104px,60px);
-  }
-
-  .time-edition-clock .roman-ix{
-    transform:translate(-50%,-50%) translateX(-120px);
-  }
-
-  .time-edition-clock .roman-x{
-    transform:translate(-50%,-50%) translate(-104px,-60px);
-  }
-
-  .time-edition-clock .roman-xi{
-    transform:translate(-50%,-50%) translate(-60px,-104px);
-  }
-
-  .time-edition-clock .tick{
-    height:9px;
-    transform-origin:50% 120px;
-  }
-
-  .time-edition-clock .tick.major{
-    height:13px;
-  }
-
-  .time-edition-clock .clock-hand.hour{
-    width:70px;
-    height:4px;
-  }
-
-  .time-edition-clock .clock-hand.minute{
-    width:92px;
-    height:2px;
-  }
-
-  .time-edition-clock .clock-hand.second{
-    width:100px;
-  }
-
-  .time-edition-content .time-badge{
-    font-size:8px;
-    padding:6px 8px;
-    letter-spacing:1.5px;
-  }
-
-  .time-edition-content .time-kicker{
-    font-size:9px;
-    letter-spacing:3px;
-  }
-
-  .time-edition-content h3{
-    font-size:39px;
-    max-width:320px;
-  }
-
-  .time-edition-content p{
-    font-size:12.5px;
-    line-height:1.65;
-    max-width:330px;
-  }
-
-  .time-edition-content .open{
-    font-size:10px;
-  }
-}
-
-@media(max-width:450px){
-
-  .time-primary{
-    height:430px;
-  }
-
-  .time-edition-clock{
-    width:260px;
-    height:260px;
-
-    right:-22px;
-    top:78px;
-  }
-
-  .time-edition-clock .roman-xii{
-    transform:translate(-50%,-50%) translateY(-110px);
-  }
-
-  .time-edition-clock .roman-i{
-    transform:translate(-50%,-50%) translate(55px,-95px);
-  }
-
-  .time-edition-clock .roman-ii{
-    transform:translate(-50%,-50%) translate(95px,-55px);
-  }
-
-  .time-edition-clock .roman-iii{
-    transform:translate(-50%,-50%) translateX(110px);
-  }
-
-  .time-edition-clock .roman-iv{
-    transform:translate(-50%,-50%) translate(95px,55px);
-  }
-
-  .time-edition-clock .roman-v{
-    transform:translate(-50%,-50%) translate(55px,95px);
-  }
-
-  .time-edition-clock .roman-vi{
-    transform:translate(-50%,-50%) translateY(110px);
-  }
-
-  .time-edition-clock .roman-vii{
-    transform:translate(-50%,-50%) translate(-55px,95px);
-  }
-
-  .time-edition-clock .roman-viii{
-    transform:translate(-50%,-50%) translate(-95px,55px);
-  }
-
-  .time-edition-clock .roman-ix{
-    transform:translate(-50%,-50%) translateX(-110px);
-  }
-
-  .time-edition-clock .roman-x{
-    transform:translate(-50%,-50%) translate(-95px,-55px);
-  }
-
-  .time-edition-clock .roman-xi{
-    transform:translate(-50%,-50%) translate(-55px,-95px);
-  }
-
-  .time-edition-clock .tick{
-    transform-origin:50% 110px;
-  }
-
-  .time-edition-clock .clock-hand.hour{
-    width:62px;
-  }
-
-  .time-edition-clock .clock-hand.minute{
-    width:80px;
-  }
-
-  .time-edition-clock .clock-hand.second{
-    width:88px;
-  }
-
-  .time-edition-content h3{
-    font-size:36px;
-  }
-
-  .time-edition-content p{
-    font-size:12px;
-  }
-}
-
 /* =========================
    EDISI 03
 ========================= */
 
 .edition-card.future{
+
+  grid-column:1 / -1;
+
   min-height:320px;
 
   padding:30px;
@@ -1399,6 +1104,7 @@ nav{
 }
 
 .future-top{
+
   display:flex;
 
   justify-content:space-between;
@@ -1407,6 +1113,7 @@ nav{
 }
 
 .future-number{
+
   color:#555149;
 
   font:
@@ -1417,6 +1124,7 @@ nav{
 }
 
 .future-status{
+
   color:#5f5b53;
 
   font-size:8px;
@@ -1425,6 +1133,7 @@ nav{
 }
 
 .future h3{
+
   margin-top:auto;
 
   color:#ded9cb;
@@ -1435,6 +1144,7 @@ nav{
 }
 
 .future-bottom{
+
   display:flex;
 
   justify-content:space-between;
@@ -1447,6 +1157,7 @@ nav{
 }
 
 .future-bottom p{
+
   max-width:330px;
 
   color:#77736a;
@@ -1457,6 +1168,7 @@ nav{
 }
 
 .future-arrow{
+
   width:42px;
   height:42px;
 
@@ -1472,14 +1184,12 @@ nav{
   font-size:17px;
 }
 
-
-
-
 /* =========================
    INDEX
 ========================= */
 
 .edition-index{
+
   margin-top:65px;
 
   padding-top:25px;
@@ -1492,6 +1202,7 @@ nav{
 }
 
 .index-item{
+
   padding:15px 20px;
 
   border-right:1px solid var(--line);
@@ -1506,6 +1217,7 @@ nav{
 }
 
 .index-item small{
+
   color:#66635c;
 
   font-size:8px;
@@ -1513,6 +1225,7 @@ nav{
 }
 
 .index-item strong{
+
   display:block;
 
   margin-top:7px;
@@ -1524,12 +1237,12 @@ nav{
   color:#d3cec2;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
 
 footer{
+
   border-top:1px solid var(--line);
 
   padding:35px 0;
@@ -1540,6 +1253,7 @@ footer{
 }
 
 .foot{
+
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -1549,6 +1263,117 @@ footer{
   color:var(--gold);
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+  .time-primary{
+    height:460px;
+  }
+
+  .time-edition-clock{
+
+    width:330px;
+    height:330px;
+
+    right:25px;
+    top:48px;
+  }
+
+  .time-edition-clock .roman{
+    font-size:13px;
+  }
+
+  .time-edition-clock .roman-xii{
+    transform:
+      translate(-50%,-50%)
+      translateY(-140px);
+  }
+
+  .time-edition-clock .roman-i{
+    transform:
+      translate(-50%,-50%)
+      translate(70px,-121px);
+  }
+
+  .time-edition-clock .roman-ii{
+    transform:
+      translate(-50%,-50%)
+      translate(121px,-70px);
+  }
+
+  .time-edition-clock .roman-iii{
+    transform:
+      translate(-50%,-50%)
+      translateX(140px);
+  }
+
+  .time-edition-clock .roman-iv{
+    transform:
+      translate(-50%,-50%)
+      translate(121px,70px);
+  }
+
+  .time-edition-clock .roman-v{
+    transform:
+      translate(-50%,-50%)
+      translate(70px,121px);
+  }
+
+  .time-edition-clock .roman-vi{
+    transform:
+      translate(-50%,-50%)
+      translateY(140px);
+  }
+
+  .time-edition-clock .roman-vii{
+    transform:
+      translate(-50%,-50%)
+      translate(-70px,121px);
+  }
+
+  .time-edition-clock .roman-viii{
+    transform:
+      translate(-50%,-50%)
+      translate(-121px,70px);
+  }
+
+  .time-edition-clock .roman-ix{
+    transform:
+      translate(-50%,-50%)
+      translateX(-140px);
+  }
+
+  .time-edition-clock .roman-x{
+    transform:
+      translate(-50%,-50%)
+      translate(-121px,-70px);
+  }
+
+  .time-edition-clock .roman-xi{
+    transform:
+      translate(-50%,-50%)
+      translate(-70px,-121px);
+  }
+
+  .time-edition-clock .tick{
+    transform-origin:50% 143px;
+  }
+
+  .time-edition-clock .clock-hand.hour{
+    width:82px;
+  }
+
+  .time-edition-clock .clock-hand.minute{
+    width:110px;
+  }
+
+  .time-edition-clock .clock-hand.second{
+    width:120px;
+  }
+}
 
 /* =========================
    MOBILE
@@ -1589,6 +1414,7 @@ footer{
   }
 
   .links{
+
     display:none;
 
     position:absolute;
@@ -1617,6 +1443,7 @@ footer{
   }
 
   .links a{
+
     padding:15px 5px;
 
     border-bottom:1px solid var(--line);
@@ -1626,7 +1453,6 @@ footer{
     border-bottom:0;
   }
 
-
   /* HERO */
 
   .hero{
@@ -1634,6 +1460,7 @@ footer{
   }
 
   .hero-inner{
+
     min-height:auto;
 
     grid-template-columns:1fr;
@@ -1645,7 +1472,9 @@ footer{
   }
 
   .hero h1{
+
     font-size:68px;
+
     letter-spacing:-3px;
   }
 
@@ -1654,337 +1483,2032 @@ footer{
   }
 
   .hero-number{
+
     font-size:190px;
+
     bottom:-25px;
   }
 
-
-  /* FEATURED */
-
-  .featured-card{
-    height:430px;
-  }
-
-  .snowflake{
-    right:25px;
-    top:35px;
-    font-size:75px;
-  }
-
-
-  /* EDITIONS */
-
-  .editions{
-    padding:75px 0 85px;
-  }
+  /* SECTION */
 
   .section-head{
-    display:block;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
   }
 
-  .section-head p{
-    margin-top:17px;
-  }
-
-  .edition-grid{
-    grid-template-columns:1fr;
-  }
+  /* EDISI 01 */
 
   .edition-card.primary{
-    grid-column:auto;
 
-    grid-template-columns:1fr;
+    grid-column:1 / -1 !important;
 
-    min-height:auto;
+    width:100% !important;
+
+    display:block !important;
+
+    height:460px !important;
+
+    min-height:460px !important;
+
+    position:relative !important;
+
+    overflow:hidden !important;
   }
 
-  .edition-cover.snow{
-    min-height:360px;
+  .edition-card.primary .snow{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    width:100% !important;
+
+    height:100% !important;
   }
 
-  .edition-info{
-    padding:28px;
+  .edition-card.primary .edition-number{
+
+    left:22px !important;
+    top:22px !important;
+
+    font-size:9px !important;
+
+    padding:6px 8px !important;
   }
 
-  .edition-info h4{
-    font-size:29px;
+  .edition-card.primary .snow h3{
+
+    left:22px !important;
+
+    bottom:auto !important;
+
+    top:245px !important;
+
+    max-width:260px !important;
+
+    font-size:43px !important;
+
+    line-height:.92 !important;
   }
+
+  .edition-card.primary .snow-description{
+
+    left:22px !important;
+    right:22px !important;
+
+    bottom:22px !important;
+
+    top:auto !important;
+
+    width:auto !important;
+
+    max-width:390px !important;
+  }
+
+  .edition-card.primary .snow-description .kicker{
+
+    font-size:8px !important;
+
+    margin-bottom:7px !important;
+  }
+
+  .edition-card.primary .snow-description p{
+
+    max-width:350px !important;
+
+    font-size:11px !important;
+
+    line-height:1.45 !important;
+  }
+
+  .edition-card.primary .snow-open{
+
+    margin-top:10px !important;
+
+    font-size:9px !important;
+  }
+
+  /* EDISI 02 */
+
+  .time-primary{
+
+    grid-column:1 / -1 !important;
+
+    width:100% !important;
+
+    height:440px !important;
+
+    min-height:440px !important;
+
+    position:relative !important;
+
+    overflow:hidden !important;
+  }
+
+  .time-edition-content{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    padding:25px !important;
+
+    z-index:5 !important;
+  }
+
+  .time-edition-content > div:last-child{
+
+    max-width:205px !important;
+
+    position:relative !important;
+
+    z-index:6 !important;
+  }
+
+  .time-edition-content h3{
+
+    font-size:39px !important;
+
+    line-height:.95 !important;
+
+    margin-bottom:11px !important;
+  }
+
+  .time-edition-content p{
+
+    max-width:205px !important;
+
+    font-size:11px !important;
+
+    line-height:1.5 !important;
+  }
+
+  .time-edition-content .open{
+
+    margin-top:11px !important;
+
+    font-size:9px !important;
+  }
+
+  .time-edition-clock{
+
+    width:270px !important;
+    height:270px !important;
+
+    right:-35px !important;
+    top:92px !important;
+
+    z-index:1 !important;
+
+    opacity:.66 !important;
+  }
+
+  /* EDISI 03 */
 
   .edition-card.future{
-    min-height:280px;
+
+    grid-column:1 / -1 !important;
   }
 
-  .edition-index{
-    grid-template-columns:1fr 1fr;
+  /* INDEX */
 
-    row-gap:20px;
+  .edition-index{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .index-item{
+
+    border-bottom:1px solid var(--line);
   }
 
   .index-item:nth-child(2){
     border-right:0;
   }
 
-  .index-item:nth-child(3){
-    padding-left:0;
-  }
-
+  .index-item:nth-child(3),
   .index-item:nth-child(4){
-    border-right:0;
+    border-bottom:0;
   }
-
-  .foot{
-    flex-direction:column;
-    align-items:flex-start;
-
-    gap:12px;
-  }
-
 }
 
+/* =========================
+   MOBILE SMALL
+========================= */
 
 @media(max-width:450px){
 
-  .hero-inner{
-    padding-top:60px;
-  }
-
-  .hero h1{
-    font-size:58px;
-  }
-
-  .featured-card{
-    height:390px;
-  }
-
-  .issue-num{
-    font-size:55px;
-  }
-
-  .featured-bottom h2{
-    font-size:38px;
-  }
-
-  .featured-bottom p{
-    font-size:11px;
-  }
-
-  .snowflake{
-    right:15px;
-    top:25px;
-    font-size:65px;
-  }
-
-  .edition-cover.snow{
-    min-height:320px;
-  }
-
-  .edition-cover h3{
-    font-size:44px;
-  }
-
-  .edition-index{
-    grid-template-columns:1fr;
-  }
-
-  .index-item{
-    border-right:0;
-    border-bottom:1px solid var(--line);
-    padding:14px 0;
-  }
-
-  .index-item:last-child{
-    border-bottom:0;
-  }
-
-}
-
-
-/* =========================================================
-   FINAL MOBILE FIX
-   CONTENT/HTML TETAP — HANYA POSISI & UKURAN RESPONSIVE
-========================================================= */
-
-@media (max-width: 850px){
-
-  /* EDISI 01 */
   .edition-card.primary{
-    grid-column:1 / -1 !important;
-    display:block !important;
-    height:460px !important;
-    min-height:460px !important;
-    position:relative !important;
-    overflow:hidden !important;
-  }
 
-  .edition-card.primary .snow{
-    position:absolute !important;
-    inset:0 !important;
-    width:100% !important;
-    height:100% !important;
-  }
-
-  .edition-card.primary .edition-number{
-    left:22px !important;
-    top:22px !important;
-    font-size:9px !important;
-    padding:6px 8px !important;
-  }
-
-  .edition-card.primary .snow::before{
-    right:22px !important;
-    top:28px !important;
-    font-size:70px !important;
-  }
-
-  /* Pisahkan judul dan deskripsi agar tidak bertumpuk */
-  .edition-card.primary .snow h3{
-    left:22px !important;
-    bottom:auto !important;
-    top:245px !important;
-    max-width:260px !important;
-    font-size:43px !important;
-    line-height:.92 !important;
-  }
-
-  .edition-card.primary .snow-description{
-    left:22px !important;
-    right:22px !important;
-    bottom:22px !important;
-    top:auto !important;
-    width:auto !important;
-    max-width:390px !important;
-  }
-
-  .edition-card.primary .snow-description .kicker{
-    font-size:8px !important;
-    margin-bottom:7px !important;
-  }
-
-  .edition-card.primary .snow-description p{
-    max-width:350px !important;
-    font-size:11px !important;
-    line-height:1.45 !important;
-  }
-
-  .edition-card.primary .snow-open{
-    margin-top:10px !important;
-    font-size:9px !important;
-  }
-
-
-  /* EDISI 02 */
-  .time-primary{
-    grid-column:1 / -1 !important;
-    height:440px !important;
-    min-height:440px !important;
-    position:relative !important;
-    overflow:hidden !important;
-  }
-
-  .time-edition-content{
-    position:absolute !important;
-    inset:0 !important;
-    padding:25px !important;
-    z-index:5 !important;
-  }
-
-  .time-edition-content > div:last-child{
-    max-width:205px !important;
-    position:relative !important;
-    z-index:6 !important;
-  }
-
-  .time-edition-content h3{
-    font-size:39px !important;
-    line-height:.95 !important;
-    margin-bottom:11px !important;
-  }
-
-  .time-edition-content p{
-    max-width:205px !important;
-    font-size:11px !important;
-    line-height:1.5 !important;
-  }
-
-  .time-edition-content .open{
-    margin-top:11px !important;
-    font-size:9px !important;
-  }
-
-  .time-edition-clock{
-    width:270px !important;
-    height:270px !important;
-    right:-35px !important;
-    top:92px !important;
-    z-index:1 !important;
-    opacity:.66 !important;
-  }
-}
-
-@media (max-width:450px){
-
-  .edition-card.primary{
     height:430px !important;
+
     min-height:430px !important;
   }
 
   .edition-card.primary .snow h3{
+
     top:225px !important;
+
     font-size:37px !important;
+
     max-width:225px !important;
   }
 
   .edition-card.primary .snow-description{
+
     bottom:18px !important;
   }
 
   .edition-card.primary .snow-description p{
+
     max-width:245px !important;
+
     font-size:10px !important;
+
     line-height:1.4 !important;
   }
 
   .edition-card.primary .snow-open{
+
     margin-top:8px !important;
+
     font-size:8px !important;
   }
 
   .time-primary{
+
     height:425px !important;
+
     min-height:425px !important;
   }
 
   .time-edition-clock{
+
     width:245px !important;
     height:245px !important;
+
     right:-38px !important;
     top:94px !important;
   }
 
   .time-edition-content{
+
     padding:22px !important;
   }
 
   .time-edition-content > div:last-child{
+
     max-width:190px !important;
   }
 
   .time-edition-content h3{
+
     font-size:35px !important;
   }
 
   .time-edition-content p{
+
     max-width:185px !important;
+
     font-size:10.5px !important;
   }
+
+  .edition-card.future{
+
+    min-height:280px;
+  }
+
+  .edition-index{
+
+    grid-template-columns:1fr;
+  }
+
+  .index-item,
+  .index-item:nth-child(2),
+  .index-item:nth-child(3){
+
+    border-right:0;
+
+    border-bottom:1px solid var(--line);
+
+    padding-left:0;
+  }
+
+  .index-item:last-child{
+    border-bottom:0;
+  }
+}
+/* =========================================
+   EDISI 03 — LOVE YOU
+========================================= */
+
+.visual-card.edisi-03{
+  position:relative;
+  min-height:520px;
+  overflow:hidden;
+  border-radius:16px;
+
+  border:1px solid #dfcfa9;
+
+  background:
+    radial-gradient(
+      circle at 62% 45%,
+      rgba(255,221,233,.42),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdfb 0%,
+      #fffaf8 55%,
+      #faf5e9 100%
+    );
+
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.18);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
+
+/* hover kartu */
+
+.visual-card.edisi-03:hover{
+  transform:translateY(-5px);
+  border-color:#e4a9bb;
+
+  box-shadow:
+    0 25px 65px rgba(0,0,0,.25);
+}
+
+
+/* =========================================
+   BACKGROUND LOTUS
+========================================= */
+
+.edisi-03 .lotus-visual{
+  position:absolute;
+
+  width:470px;
+  height:470px;
+
+  right:5%;
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  z-index:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  animation:
+    lotusFloat03 6s ease-in-out infinite;
+}
+
+
+/* cahaya belakang lotus */
+
+.edisi-03 .lotus-glow{
+  position:absolute;
+
+  width:390px;
+  height:390px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,220,232,.52) 48%,
+      rgba(244,187,207,.16) 68%,
+      transparent 74%
+    );
+
+  filter:blur(5px);
+
+  animation:
+    lotusGlow03 5s ease-in-out infinite;
+}
+
+
+/* lingkaran dekorasi */
+
+.edisi-03 .lotus-ring{
+  position:absolute;
+
+  width:360px;
+  height:360px;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(218,143,168,.16);
+
+  box-shadow:
+    0 0 0 12px rgba(218,143,168,.025),
+    0 0 0 25px rgba(218,143,168,.018);
+
+  animation:
+    ring03 7s ease-in-out infinite;
+}
+
+
+/* gambar lotus asli */
+
+.edisi-03 .lotus-visual img{
+  position:relative;
+
+  z-index:3;
+
+  width:390px;
+  height:390px;
+
+  object-fit:contain;
+
+  display:block;
+
+  filter:
+    drop-shadow(
+      0 15px 25px
+      rgba(194,117,145,.12)
+    );
+
+  animation:
+    lotusImage03 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.edisi-03 .visual-content{
+  position:relative;
+
+  z-index:10;
+
+  width:100%;
+  min-height:520px;
+
+  padding:
+    30px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,251,.99) 0%,
+      rgba(255,253,251,.97) 30%,
+      rgba(255,253,251,.82) 43%,
+      rgba(255,253,251,.25) 64%,
+      transparent 82%
+    );
+}
+
+
+/* meta */
+
+.edisi-03 .visual-meta{
+  margin-bottom:12px;
+}
+
+.edisi-03 .visual-meta span:first-child{
+  color:#e58eaa;
+}
+
+
+/* judul */
+
+.edisi-03 .visual-content h3{
+  margin-bottom:13px;
+
+  color:#171315;
+
+  font:
+    700 clamp(42px,5vw,58px)/.92
+    "Playfair Display",
+    serif;
+
+  letter-spacing:-1.5px;
+}
+
+
+/* deskripsi */
+
+.edisi-03 .visual-content p{
+  max-width:520px;
+
+  color:#6c6266;
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+
+/* tombol */
+
+.edisi-03 .visual-content .btn{
+  width:max-content;
+
+  margin-top:18px;
+
+  padding:
+    0;
+
+  background:transparent;
+
+  color:#e58eaa;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:.3px;
+}
+
+.edisi-03 .visual-content .btn:hover{
+  background:transparent;
+
+  color:#d67494;
+
+  transform:none;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes lotusFloat03{
+
+  0%,100%{
+    transform:
+      translateY(-50%);
+  }
+
+  50%{
+    transform:
+      translateY(calc(-50% - 7px));
+  }
+
+}
+
+
+@keyframes lotusImage03{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.025);
+  }
+
+}
+
+
+@keyframes lotusGlow03{
+
+  0%,100%{
+    opacity:.65;
+    transform:scale(.96);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.04);
+  }
+
+}
+
+
+@keyframes ring03{
+
+  0%,100%{
+    transform:scale(1);
+    opacity:.65;
+  }
+
+  50%{
+    transform:scale(1.035);
+    opacity:1;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px){
+
+  .visual-card.edisi-03{
+    min-height:480px;
+  }
+
+  .edisi-03 .visual-content{
+    min-height:480px;
+
+    padding:24px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(255,253,251,.99) 0%,
+        rgba(255,253,251,.96) 40%,
+        rgba(255,253,251,.68) 65%,
+        rgba(255,253,251,.1) 85%,
+        transparent 100%
+      );
+  }
+
+  .edisi-03 .lotus-visual{
+    width:330px;
+    height:330px;
+
+    right:-15px;
+    top:32%;
+  }
+
+  .edisi-03 .lotus-visual img{
+    width:280px;
+    height:280px;
+  }
+
+  .edisi-03 .lotus-glow{
+    width:290px;
+    height:290px;
+  }
+
+  .edisi-03 .lotus-ring{
+    width:270px;
+    height:270px;
+  }
+
+  .edisi-03 .visual-content h3{
+    font-size:43px;
+  }
+
+}
+/* =========================================
+   EDISI 03 — LOVE YOU / LOTUS
+========================================= */
+
+.lotus-primary {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 500px;
+  min-height: 500px;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid #e4b2c2;
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 75% 48%,
+      rgba(255, 211, 225, .45),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 18% 15%,
+      rgba(255, 255, 255, .95),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdfc 0%,
+      #fff8fa 52%,
+      #f9eaf0 100%
+    );
+
+  box-shadow:
+    0 25px 70px rgba(194, 117, 145, .12);
+
+  transition: .35s ease;
+}
+
+.lotus-primary:hover {
+  transform: translateY(-6px);
+  border-color: #d98faa;
+
+  box-shadow:
+    0 30px 80px rgba(194, 117, 145, .20);
+}
+
+
+/* =========================================
+   LINK
+========================================= */
+
+.lotus-edition {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  color: #171315;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.lotus-badge {
+  position: absolute;
+
+  left: 38px;
+  top: 38px;
+
+  z-index: 10;
+
+  padding: 7px 10px;
+
+  border: 1px solid #e58eaa;
+
+  background: rgba(255,255,255,.72);
+
+  color: #e58eaa;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   LOTUS VISUAL
+========================================= */
+
+.lotus-background {
+  position: absolute;
+
+  right: 3%;
+  top: 50%;
+
+  width: 470px;
+  height: 470px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  animation: lotusFloat03 6s ease-in-out infinite;
+}
+
+
+/* cahaya belakang */
+
+.lotus-glow {
+  position: absolute;
+
+  width: 410px;
+  height: 410px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,218,231,.65) 42%,
+      rgba(242,174,199,.20) 68%,
+      transparent 76%
+    );
+
+  filter: blur(5px);
+
+  animation: lotusGlow03 5s ease-in-out infinite;
+}
+
+
+/* lingkaran dekorasi */
+
+.lotus-ring {
+  position: absolute;
+
+  width: 365px;
+  height: 365px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(218,143,168,.16);
+
+  box-shadow:
+    0 0 0 12px rgba(218,143,168,.025),
+    0 0 0 25px rgba(218,143,168,.018);
+
+  animation: lotusRing03 7s ease-in-out infinite;
+}
+
+
+/* gambar lotus */
+
+.lotus-background img {
+  position: relative;
+
+  z-index: 3;
+
+  width: 390px;
+  height: 390px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 18px 25px
+      rgba(194,117,145,.15)
+    );
+
+  animation: lotusImage03 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.lotus-content {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 38px;
+
+  z-index: 8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,253,252,.99) 0%,
+      rgba(255,253,252,.97) 28%,
+      rgba(255,253,252,.82) 45%,
+      rgba(255,253,252,.25) 64%,
+      transparent 82%
+    );
+}
+
+
+/* =========================================
+   KICKER
+========================================= */
+
+.lotus-kicker {
+  margin-bottom: 8px;
+
+  color: #e58eaa;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.lotus-content h3 {
+  margin: 0 0 14px;
+
+  color: #171315;
+
+  font:
+    700 clamp(48px, 5vw, 65px) / .92
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.lotus-content p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #6c6266;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.lotus-open {
+  margin-top: 17px;
+
+  color: #e58eaa;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+  transition: .2s ease;
+}
+
+.lotus-open:hover {
+  color: #d67494;
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes lotusFloat03 {
+
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 8px));
+  }
+
+}
+
+
+@keyframes lotusImage03 {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+
+}
+
+
+@keyframes lotusGlow03 {
+
+  0%, 100% {
+    opacity: .65;
+    transform: scale(.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+}
+
+
+@keyframes lotusRing03 {
+
+  0%, 100% {
+    opacity: .55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px) {
+
+  .lotus-primary {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .lotus-badge {
+    left: 22px;
+    top: 22px;
+
+    font-size: 9px;
+  }
+
+  .lotus-background {
+    width: 330px;
+    height: 330px;
+
+    right: -20px;
+    top: 30%;
+  }
+
+  .lotus-background img {
+    width: 275px;
+    height: 275px;
+  }
+
+  .lotus-glow {
+    width: 290px;
+    height: 290px;
+  }
+
+  .lotus-ring {
+    width: 265px;
+    height: 265px;
+  }
+
+  .lotus-content {
+    padding: 24px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(255,253,252,.99) 0%,
+        rgba(255,253,252,.97) 45%,
+        rgba(255,253,252,.65) 68%,
+        transparent 100%
+      );
+  }
+
+  .lotus-content h3 {
+    font-size: 43px;
+  }
+
+  .lotus-content p {
+    max-width: 360px;
+
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+}
+/* =========================================
+   EDISI 03 — LOVE YOU
+========================================= */
+
+.lotus-primary {
+  grid-column: 1 / -1;
+
+  width: 100%;
+  height: 500px;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid #e3b8c6;
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      rgba(255, 196, 216, .45),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255,255,255,.95),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff8fa 50%,
+      #f8e8ee 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(190,120,145,.13);
+
+  transition: .35s ease;
+}
+
+.lotus-primary:hover {
+  transform: translateY(-6px);
+
+  border-color: #d99aae;
+
+  box-shadow:
+    0 30px 90px rgba(190,120,145,.22);
+}
+
+
+/* =========================================
+   LINK
+========================================= */
+
+.lotus-edition {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  color: #20171a;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.lotus-badge {
+  position: absolute;
+
+  left: 38px;
+  top: 38px;
+
+  z-index: 20;
+
+  padding: 7px 10px;
+
+  border: 1px solid #e58eaa;
+
+  background: rgba(255,255,255,.75);
+
+  color: #d97898;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   LOTUS VISUAL
+========================================= */
+
+.lotus-visual {
+  position: absolute;
+
+  right: 4%;
+  top: 50%;
+
+  width: 430px;
+  height: 430px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+
+  animation: lotusFloat 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   GLOW
+========================================= */
+
+.lotus-glow {
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,205,222,.70) 35%,
+      rgba(241,160,190,.25) 62%,
+      transparent 74%
+    );
+
+  filter: blur(7px);
+
+  animation: lotusGlow 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   LOTUS FLOWER
+========================================= */
+
+.lotus-flower {
+  position: relative;
+
+  width: 330px;
+  height: 300px;
+
+  z-index: 5;
+
+  animation: lotusBreath 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   PETALS
+========================================= */
+
+.petal {
+  position: absolute;
+
+  left: 50%;
+  bottom: 25px;
+
+  width: 105px;
+  height: 190px;
+
+  transform-origin: 50% 100%;
+
+  border-radius:
+    65% 65%
+    45% 45%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffafb 0%,
+      #ffdce8 48%,
+      #eea2bc 100%
+    );
+
+  border: 1px solid rgba(207,125,153,.32);
+
+  box-shadow:
+    inset 0 5px 12px rgba(255,255,255,.7),
+    0 8px 18px rgba(194,110,140,.12);
+}
+
+
+/* =========================================
+   PETAL POSITIONS
+========================================= */
+
+.p1 {
+  transform:
+    translateX(-50%)
+    rotate(0deg);
+}
+
+.p2 {
+  transform:
+    translateX(-50%)
+    rotate(-25deg)
+    scale(.94);
+}
+
+.p3 {
+  transform:
+    translateX(-50%)
+    rotate(25deg)
+    scale(.94);
+}
+
+.p4 {
+  transform:
+    translateX(-50%)
+    rotate(-48deg)
+    scale(.82);
+}
+
+.p5 {
+  transform:
+    translateX(-50%)
+    rotate(48deg)
+    scale(.82);
+}
+
+.p6 {
+  transform:
+    translateX(-50%)
+    rotate(-68deg)
+    scale(.67);
+}
+
+.p7 {
+  transform:
+    translateX(-50%)
+    rotate(68deg)
+    scale(.67);
+}
+
+.p8 {
+  transform:
+    translateX(-50%)
+    rotate(-88deg)
+    scale(.54);
+}
+
+.p9 {
+  transform:
+    translateX(-50%)
+    rotate(88deg)
+    scale(.54);
+}
+
+.p10 {
+  transform:
+    translateX(-50%)
+    rotate(-110deg)
+    scale(.42);
+}
+
+.p11 {
+  transform:
+    translateX(-50%)
+    rotate(110deg)
+    scale(.42);
+}
+
+.p12 {
+  transform:
+    translateX(-50%)
+    rotate(180deg)
+    scale(.48);
+}
+
+
+/* =========================================
+   LOTUS CENTER
+========================================= */
+
+.lotus-center {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5px;
+
+  width: 85px;
+  height: 55px;
+
+  transform: translateX(-50%);
+
+  border-radius:
+    50% 50%
+    45% 45%;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #fff6b8 0%,
+      #f1c85b 35%,
+      #d99a32 100%
+    );
+
+  border: 1px solid rgba(170,120,40,.3);
+
+  box-shadow:
+    0 5px 15px rgba(190,130,50,.18);
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.lotus-content {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 38px;
+
+  z-index: 15;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: flex-start;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.99) 0%,
+      rgba(255,253,252,.96) 27%,
+      rgba(255,253,252,.80) 43%,
+      rgba(255,253,252,.30) 62%,
+      transparent 82%
+    );
+}
+
+
+/* =========================================
+   KICKER
+========================================= */
+
+.lotus-kicker {
+  margin-bottom: 8px;
+
+  color: #df82a0;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.lotus-content h3 {
+  margin: 0 0 14px;
+
+  color: #1d1719;
+
+  font:
+    700 clamp(48px,5vw,65px)/.92
+    "Playfair Display",serif;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.lotus-content p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #6c6266;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.lotus-open {
+  margin-top: 17px;
+
+  color: #df82a0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+  transition: .2s ease;
+}
+
+.lotus-open:hover {
+  color: #ca6586;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes lotusFloat {
+
+  0%,100% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 8px));
+  }
+
+}
+
+@keyframes lotusBreath {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+
+}
+
+@keyframes lotusGlow {
+
+  0%,100% {
+    opacity: .65;
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px) {
+
+  .lotus-primary {
+    height: 460px;
+  }
+
+  .lotus-badge {
+    left: 22px;
+    top: 22px;
+
+    font-size: 9px;
+  }
+
+  .lotus-visual {
+    width: 320px;
+    height: 320px;
+
+    right: -25px;
+    top: 31%;
+  }
+
+  .lotus-flower {
+    width: 250px;
+    height: 230px;
+  }
+
+  .petal {
+    width: 78px;
+    height: 145px;
+  }
+
+  .lotus-glow {
+    width: 290px;
+    height: 290px;
+  }
+
+  .lotus-content {
+    padding: 24px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(255,253,252,.99) 0%,
+        rgba(255,253,252,.97) 43%,
+        rgba(255,253,252,.68) 66%,
+        transparent 100%
+      );
+  }
+
+  .lotus-content h3 {
+    font-size: 43px;
+  }
+
+  .lotus-content p {
+    max-width: 350px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+}
+/* =========================================
+   EDISI 03 — PINK LOTUS
+========================================= */
+
+.edisi-03 {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid #e6b5c5;
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 72% 48%,
+      rgba(244, 170, 198, .25),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 210, 225, .30),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fffafb 48%,
+      #fdf0f5 100%
+    );
+
+  box-shadow:
+    0 20px 55px rgba(224, 145, 171, .18);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.edisi-03:hover {
+  transform: translateY(-5px);
+
+  border-color: #df9eb4;
+
+  box-shadow:
+    0 25px 70px rgba(224, 145, 171, .28);
+}
+
+
+/* =========================================
+   MADING TERBARU
+========================================= */
+
+.edisi-03 .lotus-badge {
+  position: absolute;
+
+  top: 38px;
+  left: 38px;
+
+  z-index: 20;
+
+  padding: 7px 10px;
+
+  border: 1px solid #e58eaa;
+
+  background: rgba(255, 255, 255, .82);
+
+  color: #d97999;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 5px 18px rgba(225, 145, 171, .10);
+}
+
+
+/* =========================================
+   LOTUS
+========================================= */
+
+.edisi-03 .lotus-visual {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  right: 5%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    lotusFloat03 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   PINK SHADOW / GLOW LOTUS
+========================================= */
+
+.edisi-03 .lotus-visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(238, 142, 174, .28) 0%,
+      rgba(244, 178, 202, .18) 38%,
+      rgba(255, 220, 231, .08) 60%,
+      transparent 74%
+    );
+
+  filter: blur(18px);
+
+  z-index: 0;
+
+  animation:
+    lotusShadow03 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SVG
+========================================= */
+
+.edisi-03 .lotus-visual svg {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 18px 25px rgba(209, 119, 149, .15)
+    );
+
+  animation:
+    lotusImage03 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.edisi-03 .visual-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  min-height: 500px;
+
+  padding: 38px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.99) 0%,
+      rgba(255,255,255,.97) 28%,
+      rgba(255,250,252,.88) 43%,
+      rgba(255,245,249,.40) 62%,
+      transparent 82%
+    );
+}
+
+
+/* =========================================
+   TEMA
+========================================= */
+
+.edisi-03 .visual-content > div:nth-child(2) {
+  color: #e58eaa !important;
+
+  font-size: 10px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 3px !important;
+
+  margin-bottom: 5px !important;
+}
+
+
+/* =========================================
+   LOVE YOU
+========================================= */
+
+.edisi-03 .visual-content h3 {
+  margin: 0 0 14px;
+
+  color: #181416;
+
+  font:
+    700 clamp(48px, 5vw, 65px)/.92
+    "Playfair Display",
+    serif;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.edisi-03 .visual-content p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #6d6267;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BUKA EDISI
+========================================= */
+
+.edisi-03 .visual-content .btn {
+  width: max-content;
+
+  margin-top: 17px;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #e58eaa;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+  transition: .2s ease;
+}
+
+.edisi-03 .visual-content .btn:hover {
+  color: #cc6e8d;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   ANIMASI SHADOW
+========================================= */
+
+@keyframes lotusShadow03 {
+
+  0%, 100% {
+    opacity: .55;
+    transform: scale(.94);
+  }
+
+  50% {
+    opacity: .95;
+    transform: scale(1.07);
+  }
+
+}
+
+
+/* =========================================
+   ANIMASI LOTUS
+========================================= */
+
+@keyframes lotusFloat03 {
+
+  0%, 100% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 7px));
+  }
+
+}
+
+@keyframes lotusImage03 {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:700px) {
+
+  .edisi-03 {
+    min-height: 460px;
+  }
+
+  .edisi-03 .lotus-badge {
+    top: 22px;
+    left: 22px;
+
+    font-size: 9px;
+  }
+
+  .edisi-03 .lotus-visual {
+    width: 320px;
+    height: 320px;
+
+    right: -25px;
+    top: 31%;
+  }
+
+  .edisi-03 .lotus-visual::before {
+    width: 270px;
+    height: 270px;
+  }
+
+  .edisi-03 .visual-content {
+    min-height: 460px;
+
+    padding: 24px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(255,255,255,.99) 0%,
+        rgba(255,250,252,.97) 42%,
+        rgba(255,245,249,.65) 67%,
+        transparent 100%
+      );
+  }
+
+  .edisi-03 .visual-content h3 {
+    font-size: 43px;
+  }
+
+  .edisi-03 .visual-content p {
+    max-width: 350px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+}
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVBAR
@@ -2012,7 +3536,6 @@ footer{
       </span>
 
     </a>
-
 
     <div class="links" id="navLinks">
 
@@ -2042,14 +3565,12 @@ footer{
 
     </div>
 
-
     <a
       class="submit"
       href="../index.html#karya"
     >
       KIRIM KARYA ↗
     </a>
-
 
     <button
       class="menu-toggle"
@@ -2064,9 +3585,7 @@ footer{
 
 </nav>
 
-
 <main>
-
 
 <!-- =========================
      HERO
@@ -2076,19 +3595,16 @@ footer{
 
   <div class="container hero-inner">
 
-
     <div class="hero-copy">
 
       <div class="eyebrow">
         D’TIK.COM · MADING ARCHIVE
       </div>
 
-
       <h1>
         Jelajahi<br>
         <span>Mading.</span>
       </h1>
-
 
       <p class="hero-description">
         Setiap edisi punya cerita, suasana,
@@ -2096,7 +3612,6 @@ footer{
         kumpulan tulisan, tapi sebuah perjalanan
         dari satu tema ke tema berikutnya.
       </p>
-
 
       <div class="hero-meta">
 
@@ -2119,7 +3634,6 @@ footer{
 
       </div>
 
-
       <div class="hero-number">
         01
       </div>
@@ -2129,7 +3643,6 @@ footer{
   </div>
 
 </section>
-
 
 <!-- =========================
      EDITIONS
@@ -2141,7 +3654,6 @@ footer{
 >
 
   <div class="container">
-
 
     <div class="section-head">
 
@@ -2157,7 +3669,6 @@ footer{
 
       </div>
 
-
       <p>
         Setiap mading punya karakter visual
         dan cerita yang berbeda. Pilih satu
@@ -2166,14 +3677,16 @@ footer{
 
     </div>
 
+    <!-- =========================
+         SEMUA EDISI
+         SATU PER SATU
+    ========================== -->
 
     <div class="edition-grid">
-
 
       <!-- =================
            EDISI 01
            AS WHITE AS SNOW
-           HOMEPAGE STYLE
       ================== -->
 
       <article class="edition-card primary">
@@ -2187,12 +3700,10 @@ footer{
             MADING TERBARU · EDISI #01
           </div>
 
-
           <h3>
             As White<br>
             as Snow.
           </h3>
-
 
           <div class="snow-description">
 
@@ -2208,7 +3719,6 @@ footer{
               dan kreativitas santri.
             </p>
 
-
             <span class="snow-open">
               BUKA EDISI LENGKAP
             </span>
@@ -2219,9 +3729,9 @@ footer{
 
       </article>
 
-
       <!-- =================
-           EDISI 02 · TIME IS OURS
+           EDISI 02
+           TIME IS OURS
       ================== -->
 
       <article class="edition-card time-primary">
@@ -2235,19 +3745,16 @@ footer{
             MADING TERBARU · EDISI #02
           </div>
 
-
           <div>
 
             <div class="time-kicker">
               TEMA MINGGU INI
             </div>
 
-
             <h3>
               Time is<br>
               Ours.
             </h3>
-
 
             <p>
               Edisi kedua D’tik.COM hadir dengan tema waktu.
@@ -2256,7 +3763,6 @@ footer{
               rubrik karya santri.
             </p>
 
-
             <span class="open">
               BUKA EDISI LENGKAP →
             </span>
@@ -2264,7 +3770,6 @@ footer{
           </div>
 
         </a>
-
 
         <!-- CLOCK -->
 
@@ -2303,51 +3808,193 @@ footer{
 
       </article>
 
+      <!-- =========================
+     EDISI 03 — LOVE YOU
+========================= -->
 
-      <!-- =================
-           EDISI 03
-      ================== -->
+<article class="edition-card visual-card edisi-03">
 
-      <article class="edition-card future">
+  <!-- LOTUS VISUAL -->
+  <div class="lotus-visual" aria-hidden="true">
 
-        <div class="future-top">
+    <svg
+      viewBox="0 0 500 400"
+      xmlns="http://www.w3.org/2000/svg">
 
-          <div class="future-number">
-            EDITION · 03
-          </div>
+      <defs>
 
-          <div class="future-status">
-            STAY TUNED
-          </div>
+        <radialGradient id="lotusGlow03">
+          <stop offset="0%" stop-color="#e88aa8" stop-opacity=".28"/>
+          <stop offset="100%" stop-color="#e88aa8" stop-opacity="0"/>
+        </radialGradient>
 
-        </div>
+        <linearGradient id="petalPink03" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#fff"/>
+          <stop offset="55%" stop-color="#f7b6ca"/>
+          <stop offset="100%" stop-color="#df789c"/>
+        </linearGradient>
+
+        <linearGradient id="petalWhite03" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fff"/>
+          <stop offset="100%" stop-color="#f9dce5"/>
+        </linearGradient>
+
+        <linearGradient id="petalGreen03" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#dcefe2"/>
+          <stop offset="100%" stop-color="#7eaa8c"/>
+        </linearGradient>
+
+        <filter id="softGlow03">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+
+      </defs>
+
+      <!-- BACKGROUND GLOW -->
+      <ellipse
+        cx="250"
+        cy="235"
+        rx="190"
+        ry="120"
+        fill="url(#lotusGlow03)"
+        filter="url(#softGlow03)"
+      />
+
+      <!-- GREEN LEAVES -->
+      <path
+        d="M250 300 C190 315 130 300 92 265 C150 258 207 270 250 300Z"
+        fill="url(#petalGreen03)"
+        opacity=".9"
+      />
+
+      <path
+        d="M250 300 C310 315 370 300 408 265 C350 258 293 270 250 300Z"
+        fill="url(#petalGreen03)"
+        opacity=".9"
+      />
+
+      <path
+        d="M250 302 C225 325 185 337 145 325 C177 300 215 293 250 302Z"
+        fill="#91b79d"
+        opacity=".72"
+      />
+
+      <path
+        d="M250 302 C275 325 315 337 355 325 C323 300 285 293 250 302Z"
+        fill="#91b79d"
+        opacity=".72"
+      />
+
+      <!-- OUTER PINK PETALS -->
+      <path
+        d="M250 300 C178 293 117 250 105 190 C165 198 221 235 250 300Z"
+        fill="url(#petalPink03)"
+      />
+
+      <path
+        d="M250 300 C322 293 383 250 395 190 C335 198 279 235 250 300Z"
+        fill="url(#petalPink03)"
+      />
+
+      <!-- SIDE PETALS -->
+      <path
+        d="M250 300 C178 280 137 225 145 155 C199 185 236 238 250 300Z"
+        fill="url(#petalWhite03)"
+      />
+
+      <path
+        d="M250 300 C322 280 363 225 355 155 C301 185 264 238 250 300Z"
+        fill="url(#petalWhite03)"
+      />
+
+      <!-- TALL CENTER PETALS -->
+      <path
+        d="M250 300 C202 252 184 188 215 112 C246 151 257 217 250 300Z"
+        fill="url(#petalPink03)"
+      />
+
+      <path
+        d="M250 300 C298 252 316 188 285 112 C254 151 243 217 250 300Z"
+        fill="url(#petalPink03)"
+      />
+
+      <!-- CENTER WHITE PETAL -->
+      <path
+        d="M250 300 C218 238 218 166 250 82 C282 166 282 238 250 300Z"
+        fill="url(#petalWhite03)"
+      />
+
+      <!-- INNER PINK -->
+      <path
+        d="M250 292 C232 241 235 187 250 135 C265 187 268 241 250 292Z"
+        fill="#ef9db7"
+        opacity=".62"
+      />
+
+      <!-- LOTUS BASE -->
+      <ellipse
+        cx="250"
+        cy="300"
+        rx="92"
+        ry="18"
+        fill="#6e987d"
+        opacity=".35"
+      />
+
+      <!-- DECORATIVE CIRCLES -->
+      <circle cx="180" cy="285" r="4" fill="#d9789c" opacity=".5"/>
+      <circle cx="320" cy="285" r="4" fill="#d9789c" opacity=".5"/>
+      <circle cx="210" cy="310" r="3" fill="#7eaa8c" opacity=".6"/>
+      <circle cx="290" cy="310" r="3" fill="#7eaa8c" opacity=".6"/>
+
+    </svg>
+
+  </div>
 
 
-        <h3>
-          Your<br>
-          Story.
-        </h3>
+  <!-- CONTENT -->
+  <div class="visual-content">
 
-
-        <div class="future-bottom">
-
-          <p>
-            Satu edisi lagi,
-            satu cerita lagi,
-            satu dunia lagi.
-          </p>
-
-
-          <div class="future-arrow">
-            ✦
-          </div>
-
-        </div>
-
-      </article>
-
-
+    <div class="visual-meta">
+      <div class="lotus-badge">
+      MADING TERBARU · EDISI #03
+      </div>
     </div>
+    
+
+    <div
+      style="
+        color:#e58eaa;
+        font-size:10px;
+        font-weight:700;
+        letter-spacing:3px;
+        margin-bottom:5px;
+      "
+    >
+      TEMA MINGGU INI
+    </div>
+
+    <h3>
+      Love You
+    </h3>
+
+    <p>
+      Edisi ketiga D’tik.COM hadir dengan tema lotus.
+      Sebuah edisi tentang rasa, ketulusan, dan keindahan
+      yang tumbuh seperti bunga lotus—tenang, sederhana,
+      tetapi memiliki makna yang dalam.
+    </p>
+
+    <a
+      href="mading-edisi-03.html"
+      class="btn"
+    >
+      BUKA EDISI LENGKAP →
+    </a>
+
+  </div>
+
+</article>
 
 
     <!-- =================
@@ -2355,7 +4002,6 @@ footer{
     ================== -->
 
     <div class="edition-index">
-
 
       <div class="index-item">
 
@@ -2369,7 +4015,6 @@ footer{
 
       </div>
 
-
       <div class="index-item">
 
         <small>
@@ -2381,7 +4026,6 @@ footer{
         </strong>
 
       </div>
-
 
       <div class="index-item">
 
@@ -2395,7 +4039,6 @@ footer{
 
       </div>
 
-
       <div class="index-item">
 
         <small>
@@ -2408,16 +4051,13 @@ footer{
 
       </div>
 
-
     </div>
-
 
   </div>
 
 </section>
 
 </main>
-
 
 <!-- =========================
      FOOTER
@@ -2437,7 +4077,6 @@ footer{
 
     </div>
 
-
     <div>
       Time to Act and Create.
     </div>
@@ -2445,7 +4084,6 @@ footer{
   </div>
 
 </footer>
-
 
 <!-- =========================
      MOBILE MENU
@@ -2463,13 +4101,11 @@ document.addEventListener(
     const navLinks =
       document.getElementById("navLinks");
 
-
     menuToggle.addEventListener(
       "click",
       function(){
 
         navLinks.classList.toggle("active");
-
 
         if(
           navLinks.classList.contains("active")
@@ -2485,7 +4121,6 @@ document.addEventListener(
 
       }
     );
-
 
     navLinks
       .querySelectorAll("a")
@@ -2508,7 +4143,6 @@ document.addEventListener(
 );
 
 </script>
-
 
 </body>
 </html>
