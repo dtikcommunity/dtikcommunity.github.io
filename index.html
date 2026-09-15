@@ -25,6 +25,12 @@ content="D’tik.COM adalah Darussalam Jurnalistik Community, wadah jurnalistik 
   --cream:#f5f0e5;
   --muted:#9a978f;
   --line:#282721;
+
+  /* WARNA TEMA LOTUS */
+  --lotus-pink:#e88aa8;
+  --lotus-pink2:#f7b6ca;
+  --lotus-green:#7eaa8c;
+  --lotus-green2:#a8c9b1;
 }
 
 *{
@@ -266,200 +272,430 @@ nav{
    FEATURE
 ========================= */
 
- .feature{
+.feature{
   height:500px;
   position:relative;
   border:1px solid #d9c98a;
   border-radius:16px;
   overflow:hidden;
+
   background:
-    radial-gradient(circle at 78% 48%, rgba(215,170,60,.10), transparent 34%),
-    radial-gradient(circle at 15% 12%, rgba(255,255,255,.95), transparent 30%),
-    linear-gradient(145deg,#ffffff 0%,#fbfaf5 58%,#f3eedf 100%);
-  box-shadow:0 25px 80px rgba(23,23,20,.10);
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(232,138,168,.13),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 15% 12%,
+      rgba(255,255,255,.95),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfaf5 58%,
+      #f3eedf 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(23,23,20,.10);
 }
 
-.time-clock{
+
+/* ==================================================
+   LOTUS VISUAL
+================================================== */
+
+.lotus-visual{
   position:absolute;
-  right:48px;
-  top:48px;
-  width:370px;
+  right:15px;
+  top:38px;
+
+  width:440px;
   height:370px;
-  border:2px solid rgba(23,23,20,.26);
-  border-radius:50%;
-  background:
-    radial-gradient(circle at center,#fffdf8 0 67%,#f7f1df 67.5% 68%,#fff 68.5% 100%);
-  box-shadow:
-    0 0 0 10px rgba(215,170,60,.07),
-    0 0 0 22px rgba(23,23,20,.035),
-    inset 0 0 0 1px rgba(215,170,60,.18),
-    0 18px 45px rgba(23,23,20,.08);
+
   z-index:1;
   pointer-events:none;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  animation:
+    lotusFloat 5s ease-in-out infinite;
 }
 
-.time-clock:before{
-  content:"";
-  position:absolute;
-  inset:22px;
-  border:1px solid rgba(23,23,20,.10);
-  border-radius:50%;
-}
 
-.time-clock:after{
+/* glow di belakang lotus */
+
+.lotus-visual:before{
   content:"";
   position:absolute;
+
+  width:300px;
+  height:210px;
+
   left:50%;
   top:50%;
-  width:11px;
-  height:11px;
+
+  transform:translate(-50%,-45%);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(232,138,168,.24) 0%,
+      rgba(232,138,168,.12) 35%,
+      rgba(232,138,168,0) 72%
+    );
+
+  filter:blur(16px);
+
+  animation:
+    lotusGlow 4s ease-in-out infinite;
+}
+
+
+/* garis lingkaran dekoratif */
+
+.lotus-visual:after{
+  content:"";
+
+  position:absolute;
+
+  width:325px;
+  height:325px;
+
+  left:50%;
+  top:50%;
+
   transform:translate(-50%,-50%);
+
   border-radius:50%;
-  background:#d7aa3c;
-  border:3px solid #fffdf8;
-  box-shadow:0 0 0 1px rgba(23,23,20,.28);
-  z-index:4;
+
+  border:1px solid rgba(232,138,168,.18);
+
+  box-shadow:
+    0 0 0 8px rgba(126,170,140,.045),
+    0 0 0 18px rgba(232,138,168,.035);
+
+  animation:
+    lotusRing 12s linear infinite;
 }
 
-.time-clock .numeral{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform-origin:center;
-  color:#1d1d1a;
-  font:700 15px/1 "Playfair Display",serif;
-  letter-spacing:0;
-}
 
-.time-clock .n12{transform:translate(-50%,-50%) translateY(-157px);}
-.time-clock .n1{transform:translate(-50%,-50%) translate(78px,-136px);}
-.time-clock .n2{transform:translate(-50%,-50%) translate(136px,-78px);}
-.time-clock .n3{transform:translate(-50%,-50%) translateX(157px);}
-.time-clock .n4{transform:translate(-50%,-50%) translate(136px,78px);}
-.time-clock .n5{transform:translate(-50%,-50%) translate(78px,136px);}
-.time-clock .n6{transform:translate(-50%,-50%) translateY(157px);}
-.time-clock .n7{transform:translate(-50%,-50%) translate(-78px,136px);}
-.time-clock .n8{transform:translate(-50%,-50%) translate(-136px,78px);}
-.time-clock .n9{transform:translate(-50%,-50%) translateX(-157px);}
-.time-clock .n10{transform:translate(-50%,-50%) translate(-136px,-78px);}
-.time-clock .n11{transform:translate(-50%,-50%) translate(-78px,-136px);}
+/* SVG */
 
-.time-clock .tick{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:2px;
-  height:12px;
-  background:rgba(23,23,20,.28);
-  transform-origin:50% 160px;
-}
-.time-clock .t1{transform:translate(-50%,-50%) rotate(30deg);}
-.time-clock .t2{transform:translate(-50%,-50%) rotate(60deg);}
-.time-clock .t3{transform:translate(-50%,-50%) rotate(90deg);}
-.time-clock .t4{transform:translate(-50%,-50%) rotate(120deg);}
-.time-clock .t5{transform:translate(-50%,-50%) rotate(150deg);}
-.time-clock .t6{transform:translate(-50%,-50%) rotate(180deg);}
-.time-clock .t7{transform:translate(-50%,-50%) rotate(210deg);}
-.time-clock .t8{transform:translate(-50%,-50%) rotate(240deg);}
-.time-clock .t9{transform:translate(-50%,-50%) rotate(270deg);}
-.time-clock .t10{transform:translate(-50%,-50%) rotate(300deg);}
-.time-clock .t11{transform:translate(-50%,-50%) rotate(330deg);}
-.time-clock .tick.major{width:3px;height:17px;background:#1d1d1a;}
+.lotus-visual svg{
+  width:100%;
+  height:100%;
 
-.time-clock .hand{
-  position:absolute;
-  left:50%;
-  top:50%;
-  border-radius:99px;
-  transform-origin:0 50%;
-  z-index:3;
-}
-.time-clock .hour{
-  width:92px;
-  height:5px;
-  background:#1d1d1a;
-  transform:rotate(310deg);
-  box-shadow:0 2px 5px rgba(23,23,20,.12);
-  animation:clockHour 120s linear infinite;
-}
-.time-clock .minute{
-  width:125px;
-  height:3px;
-  background:#d7aa3c;
-  transform:rotate(45deg);
-  box-shadow:0 2px 7px rgba(215,170,60,.28);
-  animation:clockMinute 20s linear infinite;
-}
-.time-clock .second{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:138px;
-  height:1px;
-  border-radius:99px;
-  background:#8d6a18;
-  transform-origin:0 50%;
-  transform:rotate(0deg);
+  position:relative;
   z-index:2;
-  animation:clockSecond 5s linear infinite;
+
+  overflow:visible;
+
+  filter:
+    drop-shadow(
+      0 14px 18px rgba(111,83,94,.10)
+    );
 }
 
-@keyframes clockHour{
-  from{transform:rotate(310deg);}
-  to{transform:rotate(670deg);}
+
+/* =========================
+   ANIMASI LOTUS
+========================= */
+
+@keyframes lotusFloat{
+
+  0%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(-8px) rotate(.5deg);
+  }
+
+  100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
 }
-@keyframes clockMinute{
-  from{transform:rotate(45deg);}
-  to{transform:rotate(405deg);}
+
+
+@keyframes lotusGlow{
+
+  0%{
+    opacity:.55;
+    transform:translate(-50%,-45%) scale(.92);
+  }
+
+  50%{
+    opacity:1;
+    transform:translate(-50%,-45%) scale(1.08);
+  }
+
+  100%{
+    opacity:.55;
+    transform:translate(-50%,-45%) scale(.92);
+  }
+
 }
-@keyframes clockSecond{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+
+
+@keyframes lotusRing{
+
+  from{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+
+  to{
+    transform:translate(-50%,-50%) rotate(360deg);
+  }
+
 }
+
+
+/* =========================
+   ANIMASI KELOPAK
+========================= */
+
+.lotus-visual svg path{
+  transform-box:fill-box;
+  transform-origin:center bottom;
+}
+
+
+/* kelopak kiri */
+
+.lotus-visual svg path:nth-of-type(5){
+  animation:
+    petalLeft 4.5s ease-in-out infinite;
+}
+
+
+/* kelopak kanan */
+
+.lotus-visual svg path:nth-of-type(6){
+  animation:
+    petalRight 4.5s ease-in-out infinite;
+}
+
+
+/* kelopak samping kiri */
+
+.lotus-visual svg path:nth-of-type(7){
+  animation:
+    petalSideLeft 5s ease-in-out infinite;
+}
+
+
+/* kelopak samping kanan */
+
+.lotus-visual svg path:nth-of-type(8){
+  animation:
+    petalSideRight 5s ease-in-out infinite;
+}
+
+
+/* kelopak tengah kiri */
+
+.lotus-visual svg path:nth-of-type(9){
+  animation:
+    petalCenterLeft 4s ease-in-out infinite;
+}
+
+
+/* kelopak tengah kanan */
+
+.lotus-visual svg path:nth-of-type(10){
+  animation:
+    petalCenterRight 4s ease-in-out infinite;
+}
+
+
+/* kelopak putih tengah */
+
+.lotus-visual svg path:nth-of-type(11){
+  animation:
+    petalCenter 4.2s ease-in-out infinite;
+}
+
+
+@keyframes petalLeft{
+
+  0%,100%{
+    transform:rotate(0deg);
+  }
+
+  50%{
+    transform:rotate(-2deg);
+  }
+
+}
+
+
+@keyframes petalRight{
+
+  0%,100%{
+    transform:rotate(0deg);
+  }
+
+  50%{
+    transform:rotate(2deg);
+  }
+
+}
+
+
+@keyframes petalSideLeft{
+
+  0%,100%{
+    transform:rotate(0deg) translateY(0);
+  }
+
+  50%{
+    transform:rotate(-3deg) translateY(-3px);
+  }
+
+}
+
+
+@keyframes petalSideRight{
+
+  0%,100%{
+    transform:rotate(0deg) translateY(0);
+  }
+
+  50%{
+    transform:rotate(3deg) translateY(-3px);
+  }
+
+}
+
+
+@keyframes petalCenterLeft{
+
+  0%,100%{
+    transform:rotate(0deg);
+  }
+
+  50%{
+    transform:rotate(-1.8deg) scaleY(1.025);
+  }
+
+}
+
+
+@keyframes petalCenterRight{
+
+  0%,100%{
+    transform:rotate(0deg);
+  }
+
+  50%{
+    transform:rotate(1.8deg) scaleY(1.025);
+  }
+
+}
+
+
+@keyframes petalCenter{
+
+  0%,100%{
+    transform:scaleY(1);
+  }
+
+  50%{
+    transform:scaleY(1.035);
+  }
+
+}
+
+
+/* =========================
+   LOTUS SVG COLORS
+========================= */
+
+.lotus-visual .lotus-pink{
+  fill:url(#petalPink);
+}
+
+.lotus-visual .lotus-white{
+  fill:url(#petalWhite);
+}
+
+.lotus-visual .lotus-green{
+  fill:url(#petalGreen);
+}
+
+
+/* =========================
+   FEATURE CONTENT
+========================= */
 
 .feature-content{
   position:absolute;
   inset:0;
   padding:38px;
+
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-  z-index:2;
+
+  z-index:3;
 }
 
 .feature .badge{
   align-self:flex-start;
-  border:1px solid #d7aa3c;
+
+  border:1px solid var(--lotus-pink);
   padding:7px 10px;
+
   color:#1d1d1a;
-  background:rgba(255,255,255,.82);
+
+  background: linear-gradient(135deg, #fff9fb, #fff1f5);
+
   font-size:10px;
   letter-spacing:2px;
   font-weight:700;
+
   margin-bottom:auto;
+
+  box-shadow:
+    0 4px 14px rgba(232,138,168,.08);
 }
 
-.feature .kicker{color:#9b7620;}
+.feature .kicker{
+  color:#e88aa8;
+}
+
 .feature h2{
   font:700 48px/1.02 "Playfair Display",serif;
   max-width:440px;
   margin:0 0 14px;
   color:#1d1d1a;
 }
+
 .feature p{
   max-width:440px;
   color:#55534d;
   line-height:1.7;
   font-size:14px;
 }
+
 .feature .read{
   display:inline-block;
   margin-top:15px;
-  color:#9b7620;
+
+  color:#e88aa8;
+
   font-weight:700;
   font-size:12px;
   letter-spacing:1px;
 }
+
 
 /* =========================
    MARQUEE
@@ -467,12 +703,17 @@ nav{
 
 .marquee{
   width:100%;
+
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
+
   overflow:hidden;
   white-space:nowrap;
+
   padding:15px 0;
+
   color:#777;
+
   font-size:11px;
   letter-spacing:3px;
 }
@@ -525,35 +766,53 @@ section{
 
 .edition-main{
   min-height:360px;
+
   border-radius:14px;
   padding:34px;
-  background:linear-gradient(120deg,#19150d,#10100f);
+
+  background:
+    linear-gradient(
+      120deg,
+      #19150d,
+      #10100f
+    );
+
   border:1px solid #38301f;
+
   position:relative;
   overflow:hidden;
 }
 
 .edition-main:after{
   content:"01";
+
   position:absolute;
   right:25px;
   bottom:-45px;
+
   font:800 180px "Playfair Display",serif;
+
   color:rgba(215,170,60,.06);
 }
 
 .edition-main h3{
   font:700 44px/1.05 "Playfair Display",serif;
+
   max-width:600px;
+
   margin:28px 0 15px;
+
   position:relative;
   z-index:1;
 }
 
 .edition-main p{
   color:#aaa;
+
   max-width:570px;
+
   line-height:1.7;
+
   position:relative;
   z-index:1;
 }
@@ -561,6 +820,7 @@ section{
 .edition-main .btn{
   position:relative;
   z-index:2;
+
   margin-top:24px;
 }
 
@@ -571,9 +831,13 @@ section{
 
 .mini{
   border:1px solid var(--line);
+
   border-radius:14px;
+
   padding:25px;
+
   background:#10100f;
+
   transition:.25s;
 }
 
@@ -584,17 +848,20 @@ section{
 
 .mini .num{
   color:var(--gold);
+
   font-size:11px;
   letter-spacing:2px;
 }
 
 .mini h4{
   font:600 25px/1.15 "Playfair Display",serif;
+
   margin:13px 0;
 }
 
 .mini p{
   color:#888;
+
   font-size:13px;
   line-height:1.6;
 }
@@ -606,58 +873,86 @@ section{
 
 .cards{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
+
   gap:16px;
 }
 
 .card{
   min-height:245px;
+
   border:1px solid var(--line);
+
   border-radius:12px;
+
   padding:23px;
-  background:linear-gradient(150deg,#141412,#0d0d0c);
+
+  background:
+    linear-gradient(
+      150deg,
+      #141412,
+      #0d0d0c
+    );
+
   position:relative;
+
   overflow:hidden;
+
   transition:.25s;
 }
 
 .card:hover{
   transform:translateY(-7px);
+
   border-color:#655126;
 }
 
 .card:after{
   content:"";
+
   position:absolute;
+
   width:110px;
   height:110px;
+
   border-radius:50%;
+
   right:-45px;
   bottom:-45px;
+
   border:1px solid rgba(215,170,60,.18);
 }
 
 .icon{
   font-size:28px;
+
   color:var(--gold);
+
   margin-bottom:28px;
 }
 
 .card small{
   color:var(--gold);
+
   font-size:9px;
+
   font-weight:800;
+
   letter-spacing:2px;
 }
 
 .card h3{
   font:600 25px/1.15 "Playfair Display",serif;
+
   margin:10px 0;
 }
 
 .card p{
   font-size:13px;
+
   color:#898780;
+
   line-height:1.65;
 }
 
@@ -668,22 +963,32 @@ section{
 
 .gallery{
   display:flex;
+
   flex-direction:column;
+
   gap:18px;
 }
 
 
-/* DESAIN MADING */
+/* =========================
+   DESAIN MADING
+========================= */
 
 .mading-archive{
   position:relative;
+
   display:flex;
+
   align-items:center;
+
   min-height:280px;
+
   padding:38px;
+
   overflow:hidden;
 
   border-radius:14px;
+
   border:1px solid rgba(215,170,60,.25);
 
   background:
@@ -703,17 +1008,24 @@ section{
 
 .mading-archive:hover{
   transform:translateY(-4px);
+
   border-color:var(--gold);
-  box-shadow:0 18px 45px rgba(215,170,60,.08);
+
+  box-shadow:
+    0 18px 45px
+    rgba(215,170,60,.08);
 }
 
 .mading-archive:after{
   content:"MADING";
+
   position:absolute;
+
   right:-25px;
   bottom:-45px;
 
   font:800 130px "Playfair Display",serif;
+
   color:rgba(215,170,60,.045);
 
   pointer-events:none;
@@ -726,69 +1038,116 @@ section{
 
 .mading-archive-content span{
   color:var(--gold);
+
   font-size:10px;
+
   font-weight:700;
+
   letter-spacing:3px;
 }
 
 .mading-archive-content h3{
   margin:13px 0 15px;
 
-  font:700 clamp(38px,5vw,62px)/.95
-  "Playfair Display",serif;
+  font:
+    700
+    clamp(38px,5vw,62px)/.95
+    "Playfair Display",serif;
 }
 
 .mading-archive-content p{
   max-width:480px;
+
   color:#96938c;
+
   font-size:14px;
+
   line-height:1.7;
+
   margin-bottom:20px;
 }
 
 .mading-archive-content strong{
   color:var(--gold);
+
   font-size:11px;
+
   letter-spacing:1.5px;
 }
 
 
-/* KATEGORI VISUAL */
+/* =========================
+   KATEGORI VISUAL
+========================= */
 
 .gallery-tiles{
   display:grid;
-  grid-template-columns:1.3fr .7fr .7fr;
-  grid-template-rows:220px 180px;
+
+  grid-template-columns:
+    1.3fr .7fr .7fr;
+
+  grid-template-rows:
+    220px 180px;
+
   gap:14px;
 }
 
 .tile{
   border-radius:12px;
+
   border:1px solid var(--line);
+
   padding:25px;
+
   display:flex;
+
   align-items:end;
+
   overflow:hidden;
+
   position:relative;
-  background:linear-gradient(135deg,#302410,#111);
+
+  background:
+    linear-gradient(
+      135deg,
+      #302410,
+      #111
+    );
+
   transition:.25s;
 }
 
 .tile:hover{
   transform:translateY(-4px);
+
   border-color:#5b4a28;
 }
 
 .tile:nth-child(2){
-  background:linear-gradient(135deg,#222,#0e0e0e);
+  background:
+    linear-gradient(
+      135deg,
+      #222,
+      #0e0e0e
+    );
 }
 
 .tile:nth-child(3){
-  background:linear-gradient(135deg,#3a2c17,#111);
+  background:
+    linear-gradient(
+      135deg,
+      #3a2c17,
+      #111
+    );
 }
 
 .tile:nth-child(4){
-  background:linear-gradient(135deg,#171717,#29210f);
+  background:
+    linear-gradient(
+      135deg,
+      #171717,
+      #29210f
+    );
 }
 
 .tile:first-child{
@@ -797,24 +1156,33 @@ section{
 
 .tile b{
   font:600 27px/1.15 "Playfair Display",serif;
+
   position:relative;
   z-index:2;
 }
 
 .tile:before{
   content:"";
+
   position:absolute;
+
   inset:20px;
+
   border:1px solid rgba(215,170,60,.15);
+
   transform:rotate(-3deg);
 }
 
 .tile:after{
   content:"✦";
+
   position:absolute;
+
   right:25px;
   top:18px;
+
   color:var(--gold);
+
   font-size:24px;
 }
 
@@ -825,32 +1193,55 @@ section{
 
 .archive{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+
+  grid-template-columns:
+    repeat(5,1fr);
+
   gap:13px;
 }
 
 .issue{
   height:220px;
+
   border-radius:10px;
+
   border:1px solid var(--line);
+
   padding:18px;
-  background:linear-gradient(155deg,#17140e,#101010);
+
+  background:
+    linear-gradient(
+      155deg,
+      #17140e,
+      #101010
+    );
+
   display:flex;
+
   flex-direction:column;
+
   justify-content:space-between;
+
   transition:.25s;
+
   color:inherit;
 }
 
 .issue:hover{
   transform:translateY(-6px);
+
   border-color:var(--gold);
-  box-shadow:0 12px 30px rgba(215,170,60,.12);
+
+  box-shadow:
+    0 12px 30px
+    rgba(215,170,60,.12);
 }
 
 .issue span{
   font-size:10px;
+
   color:var(--gold);
+
   letter-spacing:2px;
 }
 
@@ -860,7 +1251,9 @@ section{
 
 .issue em{
   font-size:11px;
+
   color:#777;
+
   font-style:normal;
 }
 
@@ -871,20 +1264,29 @@ section{
 
 .quote{
   padding:110px 20px;
+
   text-align:center;
 }
 
 .quote h2{
-  font:700 italic clamp(38px,5vw,65px)/1.1
-  "Playfair Display",serif;
+  font:
+    700
+    italic
+    clamp(38px,5vw,65px)/1.1
+    "Playfair Display",serif;
+
   max-width:900px;
+
   margin:auto;
 }
 
 .quote p{
   color:var(--gold);
+
   letter-spacing:4px;
+
   font-size:10px;
+
   margin-top:25px;
 }
 
@@ -895,13 +1297,17 @@ section{
 
 footer{
   padding:35px 0;
+
   color:#6e6b64;
+
   font-size:12px;
 }
 
 .foot{
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
 }
 
@@ -926,6 +1332,7 @@ footer{
 
   .hero{
     grid-template-columns:1fr;
+
     padding-top:70px;
     padding-bottom:70px;
   }
@@ -943,22 +1350,38 @@ footer{
   }
 
   .cards{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
   }
 
   .archive{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+      repeat(3,1fr);
   }
 
   .gallery-tiles{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:220px 180px 180px;
+    grid-template-columns:
+      1fr 1fr;
+
+    grid-template-rows:
+      220px 180px 180px;
   }
 
   .tile:first-child{
     grid-row:span 1;
     grid-column:span 2;
   }
+
+  /* LOTUS TABLET */
+
+  .lotus-visual{
+    right:-15px;
+    top:45px;
+
+    width:430px;
+    height:350px;
+  }
+
 }
 
 
@@ -998,34 +1421,53 @@ footer{
     display:none;
   }
 
+
   /* HAMBURGER */
+
   .menu-toggle{
     display:flex;
+
     margin-left:auto;
   }
 
+
   /* SEMBUNYIKAN TOMBOL KIRIM DI HP */
+
   .submit{
     display:none !important;
   }
 
+
   /* MENU DROPDOWN */
+
   .links{
     display:none !important;
 
     position:absolute;
+
     top:70px;
     left:0;
+
     width:100%;
 
-    padding:10px 18px 15px;
+    padding:
+      10px
+      18px
+      15px;
 
-    background:rgba(9,9,9,.98);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+    background:
+      rgba(9,9,9,.98);
+
+    border-top:
+      1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
 
     flex-direction:column;
+
     align-items:stretch;
+
     gap:0;
 
     z-index:9999;
@@ -1037,7 +1479,10 @@ footer{
 
   .links a{
     padding:15px 5px;
-    border-bottom:1px solid var(--line);
+
+    border-bottom:
+      1px solid var(--line);
+
     color:#c6c3bb;
   }
 
@@ -1054,94 +1499,142 @@ footer{
 
   .hero{
     min-height:auto;
+
     padding-top:65px;
     padding-bottom:55px;
+
     gap:40px;
   }
 
   .hero:before{
     right:-70px;
     top:40px;
+
     font-size:100px;
   }
 
   .kicker{
     font-size:9px;
+
     letter-spacing:3px;
   }
 
   .hero h1{
-    font-size:clamp(54px,15vw,72px);
+    font-size:
+      clamp(54px,15vw,72px);
+
     margin:18px 0;
   }
 
   .hero p{
     font-size:14px;
+
     line-height:1.75;
   }
 
   .actions{
     flex-direction:column;
+
     margin-top:23px;
   }
 
   .btn{
     width:100%;
+
     min-height:48px;
+
     padding:13px 16px;
   }
 
 
-  /* FEATURE */
+  /* =========================
+     FEATURE MOBILE
+  ========================= */
 
   .feature{
     height:440px;
+
     border-radius:14px;
+
+    border-color:
+      rgba(232,138,168,.55);
+
+    background:
+      radial-gradient(
+        circle at 72% 42%,
+        rgba(232,138,168,.16),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 15% 12%,
+        rgba(255,255,255,.96),
+        transparent 32%
+      ),
+      linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fbfaf5 58%,
+        #f3eedf 100%
+      );
   }
+
+
+  /* LOTUS MOBILE */
+
+  .lotus-visual{
+    width:345px;
+    height:315px;
+
+    right:-18px;
+    top:35px;
+  }
+
+  .lotus-visual:after{
+    width:275px;
+    height:275px;
+
+    border-color:
+      rgba(232,138,168,.16);
+
+    box-shadow:
+      0 0 0 7px rgba(126,170,140,.04),
+      0 0 0 15px rgba(232,138,168,.03);
+  }
+
+  .lotus-visual:before{
+    width:260px;
+    height:185px;
+
+    filter:blur(13px);
+  }
+
 
   .feature-content{
     padding:25px;
   }
 
-  .time-clock{
-    width:285px;
-    height:285px;
-    right:-18px;
-    top:82px;
-  }
-
-  .time-clock .numeral{font-size:11px;}
-  .time-clock .n12{transform:translate(-50%,-50%) translateY(-120px);}
-  .time-clock .n1{transform:translate(-50%,-50%) translate(60px,-104px);}
-  .time-clock .n2{transform:translate(-50%,-50%) translate(104px,-60px);}
-  .time-clock .n3{transform:translate(-50%,-50%) translateX(120px);}
-  .time-clock .n4{transform:translate(-50%,-50%) translate(104px,60px);}
-  .time-clock .n5{transform:translate(-50%,-50%) translate(60px,104px);}
-  .time-clock .n6{transform:translate(-50%,-50%) translateY(120px);}
-  .time-clock .n7{transform:translate(-50%,-50%) translate(-60px,104px);}
-  .time-clock .n8{transform:translate(-50%,-50%) translate(-104px,60px);}
-  .time-clock .n9{transform:translate(-50%,-50%) translateX(-120px);}
-  .time-clock .n10{transform:translate(-50%,-50%) translate(-104px,-60px);}
-  .time-clock .n11{transform:translate(-50%,-50%) translate(-60px,-104px);}
-  .time-clock .tick{height:9px;transform-origin:50% 120px;}
-  .time-clock .tick.major{height:13px;}
-  .time-clock .hour{width:70px;height:4px;}
-  .time-clock .minute{width:92px;height:2px;}
-
   .feature .badge{
     font-size:8px;
+
     padding:6px 8px;
+
     letter-spacing:1.5px;
+
+    border-color:
+      var(--lotus-pink);
   }
 
   .feature h2{
     font-size:39px;
+
     max-width:320px;
   }
 
   .feature p{
     font-size:12.5px;
+
     line-height:1.65;
+
     max-width:330px;
   }
 
@@ -1150,11 +1643,15 @@ footer{
   }
 
 
-  /* MARQUEE */
+  /* =========================
+     MARQUEE
+  ========================= */
 
   .marquee{
     font-size:9px;
+
     letter-spacing:2px;
+
     padding:13px 0;
   }
 
@@ -1163,7 +1660,9 @@ footer{
   }
 
 
-  /* SECTION */
+  /* =========================
+     SECTION
+  ========================= */
 
   section{
     padding:65px 0;
@@ -1171,40 +1670,50 @@ footer{
 
   .section-head{
     display:block;
+
     margin-bottom:25px;
   }
 
   .section-head h2{
     font-size:36px;
+
     line-height:1.08;
+
     margin-top:9px;
   }
 
   .section-head > a{
     display:inline-block;
+
     margin-top:14px;
   }
 
 
-  /* EDITION */
+  /* =========================
+     EDITION
+  ========================= */
 
   .edition-main{
     min-height:auto;
+
     padding:25px;
   }
 
   .edition-main h3{
     font-size:37px;
+
     margin:22px 0 13px;
   }
 
   .edition-main p{
     font-size:13px;
+
     line-height:1.65;
   }
 
   .edition-main:after{
     font-size:120px;
+
     right:10px;
     bottom:-30px;
   }
@@ -1226,15 +1735,19 @@ footer{
   }
 
 
-  /* CARDS */
+  /* =========================
+     CARDS
+  ========================= */
 
   .cards{
     grid-template-columns:1fr;
+
     gap:12px;
   }
 
   .card{
     min-height:200px;
+
     padding:22px;
   }
 
@@ -1247,10 +1760,13 @@ footer{
   }
 
 
-  /* GALLERY */
+  /* =========================
+     GALLERY
+  ========================= */
 
   .mading-archive{
     min-height:250px;
+
     padding:25px;
   }
 
@@ -1264,17 +1780,22 @@ footer{
 
   .gallery-tiles{
     grid-template-columns:1fr;
-    grid-template-rows:repeat(4,170px);
+
+    grid-template-rows:
+      repeat(4,170px);
+
     gap:12px;
   }
 
   .tile{
     min-height:170px;
+
     padding:21px;
   }
 
   .tile:first-child{
     grid-column:auto;
+
     grid-row:auto;
   }
 
@@ -1283,15 +1804,20 @@ footer{
   }
 
 
-  /* ARCHIVE */
+  /* =========================
+     ARCHIVE
+  ========================= */
 
   .archive{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
+
     gap:10px;
   }
 
   .issue{
     height:190px;
+
     padding:15px;
   }
 
@@ -1304,7 +1830,9 @@ footer{
   }
 
 
-  /* QUOTE */
+  /* =========================
+     QUOTE
+  ========================= */
 
   .quote{
     padding:80px 15px;
@@ -1316,11 +1844,14 @@ footer{
 
   .quote p{
     font-size:8px;
+
     letter-spacing:2.5px;
   }
 
 
-  /* FOOTER */
+  /* =========================
+     FOOTER
+  ========================= */
 
   footer{
     padding:28px 0;
@@ -1328,7 +1859,9 @@ footer{
 
   .foot{
     flex-direction:column;
+
     gap:10px;
+
     line-height:1.6;
   }
 
@@ -1358,6 +1891,7 @@ footer{
   .menu-toggle{
     width:39px;
     height:39px;
+
     font-size:21px;
   }
 
@@ -1367,6 +1901,26 @@ footer{
 
   .feature{
     height:455px;
+  }
+
+  /* LOTUS SMALL PHONE */
+
+  .lotus-visual{
+    width:310px;
+    height:285px;
+
+    right:-20px;
+    top:45px;
+  }
+
+  .lotus-visual:after{
+    width:245px;
+    height:245px;
+  }
+
+  .lotus-visual:before{
+    width:235px;
+    height:165px;
   }
 
   .feature h2{
@@ -1401,6 +1955,7 @@ footer{
 
 <body>
 
+
 <!-- =========================
      NAVBAR
 ========================= -->
@@ -1414,8 +1969,13 @@ footer{
       <img src="logo.png" alt="Logo D'tik.COM">
 
       <span>
+
         <b>D’tik.COM</b>
-        <small>DARUSSALAM JURNALISTIK COMMUNITY</small>
+
+        <small>
+          DARUSSALAM JURNALISTIK COMMUNITY
+        </small>
+
       </span>
 
     </a>
@@ -1424,10 +1984,15 @@ footer{
     <div class="links" id="navLinks">
 
       <a href="#home">Beranda</a>
+
       <a href="#mading">Mading</a>
+
       <a href="#karya">Karya</a>
+
       <a href="#galeri">Galeri</a>
+
       <a href="#arsip">Arsip</a>
+
       <a href="pages/tentang.html">Tentang</a>
 
     </div>
@@ -1494,54 +2059,356 @@ footer{
   </div>
 
 
-  <!-- FEATURE -->
+  <!-- =========================
+       FEATURE
+  ========================= -->
 
   <div class="feature">
 
-    <div class="time-clock" aria-hidden="true">
-      <span class="numeral n12">XII</span>
-      <span class="numeral n1">I</span>
-      <span class="numeral n2">II</span>
-      <span class="numeral n3">III</span>
-      <span class="numeral n4">IV</span>
-      <span class="numeral n5">V</span>
-      <span class="numeral n6">VI</span>
-      <span class="numeral n7">VII</span>
-      <span class="numeral n8">VIII</span>
-      <span class="numeral n9">IX</span>
-      <span class="numeral n10">X</span>
-      <span class="numeral n11">XI</span>
 
-      <span class="tick t1"></span><span class="tick t2"></span>
-      <span class="tick t3 major"></span><span class="tick t4"></span>
-      <span class="tick t5"></span><span class="tick t6 major"></span>
-      <span class="tick t7"></span><span class="tick t8"></span>
-      <span class="tick t9 major"></span><span class="tick t10"></span>
-      <span class="tick t11"></span>
+    <!-- =========================
+         LOTUS VISUAL
+         MENGGANTIKAN JAM LAMA
+    ========================= -->
 
-      <span class="hand hour"></span>
-      <span class="hand minute"></span>
-      <span class="second"></span>
+    <div class="lotus-visual" aria-hidden="true">
+
+      <svg
+        viewBox="0 0 500 400"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+
+          <!-- glow -->
+
+          <radialGradient id="lotusGlow">
+
+            <stop
+              offset="0%"
+              stop-color="#e88aa8"
+              stop-opacity=".28"/>
+
+            <stop
+              offset="100%"
+              stop-color="#e88aa8"
+              stop-opacity="0"/>
+
+          </radialGradient>
+
+
+          <!-- pink -->
+
+          <linearGradient
+            id="petalPink"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1">
+
+            <stop
+              offset="0%"
+              stop-color="#fff"/>
+
+            <stop
+              offset="55%"
+              stop-color="#f7b6ca"/>
+
+            <stop
+              offset="100%"
+              stop-color="#df789c"/>
+
+          </linearGradient>
+
+
+          <!-- white -->
+
+          <linearGradient
+            id="petalWhite"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1">
+
+            <stop
+              offset="0%"
+              stop-color="#fff"/>
+
+            <stop
+              offset="100%"
+              stop-color="#f9dce5"/>
+
+          </linearGradient>
+
+
+          <!-- green -->
+
+          <linearGradient
+            id="petalGreen"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1">
+
+            <stop
+              offset="0%"
+              stop-color="#dcefe2"/>
+
+            <stop
+              offset="100%"
+              stop-color="#7eaa8c"/>
+
+          </linearGradient>
+
+
+          <filter id="softGlow">
+
+            <feGaussianBlur
+              stdDeviation="12"/>
+
+          </filter>
+
+        </defs>
+
+
+        <!-- =========================
+             BACKGROUND GLOW
+        ========================= -->
+
+        <ellipse
+          cx="250"
+          cy="235"
+          rx="190"
+          ry="120"
+          fill="url(#lotusGlow)"
+          filter="url(#softGlow)"
+        />
+
+
+        <!-- =========================
+             GREEN LEAVES
+        ========================= -->
+
+        <path
+          d="
+            M250 300
+            C190 315 130 300 92 265
+            C150 258 207 270 250 300Z
+          "
+          fill="url(#petalGreen)"
+          opacity=".9"
+        />
+
+        <path
+          d="
+            M250 300
+            C310 315 370 300 408 265
+            C350 258 293 270 250 300Z
+          "
+          fill="url(#petalGreen)"
+          opacity=".9"
+        />
+
+        <path
+          d="
+            M250 302
+            C225 325 185 337 145 325
+            C177 300 215 293 250 302Z
+          "
+          fill="#91b79d"
+          opacity=".72"
+        />
+
+        <path
+          d="
+            M250 302
+            C275 325 315 337 355 325
+            C323 300 285 293 250 302Z
+          "
+          fill="#91b79d"
+          opacity=".72"
+        />
+
+
+        <!-- =========================
+             OUTER PINK PETALS
+        ========================= -->
+
+        <path
+          d="
+            M250 300
+            C178 293 117 250 105 190
+            C165 198 221 235 250 300Z
+          "
+          fill="url(#petalPink)"
+        />
+
+        <path
+          d="
+            M250 300
+            C322 293 383 250 395 190
+            C335 198 279 235 250 300Z
+          "
+          fill="url(#petalPink)"
+        />
+
+
+        <!-- =========================
+             SIDE PETALS
+        ========================= -->
+
+        <path
+          d="
+            M250 300
+            C178 280 137 225 145 155
+            C199 185 236 238 250 300Z
+          "
+          fill="url(#petalWhite)"
+        />
+
+        <path
+          d="
+            M250 300
+            C322 280 363 225 355 155
+            C301 185 264 238 250 300Z
+          "
+          fill="url(#petalWhite)"
+        />
+
+
+        <!-- =========================
+             TALL CENTER PETALS
+        ========================= -->
+
+        <path
+          d="
+            M250 300
+            C202 252 184 188 215 112
+            C246 151 257 217 250 300Z
+          "
+          fill="url(#petalPink)"
+        />
+
+        <path
+          d="
+            M250 300
+            C298 252 316 188 285 112
+            C254 151 243 217 250 300Z
+          "
+          fill="url(#petalPink)"
+        />
+
+
+        <!-- =========================
+             CENTER WHITE PETAL
+        ========================= -->
+
+        <path
+          d="
+            M250 300
+            C218 238 218 166 250 82
+            C282 166 282 238 250 300Z
+          "
+          fill="url(#petalWhite)"
+        />
+
+
+        <!-- =========================
+             INNER PINK
+        ========================= -->
+
+        <path
+          d="
+            M250 292
+            C232 241 235 187 250 135
+            C265 187 268 241 250 292Z
+          "
+          fill="#ef9db7"
+          opacity=".62"
+        />
+
+
+        <!-- =========================
+             LOTUS BASE
+        ========================= -->
+
+        <ellipse
+          cx="250"
+          cy="300"
+          rx="92"
+          ry="18"
+          fill="#6e987d"
+          opacity=".35"
+        />
+
+
+        <!-- =========================
+             DECORATIVE CIRCLES
+        ========================= -->
+
+        <circle
+          cx="180"
+          cy="285"
+          r="4"
+          fill="#d9789c"
+          opacity=".5"/>
+
+        <circle
+          cx="320"
+          cy="285"
+          r="4"
+          fill="#d9789c"
+          opacity=".5"/>
+
+        <circle
+          cx="210"
+          cy="310"
+          r="3"
+          fill="#7eaa8c"
+          opacity=".6"/>
+
+        <circle
+          cx="290"
+          cy="310"
+          r="3"
+          fill="#7eaa8c"
+          opacity=".6"/>
+
+      </svg>
+
     </div>
+
+
+    <!-- =========================
+         FEATURE CONTENT
+    ========================= -->
 
     <div class="feature-content">
 
-      <div class="badge">MADING TERBARU · EDISI #02</div>
+      <div class="badge">
+        MADING TERBARU · EDISI #03
+      </div>
 
       <div>
-        <div class="kicker">TEMA MINGGU INI</div>
 
-        <h2>Time is<br>Ours.</h2>
+        <div class="kicker">
+          TEMA MINGGU INI
+        </div>
+
+        <h2>
+          Love You
+        </h2>
 
         <p>
-          Edisi kedua D’tik.COM hadir dengan tema waktu.
-          Menyelami arti setiap detik, kesempatan, perjalanan,
-          dan cerita yang tercipta di dalamnya melalui berbagai
-          rubrik karya santri.
+          Edisi ketiga D’tik.COM hadir dengan tema lotus.
+          Sebuah edisi tentang rasa, ketulusan, dan keindahan yang tumbuh seperti bunga lotus—tenang, sederhana, tetapi memiliki makna yang dalam.
         </p>
 
-        <a class="read" href="pages/mading-edisi-02.html">
+        <a
+          class="read"
+          href="pages/mading-edisi-03.html">
+
           BUKA EDISI LENGKAP →
+
         </a>
 
       </div>
@@ -1560,27 +2427,35 @@ footer{
 <div class="marquee">
 
   TOPIK UTAMA
+
   <span>✦</span>
 
   OPINI
+
   <span>✦</span>
 
   HUMOR PONDOK
+
   <span>✦</span>
 
   KARYA SENI
+
   <span>✦</span>
 
   KOMIK
+
   <span>✦</span>
 
   PUISI
+
   <span>✦</span>
 
   CERPEN
+
   <span>✦</span>
 
-  TIPS & TRICK
+  TIPS &amp; TRICK
+
   <span>✦</span>
 
   TOKOH INSPIRATIF
@@ -1619,33 +2494,39 @@ footer{
 
     <div class="edition">
 
+
       <div class="edition-main">
 
         <div class="kicker">
-          EDISI #01 · MADING MINGGUAN
+          EDISI #03 · MADING MINGGUAN
         </div>
 
         <h3>
-          Time is Ours.
+          Love You.
         </h3>
 
         <p>
-          Perjalanan digital D’tik.COM dengan edisi kedua
-          bertema <b>Time is Ours</b>. Jelajahi pembuka,
+          Perjalanan digital D’tik.COM dengan edisi ketiga
+          bertema <b>Love You</b>. Jelajahi pembuka,
           topik utama, opini, learning language, humor pondok,
           karikatur, karya seni, komik, puisi, tokoh inspiratif,
           cerpen, serta tips &amp; trick dalam satu mading penuh
           kreativitas santri.
         </p>
 
-        <a class="btn" href="pages/mading-edisi-02.html">
+        <a
+          class="btn"
+          href="pages/mading-edisi-03.html">
+
           LIHAT RUBRIK →
+
         </a>
 
       </div>
 
 
       <div class="edition-side">
+
 
         <div class="mini">
 
@@ -1681,6 +2562,7 @@ footer{
           </p>
 
         </div>
+
 
       </div>
 
@@ -1722,82 +2604,215 @@ footer{
 
     <div class="cards">
 
+
       <div class="card">
+
         <div class="icon">✎</div>
-        <small>01 · TULISAN</small>
-        <h3>Topik Utama</h3>
-        <p>Bahasan utama yang mengupas tema setiap edisi.</p>
+
+        <small>
+          01 · TULISAN
+        </small>
+
+        <h3>
+          Topik Utama
+        </h3>
+
+        <p>
+          Bahasan utama yang mengupas tema setiap edisi.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">“</div>
-        <small>02 · PENDAPAT</small>
-        <h3>Opini</h3>
-        <p>Suara, pandangan, dan pemikiran santri.</p>
+
+        <small>
+          02 · PENDAPAT
+        </small>
+
+        <h3>
+          Opini
+        </h3>
+
+        <p>
+          Suara, pandangan, dan pemikiran santri.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">Aa</div>
-        <small>03 · LANGUAGE</small>
-        <h3>Learning Language</h3>
-        <p>Belajar bahasa dengan cara ringan dan kreatif.</p>
+
+        <small>
+          03 · LANGUAGE
+        </small>
+
+        <h3>
+          Learning Language
+        </h3>
+
+        <p>
+          Belajar bahasa dengan cara ringan dan kreatif.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">☺</div>
-        <small>04 · HUMOR</small>
-        <h3>Humor Pondok</h3>
-        <p>Momen lucu dan cerita khas kehidupan pondok.</p>
+
+        <small>
+          04 · HUMOR
+        </small>
+
+        <h3>
+          Humor Pondok
+        </h3>
+
+        <p>
+          Momen lucu dan cerita khas kehidupan pondok.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">⌁</div>
-        <small>05 · VISUAL</small>
-        <h3>Karikatur</h3>
-        <p>Gagasan yang disampaikan lewat gambar dan satir.</p>
+
+        <small>
+          05 · VISUAL
+        </small>
+
+        <h3>
+          Karikatur
+        </h3>
+
+        <p>
+          Gagasan yang disampaikan lewat gambar dan satir.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">◇</div>
-        <small>06 · ART</small>
-        <h3>Karya Seni</h3>
-        <p>Ruang untuk lukisan, ilustrasi, dan karya visual.</p>
+
+        <small>
+          06 · ART
+        </small>
+
+        <h3>
+          Karya Seni
+        </h3>
+
+        <p>
+          Ruang untuk lukisan, ilustrasi, dan karya visual.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">▦</div>
-        <small>07 · CERITA VISUAL</small>
-        <h3>Komik</h3>
-        <p>Cerita dalam panel, karakter, dan kreativitas.</p>
+
+        <small>
+          07 · CERITA VISUAL
+        </small>
+
+        <h3>
+          Komik
+        </h3>
+
+        <p>
+          Cerita dalam panel, karakter, dan kreativitas.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">❧</div>
-        <small>08 · SASTRA</small>
-        <h3>Puisi</h3>
-        <p>Kata-kata yang dirangkai menjadi rasa.</p>
+
+        <small>
+          08 · SASTRA
+        </small>
+
+        <h3>
+          Puisi
+        </h3>
+
+        <p>
+          Kata-kata yang dirangkai menjadi rasa.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">★</div>
-        <small>09 · INSPIRASI</small>
-        <h3>Tokoh Inspiratif</h3>
-        <p>Mengenal sosok dan kisah yang memberi teladan.</p>
+
+        <small>
+          09 · INSPIRASI
+        </small>
+
+        <h3>
+          Tokoh Inspiratif
+        </h3>
+
+        <p>
+          Mengenal sosok dan kisah yang memberi teladan.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">⌂</div>
-        <small>10 · SASTRA</small>
-        <h3>Cerpen</h3>
-        <p>Cerita pendek dari imajinasi para penulis muda.</p>
+
+        <small>
+          10 · SASTRA
+        </small>
+
+        <h3>
+          Cerpen
+        </h3>
+
+        <p>
+          Cerita pendek dari imajinasi para penulis muda.
+        </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="icon">+</div>
-        <small>11 · LIFESTYLE</small>
-        <h3>Tips &amp; Trick</h3>
-        <p>Tips sederhana yang berguna untuk kehidupan santri.</p>
+
+        <small>
+          11 · LIFESTYLE
+        </small>
+
+        <h3>
+          Tips &amp; Trick
+        </h3>
+
+        <p>
+          Tips sederhana yang berguna untuk kehidupan santri.
+        </p>
+
       </div>
+
 
     </div>
 
@@ -1873,21 +2888,26 @@ footer{
 
       <div class="gallery-tiles">
 
+
         <div class="tile">
           <b>Karikatur</b>
         </div>
+
 
         <div class="tile">
           <b>Karya Seni</b>
         </div>
 
+
         <div class="tile">
           <b>Komik</b>
         </div>
 
+
         <div class="tile">
           <b>Dokumentasi</b>
         </div>
+
 
       </div>
 
@@ -1929,45 +2949,99 @@ footer{
 
     <div class="archive">
 
-      <a class="issue" href="#">
-        <span>EDISI #05</span>
-        <strong>Coming Soon</strong>
-        <em>September 2026</em>
-      </a>
 
       <a class="issue" href="#">
-        <span>EDISI #04</span>
-        <strong>Coming Soon</strong>
-        <em>September 2026</em>
+
+        <span>
+          EDISI #05
+        </span>
+
+        <strong>
+          Coming Soon
+        </strong>
+
+        <em>
+          September 2026
+        </em>
+
       </a>
+
 
       <a class="issue" href="#">
-        <span>EDISI #03</span>
-        <strong>Coming Soon</strong>
-        <em>September 2026</em>
+
+        <span>
+          EDISI #04
+        </span>
+
+        <strong>
+          Coming Soon
+        </strong>
+
+        <em>
+          September 2026
+        </em>
+
       </a>
 
-      <a href="pages/mading-edisi-02.html" class="issue">
-        <span>EDISI #02</span>
 
-        <strong>Time is<br>
-          Ours</strong>
+      <a
+        href="pages/mading-edisi-03.html"
+        class="issue">
 
-        <em>September 2026</em>
+        <span>
+          EDISI #03
+        </span>
+
+        <strong>
+          Love You
+        </strong>
+
+        <em>
+          September 2026
+        </em>
+
       </a>
 
-      <a href="pages/mading-edisi-01.html" class="issue">
 
-        <span>EDISI #01</span>
+      <a
+        href="pages/mading-edisi-02.html"
+        class="issue">
+
+        <span>
+          EDISI #02
+        </span>
+
+        <strong>
+          Time is<br>
+          Ours
+        </strong>
+
+        <em>
+          September 2026
+        </em>
+
+      </a>
+
+
+      <a
+        href="pages/mading-edisi-01.html"
+        class="issue">
+
+        <span>
+          EDISI #01
+        </span>
 
         <strong>
           As White<br>
           as Snow
         </strong>
 
-        <em>September 2026</em>
+        <em>
+          September 2026
+        </em>
 
       </a>
+
 
     </div>
 
@@ -2009,13 +3083,22 @@ footer{
   <div class="container foot">
 
     <div>
+
       © 2026
-      <span class="gold">D’tik.COM</span>
+
+      <span class="gold">
+        D’tik.COM
+      </span>
+
       · Darussalam Jurnalistik Community
+
     </div>
 
+
     <div class="gold">
+
       Time to Act and Create.
+
     </div>
 
   </div>
@@ -2029,47 +3112,74 @@ footer{
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
 
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+    const menuToggle =
+      document.getElementById("menuToggle");
 
-  menuToggle.addEventListener("click", function(){
+    const navLinks =
+      document.getElementById("navLinks");
 
-    const isOpen = navLinks.classList.toggle("active");
 
-    menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.addEventListener(
+      "click",
+      function(){
 
-    menuToggle.setAttribute(
-      "aria-expanded",
-      isOpen ? "true" : "false"
+        const isOpen =
+          navLinks.classList.toggle("active");
+
+
+        menuToggle.textContent =
+          isOpen ? "✕" : "☰";
+
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+      }
     );
 
-  });
+
+    /* Tutup menu ketika link diklik */
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(
+        function(link){
+
+          link.addEventListener(
+            "click",
+            function(){
+
+              navLinks
+                .classList
+                .remove("active");
 
 
-  /* Tutup menu ketika link diklik */
+              menuToggle.textContent =
+                "☰";
 
-  navLinks.querySelectorAll("a").forEach(function(link){
 
-    link.addEventListener("click", function(){
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
 
-      navLinks.classList.remove("active");
+            }
+          );
 
-      menuToggle.textContent = "☰";
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
+        }
       );
 
-    });
-
-  });
-
-});
+  }
+);
 
 </script>
+
 
 </body>
 </html>
