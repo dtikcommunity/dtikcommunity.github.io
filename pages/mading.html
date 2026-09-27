@@ -362,7 +362,7 @@ nav{
 
   grid-template-columns:1fr;
 
-  gap:28px;
+  gap:40px;
 }
 
 /* =========================
@@ -3505,6 +3505,438 @@ footer{
   }
 
 }
+/* =========================================
+   EDISI 04 — MUSIC / GRAMOPHONE
+========================================= */
+
+.music-primary{
+  grid-column:1 / -1;
+
+  width:100%;
+  height:500px;
+
+  position:relative;
+  overflow:hidden;
+
+  border:1px solid #cdb77c;
+  border-radius:16px;
+
+  background:
+    radial-gradient(
+      circle at 76% 45%,
+      rgba(215,170,60,.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #eee7d8 0%,
+      #dcd2bc 45%,
+      #bdb198 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(55,42,18,.16);
+
+  transition:.35s ease;
+}
+
+.music-primary:hover{
+  transform:translateY(-6px);
+
+  border-color:#a98a3d;
+
+  box-shadow:
+    0 30px 90px rgba(55,42,18,.23);
+}
+
+
+/* =========================================
+   MUSIC CONTENT
+========================================= */
+
+.music-edition-content{
+  position:absolute;
+
+  inset:0;
+
+  z-index:10;
+
+  width:100%;
+
+  padding:38px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(238,231,216,.99) 0%,
+      rgba(238,231,216,.96) 27%,
+      rgba(238,231,216,.78) 43%,
+      rgba(238,231,216,.22) 63%,
+      transparent 82%
+    );
+}
+
+.music-badge{
+  position:absolute;
+
+  left:38px;
+  top:38px;
+
+  padding:7px 10px;
+
+  border:1px solid #8e702b;
+
+  background:rgba(255,255,255,.42);
+
+  color:#57451e;
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:2px;
+}
+
+.music-kicker{
+  margin-bottom:8px;
+
+  color:#76602a;
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:3px;
+}
+
+.music-edition-content h3{
+  margin:0 0 14px;
+
+  color:#17140d;
+
+  font:
+    700 clamp(48px,5vw,65px)/.92
+    "Playfair Display",serif;
+
+  letter-spacing:-2px;
+}
+
+.music-edition-content p{
+  max-width:500px;
+
+  margin:0;
+
+  color:#635d51;
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+.music-open{
+  width:max-content;
+
+  margin-top:17px;
+
+  color:#76591c;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:.5px;
+
+  transition:.2s ease;
+}
+
+.music-open:hover{
+  color:#4f3a12;
+
+  transform:translateX(4px);
+}
+
+
+/* =========================================
+   GRAMOPHONE VISUAL
+========================================= */
+
+.music-visual{
+  position:absolute;
+
+  right:-10px;
+  top:20px;
+
+  width:510px;
+  height:440px;
+
+  pointer-events:none;
+
+  z-index:4;
+}
+
+.music-glow{
+  position:absolute;
+
+  width:260px;
+  height:260px;
+
+  right:70px;
+  top:80px;
+
+  border-radius:50%;
+
+  background:rgba(215,170,60,.22);
+
+  filter:blur(50px);
+}
+
+.music-ring{
+  position:absolute;
+
+  border:1px solid rgba(112,86,30,.16);
+
+  border-radius:50%;
+}
+
+.music-ring.one{
+  width:340px;
+  height:340px;
+
+  right:0;
+  top:45px;
+}
+
+.music-ring.two{
+  width:270px;
+  height:270px;
+
+  right:35px;
+  top:80px;
+}
+
+.gramophone{
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  z-index:3;
+
+  filter:
+    drop-shadow(
+      0 25px 20px
+      rgba(55,42,18,.18)
+    );
+}
+
+.floating-note{
+  position:absolute;
+
+  z-index:5;
+
+  color:rgba(94,72,26,.78);
+
+  font-family:"Playfair Display",serif;
+
+  font-weight:700;
+
+  animation:
+    noteFloat04 4s ease-in-out infinite;
+}
+
+.note-1{
+  top:25px;
+  right:110px;
+  font-size:28px;
+}
+
+.note-2{
+  top:105px;
+  right:18px;
+  font-size:22px;
+  animation-delay:.8s;
+}
+
+.note-3{
+  top:250px;
+  right:10px;
+  font-size:31px;
+  animation-delay:1.4s;
+}
+
+.note-4{
+  bottom:38px;
+  right:105px;
+  font-size:19px;
+  animation-delay:2s;
+}
+
+@keyframes noteFloat04{
+
+  0%,100%{
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-13px)
+      rotate(5deg);
+  }
+
+}
+
+.music-record{
+  transform-origin:298px 194px;
+
+  animation:
+    recordSpin04 6s linear infinite;
+}
+
+@keyframes recordSpin04{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE EDISI 04
+========================================= */
+
+@media(max-width:700px){
+
+  .music-primary{
+    height:460px;
+    min-height:460px;
+  }
+
+  .music-edition-content{
+    min-height:460px;
+
+    padding:24px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(238,231,216,.99) 0%,
+        rgba(238,231,216,.96) 43%,
+        rgba(238,231,216,.62) 67%,
+        transparent 100%
+      );
+  }
+
+  .music-badge{
+    left:22px;
+    top:22px;
+
+    font-size:9px;
+  }
+
+  .music-kicker{
+    font-size:9px;
+  }
+
+  .music-edition-content h3{
+    font-size:43px;
+  }
+
+  .music-edition-content p{
+    max-width:350px;
+
+    font-size:11px;
+
+    line-height:1.5;
+  }
+
+  .music-visual{
+    width:330px;
+    height:330px;
+
+    right:-20px;
+    top:28px;
+
+    opacity:.72;
+  }
+
+  .music-glow{
+    width:220px;
+    height:220px;
+
+    right:45px;
+    top:55px;
+  }
+
+  .music-ring.one{
+    width:270px;
+    height:270px;
+
+    right:0;
+    top:30px;
+  }
+
+  .music-ring.two{
+    width:215px;
+    height:215px;
+
+    right:28px;
+    top:57px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .music-primary{
+    height:440px;
+    min-height:440px;
+  }
+
+  .music-edition-content{
+    min-height:440px;
+
+    padding:22px;
+  }
+
+  .music-edition-content h3{
+    font-size:38px;
+  }
+
+  .music-edition-content p{
+    max-width:285px;
+
+    font-size:10.5px;
+  }
+
+  .music-visual{
+    width:285px;
+    height:285px;
+
+    right:-28px;
+    top:35px;
+
+    opacity:.58;
+  }
+
+}
+.edition-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+/* JARAK EDISI 03 DAN 04 */
+.edition-card.edisi-03{
+  margin-bottom:40px !important;
+}
 </style>
 </head>
 
@@ -3993,6 +4425,392 @@ footer{
     </a>
 
   </div>
+  <!-- =========================
+     EDISI 04 — MUSIC
+========================= -->
+
+<article class="edition-card music-primary">
+
+  <a
+    href="mading-edisi-04.html"
+    class="music-edition-content"
+  >
+
+    <div class="music-badge">
+      MADING TERBARU · EDISI #04
+    </div>
+
+    <div>
+
+      <div class="music-kicker">
+        TEMA MINGGU INI
+      </div>
+
+      <h3>
+        Music<br>
+        of Life.
+      </h3>
+
+      <p>
+        Edisi keempat D’tik.COM hadir dengan
+        nuansa musik. Setiap nada membawa cerita,
+        setiap irama menyimpan kenangan, dan
+        setiap karya menjadi bagian dari perjalanan.
+      </p>
+
+      <span class="music-open">
+        BUKA EDISI LENGKAP →
+      </span>
+
+    </div>
+
+  </a>
+
+
+  <!-- =========================
+       GRAMOPHONE
+  ========================== -->
+
+  <div class="music-visual" aria-hidden="true">
+
+    <div class="music-glow"></div>
+
+    <div class="music-ring one"></div>
+    <div class="music-ring two"></div>
+
+    <span class="floating-note note-1">♪</span>
+    <span class="floating-note note-2">♫</span>
+    <span class="floating-note note-3">♪</span>
+    <span class="floating-note note-4">♬</span>
+
+
+    <svg
+      class="gramophone"
+      viewBox="0 0 520 420"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <defs>
+
+        <linearGradient
+          id="woodBody04"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="1"
+        >
+          <stop offset="0%" stop-color="#6b431d"/>
+          <stop offset="55%" stop-color="#3b2413"/>
+          <stop offset="100%" stop-color="#21130b"/>
+        </linearGradient>
+
+        <linearGradient
+          id="goldMetal04"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="1"
+        >
+          <stop offset="0%" stop-color="#f4d477"/>
+          <stop offset="45%" stop-color="#c79a32"/>
+          <stop offset="100%" stop-color="#765316"/>
+        </linearGradient>
+
+        <radialGradient id="recordGradient04">
+
+          <stop
+            offset="0%"
+            stop-color="#3a3935"
+          />
+
+          <stop
+            offset="55%"
+            stop-color="#171715"
+          />
+
+          <stop
+            offset="100%"
+            stop-color="#050505"
+          />
+
+        </radialGradient>
+
+        <radialGradient id="musicGlow04">
+
+          <stop
+            offset="0%"
+            stop-color="#e3bd55"
+            stop-opacity=".35"
+          />
+
+          <stop
+            offset="100%"
+            stop-color="#e3bd55"
+            stop-opacity="0"
+          />
+
+        </radialGradient>
+
+        <filter id="recordShadow04">
+
+          <feDropShadow
+            dx="0"
+            dy="10"
+            stdDeviation="9"
+            flood-opacity=".3"
+          />
+
+        </filter>
+
+      </defs>
+
+
+      <!-- GOLDEN GLOW -->
+
+      <ellipse
+        cx="300"
+        cy="225"
+        rx="190"
+        ry="135"
+        fill="url(#musicGlow04)"
+      />
+
+
+      <!-- SHADOW -->
+
+      <ellipse
+        cx="300"
+        cy="363"
+        rx="160"
+        ry="23"
+        fill="#2b1d0d"
+        opacity=".25"
+      />
+
+
+      <!-- WOODEN BODY -->
+
+      <rect
+        x="115"
+        y="270"
+        width="310"
+        height="85"
+        rx="9"
+        fill="url(#woodBody04)"
+        stroke="#8b6122"
+        stroke-width="2"
+      />
+
+      <rect
+        x="130"
+        y="286"
+        width="280"
+        height="55"
+        rx="5"
+        fill="#25170c"
+        opacity=".72"
+      />
+
+      <path
+        d="M145 302 H395"
+        stroke="#b47e29"
+        stroke-opacity=".35"
+        stroke-width="2"
+      />
+
+      <path
+        d="M145 316 H395"
+        stroke="#b47e29"
+        stroke-opacity=".18"
+        stroke-width="2"
+      />
+
+
+      <!-- RECORD BASE -->
+
+      <ellipse
+        cx="300"
+        cy="257"
+        rx="108"
+        ry="24"
+        fill="#171513"
+        stroke="url(#goldMetal04)"
+        stroke-width="3"
+      />
+
+      <ellipse
+        cx="300"
+        cy="249"
+        rx="100"
+        ry="20"
+        fill="#292723"
+      />
+
+
+      <!-- RECORD -->
+
+      <g
+        class="music-record"
+        filter="url(#recordShadow04)"
+      >
+
+        <circle
+          cx="300"
+          cy="194"
+          r="75"
+          fill="url(#recordGradient04)"
+          stroke="#0b0b0a"
+          stroke-width="4"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="65"
+          fill="none"
+          stroke="#4d4b46"
+          stroke-opacity=".35"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="57"
+          fill="none"
+          stroke="#4d4b46"
+          stroke-opacity=".28"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="49"
+          fill="none"
+          stroke="#4d4b46"
+          stroke-opacity=".25"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="40"
+          fill="none"
+          stroke="#4d4b46"
+          stroke-opacity=".2"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="19"
+          fill="url(#goldMetal04)"
+        />
+
+        <circle
+          cx="300"
+          cy="194"
+          r="5"
+          fill="#24180c"
+        />
+
+      </g>
+
+
+      <!-- CENTER STEM -->
+
+      <rect
+        x="294"
+        y="238"
+        width="12"
+        height="35"
+        rx="4"
+        fill="url(#goldMetal04)"
+      />
+
+
+      <!-- ARM -->
+
+      <path
+        d="M350 247
+           C370 239,384 218,382 185"
+        fill="none"
+        stroke="url(#goldMetal04)"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+
+      <circle
+        cx="350"
+        cy="247"
+        r="11"
+        fill="url(#goldMetal04)"
+      />
+
+      <path
+        d="M378 181
+           L393 174
+           L399 183
+           L384 191 Z"
+        fill="#4b3513"
+      />
+
+      <line
+        x1="396"
+        y1="181"
+        x2="402"
+        y2="198"
+        stroke="#1b1309"
+        stroke-width="2"
+      />
+
+
+      <!-- HORN SUPPORT -->
+
+      <rect
+        x="378"
+        y="125"
+        width="11"
+        height="57"
+        rx="4"
+        fill="url(#goldMetal04)"
+        transform="rotate(15 383 150)"
+      />
+
+
+      <!-- GRAMOPHONE HORN -->
+
+      <path
+        d="M380 126
+           C399 111,426 91,470 70
+           C489 61,502 72,491 91
+           C474 120,451 151,418 172
+           C402 182,386 172,387 157 Z"
+        fill="url(#goldMetal04)"
+        stroke="#79561a"
+        stroke-width="2"
+      />
+
+      <path
+        d="M408 126
+           C431 107,454 91,480 80
+           C461 108,443 132,418 151
+           C410 157,402 151,408 126 Z"
+        fill="#25180b"
+        opacity=".85"
+      />
+
+      <circle
+        cx="388"
+        cy="158"
+        r="7"
+        fill="#e2bc58"
+      />
+
+    </svg>
+
+  </div>
+
+</article>
 
 </article>
 
@@ -4003,57 +4821,47 @@ footer{
 
     <div class="edition-index">
 
-      <div class="index-item">
+  <div class="index-item">
 
-        <small>
-          01
-        </small>
+    <small>01</small>
 
-        <strong>
-          As White as Snow
-        </strong>
-
-      </div>
-
-      <div class="index-item">
-
-        <small>
-          02
-        </small>
-
-        <strong>
-          Time is Ours
-        </strong>
-
-      </div>
-
-      <div class="index-item">
-
-        <small>
-          03
-        </small>
-
-        <strong>
-          Coming Soon
-        </strong>
-
-      </div>
-
-      <div class="index-item">
-
-        <small>
-          ARCHIVE
-        </small>
-
-        <strong>
-          D’tik.COM
-        </strong>
-
-      </div>
-
-    </div>
+    <strong>
+      As White as Snow
+    </strong>
 
   </div>
+
+  <div class="index-item">
+
+    <small>02</small>
+
+    <strong>
+      Time is Ours
+    </strong>
+
+  </div>
+
+  <div class="index-item">
+
+    <small>03</small>
+
+    <strong>
+      Love You
+    </strong>
+
+  </div>
+
+  <div class="index-item">
+
+    <small>04</small>
+
+    <strong>
+      Music of Life
+    </strong>
+
+  </div>
+
+</div>
 
 </section>
 
