@@ -3933,6 +3933,978 @@ footer{
   grid-template-columns:1fr;
   gap:40px;
 }
+/* =========================================================
+   EDISI 05 — G30S & SENI
+========================================================= */
+
+.g30s-primary{
+  grid-column:1 / -1;
+  width:100%;
+  height:500px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #9b8d78;
+  border-radius:16px;
+
+  background:
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(137,104,70,.25),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 60% 30%,
+      rgba(255,255,255,.12),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #171717 0%,
+      #292725 48%,
+      #111111 100%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.35);
+
+  transition:.35s ease;
+}
+
+.g30s-primary:hover{
+  transform:translateY(-6px);
+
+  border-color:#b19a78;
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.48);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.g30s-content{
+  position:absolute;
+  inset:0;
+  z-index:10;
+
+  width:100%;
+  padding:40px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20,20,20,.98) 0%,
+      rgba(20,20,20,.94) 28%,
+      rgba(20,20,20,.70) 45%,
+      rgba(20,20,20,.20) 65%,
+      transparent 84%
+    );
+}
+
+.g30s-badge{
+  display:inline-block;
+  width:max-content;
+
+  padding:7px 12px;
+
+  margin-bottom:20px;
+
+  border:1px solid rgba(191,166,124,.6);
+
+  color:#c7ae87;
+
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+
+  background:rgba(0,0,0,.22);
+}
+
+.g30s-kicker{
+  margin-bottom:10px;
+
+  color:#a9977d;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+.g30s-content h3{
+  margin:0;
+
+  max-width:430px;
+
+  color:#eee7dc;
+
+  font-family:"Playfair Display",serif;
+
+  font-size:54px;
+  line-height:.95;
+
+  font-weight:600;
+}
+
+.g30s-content p{
+  max-width:470px;
+
+  margin:22px 0 0;
+
+  color:#bdb8af;
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+.g30s-open{
+  display:inline-block;
+
+  margin-top:24px;
+
+  color:#d0b58b;
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+
+  transition:.3s ease;
+}
+
+.g30s-content a:hover .g30s-open{
+  letter-spacing:3px;
+}
+
+
+/* =========================
+   CONTEMPORARY BALLET
+========================================================= */
+
+.g30s-visual{
+  position:absolute;
+
+  right:-5px;
+  top:0;
+
+  width:560px;
+  height:500px;
+
+  z-index:5;
+
+  pointer-events:none;
+}
+
+.g30s-visual::before{
+  content:"";
+
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  right:75px;
+  top:75px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(177,143,101,.20),
+      rgba(177,143,101,.06) 42%,
+      transparent 70%
+    );
+
+  filter:blur(8px);
+
+  animation:g30sGlow 5s ease-in-out infinite;
+}
+
+
+/* abstract artistic fragments */
+
+.g30s-fragment{
+  position:absolute;
+
+  border:1px solid rgba(190,160,120,.32);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(210,190,160,.14),
+      transparent
+    );
+
+  transform:rotate(25deg);
+
+  animation:g30sFloat 7s ease-in-out infinite;
+}
+
+.g30s-fragment.one{
+  width:55px;
+  height:110px;
+
+  right:92px;
+  top:78px;
+}
+
+.g30s-fragment.two{
+  width:35px;
+  height:80px;
+
+  right:40px;
+  top:220px;
+
+  transform:rotate(-35deg);
+
+  animation-delay:1.5s;
+}
+
+.g30s-fragment.three{
+  width:70px;
+  height:25px;
+
+  right:170px;
+  bottom:80px;
+
+  transform:rotate(-18deg);
+
+  animation-delay:3s;
+}
+
+
+/* =========================
+   STATUE
+========================================================= */
+
+.g30s-statue{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  width:360px;
+  height:440px;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-4deg);
+
+  filter:
+    drop-shadow(
+      0 25px 25px rgba(0,0,0,.5)
+    );
+
+  animation:g30sDance 6s ease-in-out infinite;
+}
+
+
+/* head */
+
+.g30s-head{
+  position:absolute;
+
+  width:58px;
+  height:66px;
+
+  left:150px;
+  top:22px;
+
+  border-radius:
+    48% 48%
+    44% 44%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c5ad8c,
+      #79664f 70%,
+      #44382e
+    );
+
+  transform:rotate(-18deg);
+}
+
+
+/* hair */
+
+.g30s-head::before{
+  content:"";
+
+  position:absolute;
+
+  width:68px;
+  height:48px;
+
+  left:-7px;
+  top:-8px;
+
+  border-radius:50% 55% 25% 45%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #302a25,
+      #111
+    );
+
+  transform:rotate(-8deg);
+}
+
+
+/* neck */
+
+.g30s-neck{
+  position:absolute;
+
+  width:30px;
+  height:45px;
+
+  left:168px;
+  top:73px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #554536,
+      #b59a76,
+      #554536
+    );
+
+  transform:rotate(-7deg);
+}
+
+
+/* torso */
+
+.g30s-body{
+  position:absolute;
+
+  width:90px;
+  height:190px;
+
+  left:133px;
+  top:98px;
+
+  border-radius:
+    42% 48%
+    30% 38%;
+
+  background:
+    linear-gradient(
+      100deg,
+      #3e332a,
+      #ad9270 38%,
+      #665442 64%,
+      #29231f
+    );
+
+  transform:
+    rotate(12deg)
+    skewY(-4deg);
+}
+
+
+/* left arm */
+
+.g30s-arm-left{
+  position:absolute;
+
+  width:28px;
+  height:190px;
+
+  left:106px;
+  top:94px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4a3b2f,
+      #b59b78,
+      #594838
+    );
+
+  transform:
+    rotate(42deg)
+    translateY(20px);
+
+  transform-origin:top center;
+}
+
+
+/* right arm */
+
+.g30s-arm-right{
+  position:absolute;
+
+  width:27px;
+  height:210px;
+
+  left:211px;
+  top:92px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #493a2e,
+      #b69b76,
+      #554535
+    );
+
+  transform:
+    rotate(-58deg)
+    translateY(-5px);
+
+  transform-origin:top center;
+}
+
+
+/* hand */
+
+.g30s-hand{
+  position:absolute;
+
+  width:25px;
+  height:45px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #594837,
+      #b59a76
+    );
+}
+
+
+/* legs */
+
+.g30s-leg-left{
+  position:absolute;
+
+  width:37px;
+  height:220px;
+
+  left:143px;
+  top:260px;
+
+  border-radius:35px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #45372c,
+      #b59a76 45%,
+      #5a4939
+    );
+
+  transform:
+    rotate(18deg)
+    skewX(-5deg);
+
+  transform-origin:top center;
+}
+
+.g30s-leg-right{
+  position:absolute;
+
+  width:38px;
+  height:225px;
+
+  left:187px;
+  top:255px;
+
+  border-radius:35px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #43352a,
+      #ad9270 44%,
+      #514132
+    );
+
+  transform:
+    rotate(-36deg)
+    skewX(4deg);
+
+  transform-origin:top center;
+}
+
+
+/* ballet feet */
+
+.g30s-foot-left,
+.g30s-foot-right{
+  position:absolute;
+
+  width:82px;
+  height:24px;
+
+  border-radius:80% 30% 30% 70%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4b3c30,
+      #b59b78
+    );
+}
+
+.g30s-foot-left{
+  left:92px;
+  bottom:4px;
+
+  transform:rotate(-25deg);
+}
+
+.g30s-foot-right{
+  left:212px;
+  bottom:15px;
+
+  transform:rotate(18deg);
+}
+
+
+/* base */
+
+.g30s-base{
+  position:absolute;
+
+  width:180px;
+  height:22px;
+
+  left:105px;
+  bottom:-8px;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #211d19,
+      #78634d,
+      #211d19
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+
+/* =========================
+   TEXTURE
+========================================================= */
+
+.g30s-grain{
+  position:absolute;
+
+  inset:0;
+
+  z-index:8;
+
+  pointer-events:none;
+
+  opacity:.09;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,.8) .5px,
+      transparent .5px
+    );
+
+  background-size:5px 5px;
+
+  mix-blend-mode:overlay;
+}
+
+
+/* =========================
+   ANIMATION
+========================================================= */
+
+@keyframes g30sDance{
+
+  0%,100%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-4deg)
+      translateY(0);
+  }
+
+  50%{
+    transform:
+      translate(-50%,-50%)
+      rotate(-1deg)
+      translateY(-8px);
+  }
+}
+
+@keyframes g30sGlow{
+
+  0%,100%{
+    transform:scale(.95);
+    opacity:.65;
+  }
+
+  50%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+}
+
+@keyframes g30sFloat{
+
+  0%,100%{
+    transform:
+      translateY(0)
+      rotate(25deg);
+  }
+
+  50%{
+    transform:
+      translateY(-15px)
+      rotate(31deg);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+  .g30s-primary{
+    height:460px;
+    min-height:460px;
+  }
+
+  .g30s-content{
+    padding:28px;
+    justify-content:flex-end;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15,15,15,.10) 0%,
+        rgba(15,15,15,.55) 45%,
+        rgba(15,15,15,.98) 76%
+      );
+  }
+
+  .g30s-content h3{
+    font-size:42px;
+  }
+
+  .g30s-content p{
+    font-size:13px;
+    max-width:340px;
+  }
+
+  .g30s-visual{
+    width:390px;
+    height:380px;
+
+    right:-55px;
+    top:-10px;
+
+    opacity:.72;
+  }
+
+  .g30s-statue{
+    transform:
+      translate(-50%,-50%)
+      scale(.78)
+      rotate(-4deg);
+  }
+
+}
+
+@media(max-width:450px){
+
+  .g30s-primary{
+    height:440px;
+    min-height:440px;
+  }
+
+  .g30s-content{
+    padding:24px;
+  }
+
+  .g30s-content h3{
+    font-size:36px;
+  }
+
+  .g30s-content p{
+    font-size:12px;
+    line-height:1.65;
+  }
+
+  .g30s-visual{
+    width:330px;
+    height:330px;
+
+    right:-60px;
+    top:0;
+
+    opacity:.55;
+  }
+
+  .g30s-statue{
+    transform:
+      translate(-50%,-50%)
+      scale(.63)
+      rotate(-4deg);
+  }
+
+}
+/* =========================================================
+   EDISI 05 — BALLET SCULPTURE
+========================================================= */
+
+.g30s-visual{
+  position:absolute;
+  right:-10px;
+  top:15px;
+
+  width:560px;
+  height:500px;
+
+  z-index:5;
+  pointer-events:none;
+}
+
+.ballet-statue{
+  position:absolute;
+
+  width:480px;
+  height:540px;
+
+  left:50%;
+  top:58%;
+
+  transform:
+    translate(-50%,-52%)
+    rotate(-3deg);
+
+  overflow:visible;
+
+  animation:
+    balletFloat 6s ease-in-out infinite;
+}
+
+
+/* lingkaran artistik */
+
+.g30s-orbit{
+  position:absolute;
+
+  width:390px;
+  height:390px;
+
+  right:60px;
+  top:54px;
+
+  border:1px solid rgba(196,164,119,.22);
+
+  border-radius:50%;
+
+  transform:rotate(-18deg);
+
+  animation:
+    orbitRotate 14s linear infinite;
+}
+
+.g30s-orbit::after{
+  content:"";
+
+  position:absolute;
+
+  width:8px;
+  height:8px;
+
+  right:28px;
+  top:47px;
+
+  border-radius:50%;
+
+  background:#c4a576;
+
+  box-shadow:
+    0 0 18px rgba(196,165,118,.7);
+}
+
+.g30s-orbit.orbit-2{
+  width:310px;
+  height:440px;
+
+  right:102px;
+  top:20px;
+
+  transform:rotate(24deg);
+
+  opacity:.45;
+
+  animation-duration:18s;
+  animation-direction:reverse;
+}
+
+
+/* cahaya di belakang patung */
+
+.g30s-visual::before{
+  content:"";
+
+  position:absolute;
+
+  width:340px;
+  height:340px;
+
+  right:80px;
+  top:75px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(181,148,103,.24) 0%,
+      rgba(181,148,103,.08) 42%,
+      transparent 72%
+    );
+
+  filter:blur(8px);
+
+  animation:
+    statueGlow 5s ease-in-out infinite;
+}
+
+
+/* grain */
+
+.g30s-visual::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+    radial-gradient(
+      rgba(255,255,255,.7) .5px,
+      transparent .5px
+    );
+
+  background-size:5px 5px;
+
+  opacity:.06;
+}
+
+
+/* animation */
+
+@keyframes balletFloat{
+
+  0%,100%{
+    transform:
+      translate(-50%,-52%)
+      rotate(-3deg)
+      translateY(0);
+  }
+
+  50%{
+    transform:
+      translate(-50%,-52%)
+      rotate(-1deg)
+      translateY(-7px);
+  }
+
+}
+
+@keyframes orbitRotate{
+
+  from{
+    transform:rotate(-18deg);
+  }
+
+  to{
+    transform:rotate(342deg);
+  }
+
+}
+
+@keyframes statueGlow{
+
+  0%,100%{
+    transform:scale(.94);
+    opacity:.65;
+  }
+
+  50%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .g30s-visual{
+    width:390px;
+    height:390px;
+
+    right:-45px;
+    top:-15px;
+
+    opacity:.72;
+  }
+
+  .ballet-statue{
+    width:390px;
+    height:440px;
+  }
+
+  .g30s-orbit{
+    width:300px;
+    height:300px;
+
+    right:40px;
+    top:40px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .g30s-visual{
+    width:330px;
+    height:350px;
+
+    right:-55px;
+    top:-5px;
+
+    opacity:.55;
+  }
+
+  .ballet-statue{
+    width:330px;
+    height:390px;
+  }
+
+}
 
 </style>
 </head>
@@ -4809,6 +5781,372 @@ footer{
   </div>
 
 </article>
+<!-- =========================
+     CONTEMPORARY BALLET
+========================= -->
+
+<div class="g30s-visual" aria-hidden="true">
+
+  <div class="g30s-orbit"></div>
+  <div class="g30s-orbit orbit-2"></div>
+
+  <svg
+    class="ballet-statue"
+    viewBox="0 0 500 560"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <defs>
+
+      <linearGradient
+        id="bronze"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+      >
+        <stop offset="0%" stop-color="#40372f"/>
+        <stop offset="28%" stop-color="#b69a73"/>
+        <stop offset="48%" stop-color="#e0c69a"/>
+        <stop offset="70%" stop-color="#77604a"/>
+        <stop offset="100%" stop-color="#29231e"/>
+      </linearGradient>
+
+      <radialGradient
+        id="bronzeLight"
+        cx="35%"
+        cy="25%"
+      >
+        <stop offset="0%" stop-color="#e8d0a6"/>
+        <stop offset="45%" stop-color="#a98b65"/>
+        <stop offset="100%" stop-color="#40352b"/>
+      </radialGradient>
+
+      <filter id="statueShadow">
+        <feDropShadow
+          dx="0"
+          dy="18"
+          stdDeviation="15"
+          flood-color="#000"
+          flood-opacity=".55"
+        />
+      </filter>
+
+    </defs>
+
+
+    <!-- =====================
+         ABSTRACT BACK PLATE
+    ====================== -->
+
+    <path
+      d="
+        M356 66
+        L424 126
+        L398 240
+        L455 322
+        L382 398
+        L306 348
+        L330 244
+        L285 154
+        Z
+      "
+      fill="none"
+      stroke="#b39a77"
+      stroke-opacity=".18"
+      stroke-width="2"
+    />
+
+    <path
+      d="
+        M378 90
+        L410 132
+        L380 208
+        L424 285
+        L365 337
+      "
+      fill="none"
+      stroke="#c8ae87"
+      stroke-opacity=".22"
+      stroke-width="1"
+    />
+
+
+    <!-- =====================
+         STATUE
+    ====================== -->
+
+    <g
+      filter="url(#statueShadow)"
+      fill="url(#bronze)"
+    >
+
+      <!-- HEAD -->
+
+      <path
+        d="
+          M240 54
+          C218 54 202 70 202 94
+          C202 117 218 133 238 135
+          C257 137 274 120 277 97
+          C280 74 263 54 240 54
+          Z
+        "
+      />
+
+
+      <!-- HAIR -->
+
+      <path
+        d="
+          M207 80
+          C207 53 226 39 252 47
+          C270 52 280 69 276 87
+          C267 76 257 69 243 68
+          C229 67 218 72 207 80
+          Z
+        "
+        fill="#29231e"
+      />
+
+
+      <!-- NECK -->
+
+      <path
+        d="
+          M228 126
+          C232 142 231 152 223 164
+          L257 166
+          C250 151 251 137 255 125
+          Z
+        "
+      />
+
+
+      <!-- TORSO / DRESS -->
+
+      <path
+        d="
+          M220 148
+
+          C204 154 193 174 190 198
+
+          C187 220 193 243 204 264
+
+          C213 281 213 300 205 322
+
+          C229 337 269 337 298 319
+
+          C280 293 272 269 274 242
+
+          C276 215 291 191 286 174
+
+          C281 157 263 149 250 148
+
+          C241 155 229 155 220 148
+
+          Z
+        "
+      />
+
+
+      <!-- LEFT ARM — CURVED UP -->
+
+      <path
+        d="
+          M211 164
+
+          C193 163 177 153 166 136
+
+          C154 118 149 95 153 70
+
+          C155 60 163 54 171 58
+
+          C179 62 181 70 178 80
+
+          C174 98 178 112 189 125
+
+          C199 137 210 142 222 143
+
+          Z
+        "
+      />
+
+
+      <!-- LEFT HAND -->
+
+      <path
+        d="
+          M151 71
+          C144 64 143 55 148 49
+          C152 44 158 45 160 51
+          C164 46 169 48 170 53
+          C174 48 179 52 176 58
+          C173 67 163 72 151 71
+          Z
+        "
+      />
+
+
+      <!-- RIGHT ARM — EXTENDED -->
+
+      <path
+        d="
+          M274 164
+
+          C297 159 318 146 336 128
+
+          C354 110 367 88 382 67
+
+          C387 60 395 59 401 64
+
+          C406 69 405 77 401 84
+
+          C385 109 374 132 354 151
+
+          C334 171 309 190 280 199
+
+          Z
+        "
+      />
+
+
+      <!-- RIGHT HAND -->
+
+      <path
+        d="
+          M382 68
+          C382 59 387 50 394 46
+          C400 42 404 46 401 52
+          C408 48 413 52 409 58
+          C414 56 418 60 413 65
+          C405 73 395 76 382 68
+          Z
+        "
+      />
+
+
+      <!-- SUPPORT LEG -->
+
+      <path
+        d="
+          M225 310
+
+          C220 348 214 390 207 430
+
+          C204 451 202 470 204 489
+
+          C211 498 225 500 235 494
+
+          C241 462 246 432 252 403
+
+          C258 371 266 343 275 319
+
+          Z
+        "
+      />
+
+
+      <!-- EXTENDED LEG -->
+
+      <path
+        d="
+          M263 316
+
+          C280 337 296 353 318 365
+
+          C345 381 373 392 403 399
+
+          C411 400 417 395 418 389
+
+          C419 381 414 375 406 372
+
+          C376 362 352 348 332 329
+
+          C314 311 300 291 291 270
+
+          Z
+        "
+      />
+
+
+      <!-- FOOT / EN POINTE -->
+
+      <path
+        d="
+          M202 486
+          C193 494 186 504 181 516
+          C179 522 185 527 192 525
+
+          L233 506
+          C239 503 239 495 233 491
+
+          Z
+        "
+      />
+
+      <path
+        d="
+          M403 398
+          C416 402 429 403 442 400
+          C448 398 450 393 445 390
+          C435 384 424 381 413 380
+          Z
+        "
+      />
+
+    </g>
+
+
+    <!-- =====================
+         SCULPTURE CRACKS
+    ====================== -->
+
+    <g
+      fill="none"
+      stroke="#dfc59b"
+      stroke-opacity=".35"
+      stroke-width="2"
+    >
+
+      <path d="M238 172 L250 205 L239 231 L252 263"/>
+      <path d="M249 205 L268 220"/>
+      <path d="M239 231 L220 250"/>
+
+      <path d="M295 285 L315 301 L309 325"/>
+      <path d="M316 301 L338 294"/>
+
+    </g>
+
+
+    <!-- =====================
+         PEDESTAL
+    ====================== -->
+
+    <path
+      d="
+        M137 515
+        L363 515
+        L386 545
+        L114 545
+        Z
+      "
+      fill="url(#bronze)"
+      opacity=".85"
+    />
+
+    <ellipse
+      cx="250"
+      cy="515"
+      rx="115"
+      ry="14"
+      fill="#17130f"
+      opacity=".65"
+    />
+
+  </svg>
+
+</div>
 
 </article>
 
@@ -4854,11 +6192,20 @@ footer{
     <small>04</small>
 
     <strong>
-      Music of Life
+      Future Melody
     </strong>
 
   </div>
 
+  <div class="index-item">
+
+    <small>05</small>
+
+    <strong>
+      G30S & Seni
+    </strong>
+
+  </div>
 </div>
 
 </section>
