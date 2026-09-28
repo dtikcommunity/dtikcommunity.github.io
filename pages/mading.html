@@ -3937,60 +3937,42 @@ footer{
    EDISI 05 — G30S & SENI
 ========================================================= */
 
-.g30s-primary{
+.art05-primary{
   grid-column:1 / -1;
   width:100%;
   height:500px;
   position:relative;
   overflow:hidden;
-  border:1px solid #9b8d78;
+  border:1px solid #b9a77d;
   border-radius:16px;
-
   background:
     radial-gradient(
-      circle at 78% 48%,
-      rgba(137,104,70,.25),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 60% 30%,
-      rgba(255,255,255,.12),
-      transparent 25%
+      circle at 72% 45%,
+      rgba(122,42,52,.18),
+      transparent 35%
     ),
     linear-gradient(
       135deg,
-      #171717 0%,
-      #292725 48%,
-      #111111 100%
+      #eee9df 0%,
+      #d9d1c2 48%,
+      #b8afa0 100%
     );
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.35);
-
+  box-shadow:0 25px 80px rgba(45,35,25,.16);
   transition:.35s ease;
 }
 
-.g30s-primary:hover{
+.art05-primary:hover{
   transform:translateY(-6px);
-
-  border-color:#b19a78;
-
-  box-shadow:
-    0 30px 90px rgba(0,0,0,.48);
+  border-color:#8f6f50;
+  box-shadow:0 30px 90px rgba(45,35,25,.23);
 }
 
-
-/* =========================
-   CONTENT
-========================= */
-
-.g30s-content{
+.art05-content{
   position:absolute;
   inset:0;
   z-index:10;
-
   width:100%;
-  padding:40px;
+  padding:38px;
 
   display:flex;
   flex-direction:column;
@@ -3999,911 +3981,251 @@ footer{
   background:
     linear-gradient(
       90deg,
-      rgba(20,20,20,.98) 0%,
-      rgba(20,20,20,.94) 28%,
-      rgba(20,20,20,.70) 45%,
-      rgba(20,20,20,.20) 65%,
-      transparent 84%
+      rgba(238,233,223,.99) 0%,
+      rgba(238,233,223,.96) 27%,
+      rgba(238,233,223,.78) 43%,
+      rgba(238,233,223,.22) 63%,
+      transparent 83%
     );
 }
 
-.g30s-badge{
-  display:inline-block;
+.art05-badge{
+  display:inline-flex;
   width:max-content;
+  padding:7px 13px;
 
-  padding:7px 12px;
-
-  margin-bottom:20px;
-
-  border:1px solid rgba(191,166,124,.6);
-
-  color:#c7ae87;
+  border:1px solid rgba(110,75,62,.45);
+  border-radius:999px;
 
   font-size:10px;
-  font-weight:700;
-  letter-spacing:2px;
-
-  background:rgba(0,0,0,.22);
+  font-weight:800;
+  letter-spacing:1.5px;
+  color:#67454a;
+  margin-bottom:15px;
 }
 
-.g30s-kicker{
-  margin-bottom:10px;
-
-  color:#a9977d;
-
+.art05-kicker{
   font-size:11px;
-  font-weight:700;
-  letter-spacing:3px;
+  letter-spacing:2px;
+  font-weight:800;
+  color:#73515a;
+  margin-bottom:8px;
 }
 
-.g30s-content h3{
-  margin:0;
-
-  max-width:430px;
-
-  color:#eee7dc;
-
+.art05-content h3{
+  margin:0 0 15px;
   font-family:"Playfair Display",serif;
-
-  font-size:54px;
-  line-height:.95;
-
-  font-weight:600;
+  font-size:58px;
+  line-height:.9;
+  letter-spacing:-2px;
+  color:#211d1a;
 }
 
-.g30s-content p{
-  max-width:470px;
-
-  margin:22px 0 0;
-
-  color:#bdb8af;
+.art05-content p{
+  max-width:440px;
+  margin:0 0 22px;
 
   font-size:14px;
-  line-height:1.8;
+  line-height:1.75;
+  color:#514a43;
 }
 
-.g30s-open{
-  display:inline-block;
+.art05-open{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
 
-  margin-top:24px;
-
-  color:#d0b58b;
+  padding:11px 16px;
+  border:1px solid #7b5d50;
+  border-radius:6px;
 
   font-size:11px;
   font-weight:800;
-  letter-spacing:2px;
+  letter-spacing:1px;
+  color:#5e403f;
 
-  transition:.3s ease;
+  transition:.25s ease;
 }
 
-.g30s-content a:hover .g30s-open{
-  letter-spacing:3px;
+.art05-open:hover{
+  background:#6d464c;
+  color:#fff;
 }
 
 
-/* =========================
-   CONTEMPORARY BALLET
+/* =========================================================
+   PATUNG BALET KONTEMPORER
 ========================================================= */
 
-.g30s-visual{
+.art05-visual{
   position:absolute;
-
   right:-5px;
-  top:0;
+  top:5px;
 
   width:560px;
-  height:500px;
-
-  z-index:5;
+  height:490px;
 
   pointer-events:none;
+  z-index:4;
 }
 
-.g30s-visual::before{
-  content:"";
+.art05-glow{
+  position:absolute;
+  width:310px;
+  height:310px;
 
+  right:95px;
+  top:75px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(116,48,58,.18),
+      transparent 68%
+    );
+
+  filter:blur(8px);
+}
+
+.art05-floor{
+  position:absolute;
+
+  width:370px;
+  height:55px;
+
+  right:70px;
+  bottom:50px;
+
+  border-radius:50%;
+
+  background:rgba(65,53,43,.20);
+
+  filter:blur(18px);
+}
+
+.art05-statue{
+  position:absolute;
+
+  width:390px;
+  height:450px;
+
+  right:75px;
+  top:10px;
+
+  filter:
+    drop-shadow(
+      0 25px 20px rgba(45,35,30,.18)
+    );
+}
+
+.art05-ring{
   position:absolute;
 
   width:350px;
   height:350px;
 
-  right:75px;
-  top:75px;
+  right:90px;
+  top:62px;
 
+  border:1px solid rgba(108,72,72,.18);
   border-radius:50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(177,143,101,.20),
-      rgba(177,143,101,.06) 42%,
-      transparent 70%
-    );
-
-  filter:blur(8px);
-
-  animation:g30sGlow 5s ease-in-out infinite;
-}
-
-
-/* abstract artistic fragments */
-
-.g30s-fragment{
-  position:absolute;
-
-  border:1px solid rgba(190,160,120,.32);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(210,190,160,.14),
-      transparent
-    );
-
-  transform:rotate(25deg);
-
-  animation:g30sFloat 7s ease-in-out infinite;
-}
-
-.g30s-fragment.one{
-  width:55px;
-  height:110px;
-
-  right:92px;
-  top:78px;
-}
-
-.g30s-fragment.two{
-  width:35px;
-  height:80px;
-
-  right:40px;
-  top:220px;
-
-  transform:rotate(-35deg);
-
-  animation-delay:1.5s;
-}
-
-.g30s-fragment.three{
-  width:70px;
-  height:25px;
-
-  right:170px;
-  bottom:80px;
-
-  transform:rotate(-18deg);
-
-  animation-delay:3s;
-}
-
-
-/* =========================
-   STATUE
-========================================================= */
-
-.g30s-statue{
-  position:absolute;
-
-  left:50%;
-  top:50%;
-
-  width:360px;
-  height:440px;
-
-  transform:
-    translate(-50%,-50%)
-    rotate(-4deg);
-
-  filter:
-    drop-shadow(
-      0 25px 25px rgba(0,0,0,.5)
-    );
-
-  animation:g30sDance 6s ease-in-out infinite;
-}
-
-
-/* head */
-
-.g30s-head{
-  position:absolute;
-
-  width:58px;
-  height:66px;
-
-  left:150px;
-  top:22px;
-
-  border-radius:
-    48% 48%
-    44% 44%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #c5ad8c,
-      #79664f 70%,
-      #44382e
-    );
-
   transform:rotate(-18deg);
 }
 
-
-/* hair */
-
-.g30s-head::before{
+.art05-ring::before{
   content:"";
 
   position:absolute;
+  inset:25px;
 
-  width:68px;
-  height:48px;
-
-  left:-7px;
-  top:-8px;
-
-  border-radius:50% 55% 25% 45%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #302a25,
-      #111
-    );
-
-  transform:rotate(-8deg);
-}
-
-
-/* neck */
-
-.g30s-neck{
-  position:absolute;
-
-  width:30px;
-  height:45px;
-
-  left:168px;
-  top:73px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #554536,
-      #b59a76,
-      #554536
-    );
-
-  transform:rotate(-7deg);
-}
-
-
-/* torso */
-
-.g30s-body{
-  position:absolute;
-
-  width:90px;
-  height:190px;
-
-  left:133px;
-  top:98px;
-
-  border-radius:
-    42% 48%
-    30% 38%;
-
-  background:
-    linear-gradient(
-      100deg,
-      #3e332a,
-      #ad9270 38%,
-      #665442 64%,
-      #29231f
-    );
-
-  transform:
-    rotate(12deg)
-    skewY(-4deg);
-}
-
-
-/* left arm */
-
-.g30s-arm-left{
-  position:absolute;
-
-  width:28px;
-  height:190px;
-
-  left:106px;
-  top:94px;
-
-  border-radius:30px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #4a3b2f,
-      #b59b78,
-      #594838
-    );
-
-  transform:
-    rotate(42deg)
-    translateY(20px);
-
-  transform-origin:top center;
-}
-
-
-/* right arm */
-
-.g30s-arm-right{
-  position:absolute;
-
-  width:27px;
-  height:210px;
-
-  left:211px;
-  top:92px;
-
-  border-radius:30px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #493a2e,
-      #b69b76,
-      #554535
-    );
-
-  transform:
-    rotate(-58deg)
-    translateY(-5px);
-
-  transform-origin:top center;
-}
-
-
-/* hand */
-
-.g30s-hand{
-  position:absolute;
-
-  width:25px;
-  height:45px;
-
+  border:1px solid rgba(108,72,72,.11);
   border-radius:50%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #594837,
-      #b59a76
-    );
 }
 
 
-/* legs */
-
-.g30s-leg-left{
-  position:absolute;
-
-  width:37px;
-  height:220px;
-
-  left:143px;
-  top:260px;
-
-  border-radius:35px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #45372c,
-      #b59a76 45%,
-      #5a4939
-    );
-
-  transform:
-    rotate(18deg)
-    skewX(-5deg);
-
-  transform-origin:top center;
-}
-
-.g30s-leg-right{
-  position:absolute;
-
-  width:38px;
-  height:225px;
-
-  left:187px;
-  top:255px;
-
-  border-radius:35px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #43352a,
-      #ad9270 44%,
-      #514132
-    );
-
-  transform:
-    rotate(-36deg)
-    skewX(4deg);
-
-  transform-origin:top center;
-}
-
-
-/* ballet feet */
-
-.g30s-foot-left,
-.g30s-foot-right{
-  position:absolute;
-
-  width:82px;
-  height:24px;
-
-  border-radius:80% 30% 30% 70%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #4b3c30,
-      #b59b78
-    );
-}
-
-.g30s-foot-left{
-  left:92px;
-  bottom:4px;
-
-  transform:rotate(-25deg);
-}
-
-.g30s-foot-right{
-  left:212px;
-  bottom:15px;
-
-  transform:rotate(18deg);
-}
-
-
-/* base */
-
-.g30s-base{
-  position:absolute;
-
-  width:180px;
-  height:22px;
-
-  left:105px;
-  bottom:-8px;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #211d19,
-      #78634d,
-      #211d19
-    );
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.45);
-}
-
-
-/* =========================
-   TEXTURE
-========================================================= */
-
-.g30s-grain{
-  position:absolute;
-
-  inset:0;
-
-  z-index:8;
-
-  pointer-events:none;
-
-  opacity:.09;
-
-  background-image:
-    radial-gradient(
-      rgba(255,255,255,.8) .5px,
-      transparent .5px
-    );
-
-  background-size:5px 5px;
-
-  mix-blend-mode:overlay;
-}
-
-
-/* =========================
-   ANIMATION
-========================================================= */
-
-@keyframes g30sDance{
-
-  0%,100%{
-    transform:
-      translate(-50%,-50%)
-      rotate(-4deg)
-      translateY(0);
-  }
-
-  50%{
-    transform:
-      translate(-50%,-50%)
-      rotate(-1deg)
-      translateY(-8px);
-  }
-}
-
-@keyframes g30sGlow{
-
-  0%,100%{
-    transform:scale(.95);
-    opacity:.65;
-  }
-
-  50%{
-    transform:scale(1.08);
-    opacity:1;
-  }
-}
-
-@keyframes g30sFloat{
-
-  0%,100%{
-    transform:
-      translateY(0)
-      rotate(25deg);
-  }
-
-  50%{
-    transform:
-      translateY(-15px)
-      rotate(31deg);
-  }
-}
-
-
-/* =========================
-   MOBILE
-========================================================= */
+/* responsive */
 
 @media(max-width:700px){
 
-  .g30s-primary{
+  .art05-primary{
     height:460px;
     min-height:460px;
   }
 
-  .g30s-content{
+  .art05-content{
     padding:28px;
     justify-content:flex-end;
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(15,15,15,.10) 0%,
-        rgba(15,15,15,.55) 45%,
-        rgba(15,15,15,.98) 76%
-      );
   }
 
-  .g30s-content h3{
-    font-size:42px;
+  .art05-content h3{
+    font-size:45px;
   }
 
-  .g30s-content p{
-    font-size:13px;
-    max-width:340px;
+  .art05-content p{
+    max-width:300px;
+    font-size:12px;
   }
 
-  .g30s-visual{
-    width:390px;
-    height:380px;
+  .art05-visual{
+    width:350px;
+    height:350px;
 
-    right:-55px;
-    top:-10px;
+    right:-35px;
+    top:35px;
 
-    opacity:.72;
+    opacity:.62;
   }
 
-  .g30s-statue{
-    transform:
-      translate(-50%,-50%)
-      scale(.78)
-      rotate(-4deg);
+  .art05-statue{
+    width:300px;
+    height:345px;
+
+    right:25px;
   }
 
+  .art05-ring{
+    width:280px;
+    height:280px;
+
+    right:35px;
+    top:30px;
+  }
 }
 
 @media(max-width:450px){
 
-  .g30s-primary{
+  .art05-primary{
     height:440px;
     min-height:440px;
   }
 
-  .g30s-content{
+  .art05-content{
     padding:24px;
   }
 
-  .g30s-content h3{
-    font-size:36px;
+  .art05-content h3{
+    font-size:39px;
   }
 
-  .g30s-content p{
-    font-size:12px;
-    line-height:1.65;
-  }
-
-  .g30s-visual{
-    width:330px;
-    height:330px;
-
-    right:-60px;
-    top:0;
-
-    opacity:.55;
-  }
-
-  .g30s-statue{
-    transform:
-      translate(-50%,-50%)
-      scale(.63)
-      rotate(-4deg);
-  }
-
-}
-/* =========================================================
-   EDISI 05 — BALLET SCULPTURE
-========================================================= */
-
-.g30s-visual{
-  position:absolute;
-  right:-10px;
-  top:15px;
-
-  width:560px;
-  height:500px;
-
-  z-index:5;
-  pointer-events:none;
-}
-
-.ballet-statue{
-  position:absolute;
-
-  width:480px;
-  height:540px;
-
-  left:50%;
-  top:58%;
-
-  transform:
-    translate(-50%,-52%)
-    rotate(-3deg);
-
-  overflow:visible;
-
-  animation:
-    balletFloat 6s ease-in-out infinite;
-}
-
-
-/* lingkaran artistik */
-
-.g30s-orbit{
-  position:absolute;
-
-  width:390px;
-  height:390px;
-
-  right:60px;
-  top:54px;
-
-  border:1px solid rgba(196,164,119,.22);
-
-  border-radius:50%;
-
-  transform:rotate(-18deg);
-
-  animation:
-    orbitRotate 14s linear infinite;
-}
-
-.g30s-orbit::after{
-  content:"";
-
-  position:absolute;
-
-  width:8px;
-  height:8px;
-
-  right:28px;
-  top:47px;
-
-  border-radius:50%;
-
-  background:#c4a576;
-
-  box-shadow:
-    0 0 18px rgba(196,165,118,.7);
-}
-
-.g30s-orbit.orbit-2{
-  width:310px;
-  height:440px;
-
-  right:102px;
-  top:20px;
-
-  transform:rotate(24deg);
-
-  opacity:.45;
-
-  animation-duration:18s;
-  animation-direction:reverse;
-}
-
-
-/* cahaya di belakang patung */
-
-.g30s-visual::before{
-  content:"";
-
-  position:absolute;
-
-  width:340px;
-  height:340px;
-
-  right:80px;
-  top:75px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(181,148,103,.24) 0%,
-      rgba(181,148,103,.08) 42%,
-      transparent 72%
-    );
-
-  filter:blur(8px);
-
-  animation:
-    statueGlow 5s ease-in-out infinite;
-}
-
-
-/* grain */
-
-.g30s-visual::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background-image:
-    radial-gradient(
-      rgba(255,255,255,.7) .5px,
-      transparent .5px
-    );
-
-  background-size:5px 5px;
-
-  opacity:.06;
-}
-
-
-/* animation */
-
-@keyframes balletFloat{
-
-  0%,100%{
-    transform:
-      translate(-50%,-52%)
-      rotate(-3deg)
-      translateY(0);
-  }
-
-  50%{
-    transform:
-      translate(-50%,-52%)
-      rotate(-1deg)
-      translateY(-7px);
-  }
-
-}
-
-@keyframes orbitRotate{
-
-  from{
-    transform:rotate(-18deg);
-  }
-
-  to{
-    transform:rotate(342deg);
-  }
-
-}
-
-@keyframes statueGlow{
-
-  0%,100%{
-    transform:scale(.94);
-    opacity:.65;
-  }
-
-  50%{
-    transform:scale(1.08);
-    opacity:1;
-  }
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-  .g30s-visual{
-    width:390px;
-    height:390px;
-
-    right:-45px;
-    top:-15px;
-
-    opacity:.72;
-  }
-
-  .ballet-statue{
-    width:390px;
-    height:440px;
-  }
-
-  .g30s-orbit{
+  .art05-visual{
     width:300px;
     height:300px;
 
-    right:40px;
-    top:40px;
+    right:-45px;
+    top:38px;
+
+    opacity:.52;
   }
 
-}
+  .art05-statue{
+    width:260px;
+    height:300px;
 
-@media(max-width:450px){
-
-  .g30s-visual{
-    width:330px;
-    height:350px;
-
-    right:-55px;
-    top:-5px;
-
-    opacity:.55;
+    right:10px;
   }
-
-  .ballet-statue{
-    width:330px;
-    height:390px;
-  }
-
 }
 
 </style>
@@ -5782,371 +5104,567 @@ footer{
 
 </article>
 <!-- =========================
-     CONTEMPORARY BALLET
+     EDISI 05 — G30S & SENI
 ========================= -->
 
-<div class="g30s-visual" aria-hidden="true">
+<article class="edition-card art05-primary">
 
-  <div class="g30s-orbit"></div>
-  <div class="g30s-orbit orbit-2"></div>
-
-  <svg
-    class="ballet-statue"
-    viewBox="0 0 500 560"
-    xmlns="http://www.w3.org/2000/svg"
+  <a
+    href="mading-edisi-05.html"
+    class="art05-content"
   >
 
-    <defs>
-
-      <linearGradient
-        id="bronze"
-        x1="0"
-        y1="0"
-        x2="1"
-        y2="1"
-      >
-        <stop offset="0%" stop-color="#40372f"/>
-        <stop offset="28%" stop-color="#b69a73"/>
-        <stop offset="48%" stop-color="#e0c69a"/>
-        <stop offset="70%" stop-color="#77604a"/>
-        <stop offset="100%" stop-color="#29231e"/>
-      </linearGradient>
-
-      <radialGradient
-        id="bronzeLight"
-        cx="35%"
-        cy="25%"
-      >
-        <stop offset="0%" stop-color="#e8d0a6"/>
-        <stop offset="45%" stop-color="#a98b65"/>
-        <stop offset="100%" stop-color="#40352b"/>
-      </radialGradient>
-
-      <filter id="statueShadow">
-        <feDropShadow
-          dx="0"
-          dy="18"
-          stdDeviation="15"
-          flood-color="#000"
-          flood-opacity=".55"
-        />
-      </filter>
-
-    </defs>
-
-
-    <!-- =====================
-         ABSTRACT BACK PLATE
-    ====================== -->
-
-    <path
-      d="
-        M356 66
-        L424 126
-        L398 240
-        L455 322
-        L382 398
-        L306 348
-        L330 244
-        L285 154
-        Z
-      "
-      fill="none"
-      stroke="#b39a77"
-      stroke-opacity=".18"
-      stroke-width="2"
-    />
-
-    <path
-      d="
-        M378 90
-        L410 132
-        L380 208
-        L424 285
-        L365 337
-      "
-      fill="none"
-      stroke="#c8ae87"
-      stroke-opacity=".22"
-      stroke-width="1"
-    />
-
-
-    <!-- =====================
-         STATUE
-    ====================== -->
-
-    <g
-      filter="url(#statueShadow)"
-      fill="url(#bronze)"
-    >
-
-      <!-- HEAD -->
-
-      <path
-        d="
-          M240 54
-          C218 54 202 70 202 94
-          C202 117 218 133 238 135
-          C257 137 274 120 277 97
-          C280 74 263 54 240 54
-          Z
-        "
-      />
-
-
-      <!-- HAIR -->
-
-      <path
-        d="
-          M207 80
-          C207 53 226 39 252 47
-          C270 52 280 69 276 87
-          C267 76 257 69 243 68
-          C229 67 218 72 207 80
-          Z
-        "
-        fill="#29231e"
-      />
-
-
-      <!-- NECK -->
-
-      <path
-        d="
-          M228 126
-          C232 142 231 152 223 164
-          L257 166
-          C250 151 251 137 255 125
-          Z
-        "
-      />
-
-
-      <!-- TORSO / DRESS -->
-
-      <path
-        d="
-          M220 148
-
-          C204 154 193 174 190 198
-
-          C187 220 193 243 204 264
-
-          C213 281 213 300 205 322
-
-          C229 337 269 337 298 319
-
-          C280 293 272 269 274 242
-
-          C276 215 291 191 286 174
-
-          C281 157 263 149 250 148
-
-          C241 155 229 155 220 148
-
-          Z
-        "
-      />
-
-
-      <!-- LEFT ARM — CURVED UP -->
-
-      <path
-        d="
-          M211 164
-
-          C193 163 177 153 166 136
-
-          C154 118 149 95 153 70
-
-          C155 60 163 54 171 58
-
-          C179 62 181 70 178 80
-
-          C174 98 178 112 189 125
-
-          C199 137 210 142 222 143
-
-          Z
-        "
-      />
-
-
-      <!-- LEFT HAND -->
-
-      <path
-        d="
-          M151 71
-          C144 64 143 55 148 49
-          C152 44 158 45 160 51
-          C164 46 169 48 170 53
-          C174 48 179 52 176 58
-          C173 67 163 72 151 71
-          Z
-        "
-      />
-
-
-      <!-- RIGHT ARM — EXTENDED -->
-
-      <path
-        d="
-          M274 164
-
-          C297 159 318 146 336 128
-
-          C354 110 367 88 382 67
-
-          C387 60 395 59 401 64
-
-          C406 69 405 77 401 84
-
-          C385 109 374 132 354 151
-
-          C334 171 309 190 280 199
-
-          Z
-        "
-      />
-
-
-      <!-- RIGHT HAND -->
-
-      <path
-        d="
-          M382 68
-          C382 59 387 50 394 46
-          C400 42 404 46 401 52
-          C408 48 413 52 409 58
-          C414 56 418 60 413 65
-          C405 73 395 76 382 68
-          Z
-        "
-      />
-
-
-      <!-- SUPPORT LEG -->
-
-      <path
-        d="
-          M225 310
-
-          C220 348 214 390 207 430
-
-          C204 451 202 470 204 489
-
-          C211 498 225 500 235 494
-
-          C241 462 246 432 252 403
-
-          C258 371 266 343 275 319
-
-          Z
-        "
-      />
-
-
-      <!-- EXTENDED LEG -->
-
-      <path
-        d="
-          M263 316
-
-          C280 337 296 353 318 365
-
-          C345 381 373 392 403 399
-
-          C411 400 417 395 418 389
-
-          C419 381 414 375 406 372
-
-          C376 362 352 348 332 329
-
-          C314 311 300 291 291 270
-
-          Z
-        "
-      />
-
-
-      <!-- FOOT / EN POINTE -->
-
-      <path
-        d="
-          M202 486
-          C193 494 186 504 181 516
-          C179 522 185 527 192 525
-
-          L233 506
-          C239 503 239 495 233 491
-
-          Z
-        "
-      />
-
-      <path
-        d="
-          M403 398
-          C416 402 429 403 442 400
-          C448 398 450 393 445 390
-          C435 384 424 381 413 380
-          Z
-        "
-      />
-
-    </g>
-
-
-    <!-- =====================
-         SCULPTURE CRACKS
-    ====================== -->
-
-    <g
-      fill="none"
-      stroke="#dfc59b"
-      stroke-opacity=".35"
-      stroke-width="2"
-    >
-
-      <path d="M238 172 L250 205 L239 231 L252 263"/>
-      <path d="M249 205 L268 220"/>
-      <path d="M239 231 L220 250"/>
-
-      <path d="M295 285 L315 301 L309 325"/>
-      <path d="M316 301 L338 294"/>
-
-    </g>
-
-
-    <!-- =====================
-         PEDESTAL
-    ====================== -->
-
-    <path
-      d="
-        M137 515
-        L363 515
-        L386 545
-        L114 545
-        Z
-      "
-      fill="url(#bronze)"
-      opacity=".85"
-    />
-
+    <div class="art05-badge">
+      MADING · EDISI #05
+    </div>
+
+    <div>
+
+      <div class="art05-kicker">
+        TEMA MINGGU INI
+      </div>
+
+      <h3>
+        G30S<br>
+        &amp; Seni.
+      </h3>
+
+      <p>
+        Sebuah perjalanan melihat bagaimana seni
+        menjadi bagian dari ingatan, ekspresi,
+        dan cara manusia memahami sebuah peristiwa.
+      </p>
+
+      <span class="art05-open">
+        BUKA EDISI LENGKAP →
+      </span>
+
+    </div>
+
+  </a>
+
+
+  <!-- PATUNG BALET KONTEMPORER -->
+
+  <div class="art05-visual" aria-hidden="true">
+
+    <div class="art05-glow"></div>
+    <div class="art05-ring"></div>
+    <div class="art05-floor"></div>
+
+    <svg class="art05-statue"
+     viewBox="0 0 390 450"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Material marmer -->
+    <linearGradient id="marble05" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="28%" stop-color="#e9e5dc"/>
+      <stop offset="52%" stop-color="#c9c3b7"/>
+      <stop offset="72%" stop-color="#f3f0e8"/>
+      <stop offset="100%" stop-color="#aaa397"/>
+    </linearGradient>
+
+    <linearGradient id="marbleDark05" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#aaa49a"/>
+      <stop offset="45%" stop-color="#e7e3da"/>
+      <stop offset="100%" stop-color="#b7b0a4"/>
+    </linearGradient>
+
+    <radialGradient id="stoneLight05">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="65%" stop-color="#ddd8ce" stop-opacity=".7"/>
+      <stop offset="100%" stop-color="#aaa398" stop-opacity=".35"/>
+    </radialGradient>
+
+    <filter id="softShadow05" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow
+        dx="0"
+        dy="18"
+        stdDeviation="13"
+        flood-color="#514b42"
+        flood-opacity=".25"/>
+    </filter>
+  </defs>
+
+
+  <!-- ================================================= -->
+  <!-- BALERINA CONTEMPORARY MARBLE STATUE               -->
+  <!-- ================================================= -->
+
+  <g filter="url(#softShadow05)">
+
+
+    <!-- ===== KEPALA ===== -->
+
+    <!-- rambut / ballet bun -->
+    <circle
+      cx="208"
+      cy="52"
+      r="17"
+      fill="url(#marbleDark05)"/>
+
+    <circle
+      cx="214"
+      cy="43"
+      r="9"
+      fill="url(#marble05)"/>
+
+    <!-- kepala -->
     <ellipse
-      cx="250"
-      cy="515"
-      rx="115"
-      ry="14"
-      fill="#17130f"
-      opacity=".65"
-    />
+      cx="204"
+      cy="68"
+      rx="18"
+      ry="22"
+      fill="url(#marble05)"/>
 
-  </svg>
 
-</div>
+    <!-- ===== LEHER ===== -->
+
+    <path
+      d="
+        M195 84
+        C196 94 194 99 188 105
+        L218 105
+        C211 98 211 91 213 82
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== LENGAN KIRI ===== -->
+    <!-- tangan terbuka ke samping dalam pose ballet -->
+
+    <path
+      d="
+        M191 104
+        C178 108 168 117 158 127
+        C148 136 139 140 128 141
+        C124 141 122 145 126 148
+        C140 150 153 145 164 137
+        C177 128 187 120 200 116
+        Z"
+      fill="url(#marble05)"/>
+
+    <!-- tangan kiri -->
+    <path
+      d="
+        M127 140
+        C119 138 113 135 108 130
+        C106 128 104 130 106 133
+        C109 138 114 142 120 145
+        C114 145 111 147 112 149
+        C118 151 125 151 130 148
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== LENGAN KANAN ===== -->
+    <!-- tangan membentuk lengkungan ballet -->
+
+    <path
+      d="
+        M216 104
+        C231 108 243 117 251 128
+        C258 138 267 143 278 143
+        C282 143 284 147 280 150
+        C266 152 254 146 245 138
+        C233 127 225 121 211 117
+        Z"
+      fill="url(#marble05)"/>
+
+    <!-- tangan kanan -->
+    <path
+      d="
+        M279 142
+        C286 139 292 135 296 130
+        C298 128 300 130 298 133
+        C296 138 291 142 286 145
+        C292 145 295 147 294 150
+        C288 152 281 151 276 148
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== TUBUH ===== -->
+
+    <path
+      d="
+        M190 101
+        C183 111 181 124 183 139
+        C185 151 181 164 174 176
+
+        C185 183 198 186 211 185
+        C225 184 237 179 244 171
+
+        C236 160 230 150 230 137
+        C231 123 226 111 216 101
+
+        C209 108 198 108 190 101
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== TUTU ===== -->
+
+    <!-- lapisan atas -->
+    <path
+      d="
+        M178 166
+        C190 172 207 174 224 169
+        C235 166 244 168 250 174
+
+        C242 182 230 188 213 191
+        C194 194 175 189 160 180
+
+        C164 173 170 168 178 166
+        Z"
+      fill="url(#stoneLight05)"/>
+
+    <!-- lapisan tutu 1 -->
+    <path
+      d="
+        M163 177
+        C183 188 220 190 248 174
+        C253 177 256 182 258 186
+
+        C230 202 190 207 155 188
+        C157 184 159 180 163 177
+        Z"
+      fill="url(#marble05)"/>
+
+    <!-- lapisan tutu 2 -->
+    <path
+      d="
+        M157 187
+        C184 202 226 203 258 184
+        C263 189 266 194 267 198
+
+        C232 218 183 218 148 197
+        C150 193 153 189 157 187
+        Z"
+      fill="url(#marbleDark05)"/>
+
+    <!-- lapisan tutu paling bawah -->
+    <path
+      d="
+        M150 197
+        C180 213 231 214 267 196
+        C271 200 273 204 274 208
+
+        C235 231 180 230 142 207
+        C144 203 147 199 150 197
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== KAKI PENOPANG ===== -->
+    <!-- satu kaki lurus turun ke en pointe -->
+
+    <path
+      d="
+        M197 210
+        C201 225 202 243 201 263
+        C200 288 199 315 198 341
+
+        C198 357 195 373 191 389
+
+        L207 389
+
+        C211 371 214 355 215 339
+        C217 314 220 286 221 261
+        C222 240 222 222 220 208
+
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== KAKI EN POINTE ===== -->
+
+    <path
+      d="
+        M191 386
+        C190 392 188 397 184 403
+        C180 409 177 414 176 420
+
+        C184 423 198 423 208 419
+
+        C207 413 207 405 207 398
+        C207 393 207 389 207 386
+
+        Z"
+      fill="url(#marbleDark05)"/>
+
+    <!-- ujung pointe -->
+    <path
+      d="
+        M176 419
+        C172 422 170 425 169 428
+        C178 430 194 430 207 427
+        C207 424 207 421 208 419
+        C197 422 185 423 176 419
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- ===== KAKI KEDUA ===== -->
+    <!-- diangkat ke belakang dalam pose arabesque -->
+
+    <path
+      d="
+        M218 205
+        C231 211 243 218 255 224
+
+        C271 232 286 237 302 238
+
+        C316 239 328 236 340 230
+
+        C344 228 348 231 345 235
+
+        C333 246 317 251 300 251
+
+        C280 250 263 244 247 237
+
+        C231 230 218 225 207 222
+
+        Z"
+      fill="url(#marble05)"/>
+
+
+    <!-- paha/kaki dibuat lebih ramping menuju pointe -->
+    <path
+      d="
+        M301 238
+        C316 238 330 233 340 228
+        C346 225 352 226 354 229
+        C355 232 351 235 347 237
+
+        C336 244 320 249 304 251
+        Z"
+      fill="url(#marbleDark05)"/>
+
+
+    <!-- kaki belakang -->
+    <path
+      d="
+        M341 229
+        C350 225 358 220 365 215
+        C369 212 372 214 370 218
+        C365 226 357 233 348 238
+        Z"
+      fill="url(#marble05)"/>
+
+    <!-- pointe kaki belakang -->
+    <path
+      d="
+        M365 215
+        C370 211 375 208 379 207
+        C381 207 382 209 380 211
+
+        C376 216 372 220 367 223
+
+        Z"
+      fill="url(#marbleDark05)"/>
+
+
+    <!-- ===== DETAIL PATUNG ===== -->
+
+    <!-- highlight wajah -->
+    <path
+      d="M198 56 C204 51 211 54 216 60"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity=".65"
+      stroke-width="3"
+      stroke-linecap="round"/>
+
+    <!-- highlight tubuh -->
+    <path
+      d="
+        M193 111
+        C188 129 190 147 185 163
+        M205 215
+        C209 259 205 314 201 351
+      "
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity=".35"
+      stroke-width="4"
+      stroke-linecap="round"/>
+
+    <!-- detail lipatan tutu -->
+    <path
+      d="
+        M157 190 C180 202 220 205 258 190
+        M151 201 C182 216 229 217 267 202
+      "
+      fill="none"
+      stroke="#8f897e"
+      stroke-opacity=".28"
+      stroke-width="2"/>
+
+  </g>
+
+</svg>
+<!-- ===== RAMBUT PRIA ===== -->
+
+<path
+  d="
+    M187 66
+    C184 57 187 47 195 42
+    C204 36 216 39 222 47
+    C225 52 225 61 221 67
+    C216 60 210 57 202 57
+    C196 57 191 61 187 66
+    Z"
+  fill="url(#marbleDark05)"/>
+
+<!-- kepala pria -->
+<ellipse
+  cx="204"
+  cy="70"
+  rx="18"
+  ry="22"
+  fill="url(#marble05)"/>
+
+
+<!-- ===== LEHER ===== -->
+
+<path
+  d="
+    M195 85
+    C196 94 194 100 188 105
+    L218 105
+    C211 98 211 91 213 83
+    Z"
+  fill="url(#marble05)"/>
+
+
+<!-- ===== TANGAN KIRI — DIANGKAT KE ATAS ===== -->
+
+<path
+  d="
+    M190 105
+    C180 103 173 96 169 86
+    C165 76 163 65 165 53
+
+    C166 48 170 47 172 51
+    C173 62 176 72 180 80
+    C184 88 190 92 198 96
+
+    Z"
+  fill="url(#marble05)"/>
+
+<!-- lengan atas sampai tangan -->
+<path
+  d="
+    M165 54
+    C164 45 165 35 168 27
+    C170 21 174 21 176 26
+    C175 36 174 44 172 52
+    Z"
+  fill="url(#marbleDark05)"/>
+
+<!-- tangan -->
+<path
+  d="
+    M168 28
+    C166 22 166 16 168 11
+    C169 8 171 9 172 12
+    C173 8 175 6 176 9
+    C177 13 176 19 174 25
+    C173 28 171 29 168 28
+    Z"
+  fill="url(#marble05)"/>
+
+
+<!-- ===== TANGAN KANAN — POSE BALLET ===== -->
+
+<path
+  d="
+    M216 104
+    C230 107 242 115 251 126
+    C258 135 267 140 277 140
+
+    C282 140 284 144 280 147
+    C267 149 255 144 246 136
+    C234 126 226 120 213 116
+
+    Z"
+  fill="url(#marble05)"/>
+
+<!-- tangan kanan -->
+<path
+  d="
+    M278 140
+    C286 138 292 133 297 128
+    C299 126 301 128 299 131
+    C296 137 291 141 285 144
+    C291 144 294 146 293 149
+    C287 151 280 149 276 146
+    Z"
+  fill="url(#marble05)"/>
+
+
+<!-- ===== KAKI YANG DIANGKAT KE DEPAN ===== -->
+
+<!-- paha terangkat -->
+<path
+  d="
+    M215 205
+    C227 207 239 211 249 216
+    C259 221 267 225 276 224
+
+    C283 223 288 218 293 212
+
+    C296 208 301 209 302 213
+    C301 221 295 230 287 234
+
+    C275 240 262 237 250 233
+    C235 228 221 224 210 222
+
+    Z"
+  fill="url(#marble05)"/>
+
+
+<!-- betis ditekuk ke depan -->
+<path
+  d="
+    M293 213
+    C299 205 304 195 307 185
+    C309 179 313 177 316 180
+    C318 183 316 188 315 192
+
+    C312 204 308 216 302 225
+
+    Z"
+  fill="url(#marbleDark05)"/>
+
+
+<!-- kaki depan -->
+<path
+  d="
+    M307 185
+    C310 176 312 168 316 161
+    C318 157 322 158 323 161
+
+    C323 169 320 178 316 185
+    Z"
+  fill="url(#marble05)"/>
+
+<!-- ujung kaki -->
+<path
+  d="
+    M316 162
+    C319 156 323 151 327 148
+    C330 146 332 148 330 151
+    C327 157 323 162 319 166
+    Z"
+  fill="url(#marbleDark05)"/>
+
+  </div>
+
+</article>
 
 </article>
 
@@ -6192,20 +5710,11 @@ footer{
     <small>04</small>
 
     <strong>
-      Future Melody
+      Music of Life
     </strong>
 
   </div>
 
-  <div class="index-item">
-
-    <small>05</small>
-
-    <strong>
-      G30S & Seni
-    </strong>
-
-  </div>
 </div>
 
 </section>
